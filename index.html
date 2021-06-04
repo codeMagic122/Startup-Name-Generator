@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Name Generator</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<script>
+    const generateName = (users, category, location, buzzword) => {
+        const name = "Sonic Roots"
+        const description = `We\’re making the world a better place, by bringing ${ buzzword } ${ category } products to ${ users } near ${ location }`
+        const logo = "SR"
+
+        return {
+            name, 
+            description,
+            logo
+        }
+    }
+
+    const onSubmitHandler = e => {
+        e.preventDefault()
+
+        const users = e.target.elements.users.value
+        const category = e.target.elements.category.value
+        const location = e.target.elements.location.value
+        const buzzword = e.target.elements.buzzword.value
+
+        const { name, description, logo } = generateName(users, category, location, buzzword)
+        
+        const nameOutput = document.querySelector("#name")
+        nameOutput.textContent = name
+
+        const descriptionOutput = document.querySelector("#description")
+        descriptionOutput.textContent = description
+
+        const logoOutput = document.querySelector("#logo")
+        logoOutput.textContent = logo
+
+        const nameOutput2 = document.querySelector("#name2")
+        nameOutput2.textContent = name
+
+        const result = document.querySelector(".result")
+        result.scrollIntoView()
+    }
+</script>
+
+<body>
+    <div class="body">
+        <div class="title">
+            <h1>Startup Name Generator</h1>
+            <p>Build your D2C Startup in seconds</p>
+        </div>
+
+        <form action="#" class="form" id="form" name="startupform" onsubmit=onSubmitHandler(event)>
+            <div class="form-group">
+                <h5 class="form-heading">What's your product category?</h5>
+                <select name="category" id="pet-select" required>
+                    <option value="" selected disabled hidden>Select an option</option>
+                    <option value="Health & Wellness">Health & Wellness</option>
+                    <option value="Pets">Pets</option>
+                    <option value="Legal">Legal</option>
+                    <option value="Fintech">Fintech</option>
+                    <option value="Video Games">Video Games</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <h5 class="form-heading">Who are your target users?</h5>
+                <select name="users" id="pet-select" required>
+                    <option value="" selected disabled hidden>Select an option</option>
+                    <option value="Parents">Parents</option>
+                    <option value="Vegans">Vegans</option>
+                    <option value="Teens">Teens</option>
+                    <option value="Grandmas">Grandmas</option>
+                    <option value="Millenials">Millenials</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <h5 class="form-heading">What's your location?</h5>
+                <select name="location" id="pet-select" required>
+                    <option value="" selected disabled hidden>Select an option</option>
+                    <option value="San Francisco, CA">San Francisco, CA</option>
+                    <option value="Austin, TX">Austin, TX</option>
+                    <option value="New York, NY">New York, NY</option>
+                    <option value="Miami, FL">Miami, FL</option>
+                    <option value="Ireland">Ireland</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <h5 class="form-heading">Pick your favorite buzzword!</h5>
+                <select name="buzzword" id="pet-select" required>
+                    <option value="" selected disabled hidden>Select an option</option>
+                    <option value="AI-Powered">AI-Powered</option>
+                    <option value="Reality-Extending">Reality-Extending</option>
+                </select>
+            </div>
+
+            <input type="submit" class="go-btn center" value="Build My Startup">
+        </form>
+    </div>
+
+    <div class="result">
+        <p>Welcome to</p>
+        <h1 class="large u-margin-bottom" id="name">Company name</h1>
+        <p class="small u-margin-bottom" id="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis fugiat asperiores reiciendis harum nisi iste autem sapiente corporis corrupti optio quos minima molestiae, quo, iure laborum ipsam sequi labore possimus.</p>
+
+        <div class="logo u-margin-bottom">
+            <h1>&#128640; <span id="logo">LG</span> &#128640;</h1>
+        </div>
+
+        <p class="small u-margin-bottom u-margin-top">Tell others about <span id="name2">company name</span></p>
+
+        <div class="socials u-margin-top">
+            <a class="go-btn u-space-right">Twitter</a>
+            <a class="go-btn u-space-right">Instagram</a>
+            <a class="go-btn">Facebook</a>
+        </div>
+    </div>
+</body>
+
+<!-- <script>
+    document.querySelector("form").onSubmit = e => {
+        e.preventDefault();
+        alert("working!");
+    }
+</script> -->
+
+</html>
