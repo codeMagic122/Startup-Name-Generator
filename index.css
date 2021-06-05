@@ -154,6 +154,12 @@ p.small {
   margin-right: 3rem;
 }
 
+.u-flex-center {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+}
+
 @keyframes pulse {
   0% {
     transform: scale(1);
