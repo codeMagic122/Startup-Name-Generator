@@ -31,7 +31,8 @@ html {
 
 .result {
   width: 70%;
-  display: flex;
+/*   display: flex; */
+  display: none;
   flex-direction: column;
   align-items: center;
   margin: 10rem auto;
