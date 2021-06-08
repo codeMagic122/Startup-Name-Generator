@@ -1049,6 +1049,18 @@
         const nameOutput2 = document.querySelector("#name2")
         nameOutput2.textContent = name
 
+        const twitterText = 
+            "Check out my new startup! \n \n" 
+            + name
+            + ": " 
+            + description + ". \n \nBuild your own startup:" 
+        const twitterLink = 
+            "https://twitter.com/intent/tweet?text=" 
+            + twitterText 
+            + "&url=https://codemagic122.github.io/"
+        const twitterBtn = document.querySelector("#twitter")
+        twitterBtn.setAttribute("href", twitterLink)
+
         const result = document.querySelector(".result")
         result.style.display = "flex"
         result.scrollIntoView()
@@ -1139,18 +1151,11 @@
         <p class="small u-margin-bottom u-margin-top">Tell others about <span id="name2">company name</span></p>
 
         <div class="u-flex-center u-margin-top">
-            <a class="go-btn u-space-right">Twitter</a>
-            <a class="go-btn u-space-right">Instagram</a>
-            <a class="go-btn">Facebook</a>
+            <a class="go-btn u-space-right" target="_blank" href="https://twitter.com/home?status=hello&url=https://codemagic122.github.io/" id="twitter">Twitter</a>
+            <a class="go-btn u-space-right" target="_blank" href="#" id="instagram">Instagram</a>
+            <a class="go-btn" target="_blank" href="#" id="facebook">Facebook</a>
         </div>
     </div>
 </body>
-
-<!-- <script>
-    document.querySelector("form").onSubmit = e => {
-        e.preventDefault();
-        alert("working!");
-    }
-</script> -->
 
 </html>
