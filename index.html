@@ -7,1154 +7,388 @@
     <title>Startup Name Generator</title>
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
+<!-- Generator Logic -->
+
 <script>
-    const names = [
-        {'name': 'High Homes', 'logo': 'HH'},
-        {'name': 'Happy Laws', 'logo': 'HL'},
-        {'name': 'Happy Incomes', 'logo': 'HI'},
-        {'name': 'Well Devices', 'logo': 'WD'},
-        {'name': 'Suppository Supports', 'logo': 'SS'},
-        {'name': 'Pandemic States', 'logo': 'PS'},
-        {'name': 'Solar Events', 'logo': 'SE'},
-        {'name': 'Disconnected Laws', 'logo': 'DL'},
-        {'name': 'Solar Approachs', 'logo': 'SA'},
-        {'name': 'Covid Organizations', 'logo': 'CO'},
-        {'name': 'Valuable Machines', 'logo': 'VM'},
-        {'name': 'Different Peoples', 'logo': 'DP'},
-        {'name': 'Critical Rates', 'logo': 'CR'},
-        {'name': 'Multiple Plans', 'logo': 'MP'},
-        {'name': 'Pre Communitys', 'logo': 'PC'},
-        {'name': 'Good Giants', 'logo': 'GG'},
-        {'name': 'Clear Teams', 'logo': 'CT'},
-        {'name': 'Lunar Stars', 'logo': 'LS'},
-        {'name': 'Beneficial Kidneys', 'logo': 'BK'},
-        {'name': 'Difficult Customers', 'logo': 'DC'},
-        {'name': 'Musical Needs', 'logo': 'MN'},
-        {'name': 'Current Kids', 'logo': 'CK'},
-        {'name': 'Economic Diseases', 'logo': 'ED'},
-        {'name': 'Subject Offices', 'logo': 'SO'},
-        {'name': 'Easy Deliverys', 'logo': 'ED'},
-        {'name': 'Old Tools', 'logo': 'OT'},
-        {'name': 'Open Sellers', 'logo': 'OS'},
-        {'name': 'Global Citys', 'logo': 'GC'},
-        {'name': 'Long Roles', 'logo': 'LR'},
-        {'name': 'Late Centers', 'logo': 'LC'},
-        {'name': 'Available Stages', 'logo': 'AS'},
-        {'name': 'Commercial Missions', 'logo': 'CM'},
-        {'name': 'Alive Cos', 'logo': 'AC'},
-        {'name': 'Federal Podcasts', 'logo': 'FP'},
-        {'name': 'Significant Stars', 'logo': 'SS'},
-        {'name': 'Difficult Games', 'logo': 'DG'},
-        {'name': 'Great Fundings', 'logo': 'GF'},
-        {'name': 'Tiny Sellers', 'logo': 'TS'},
-        {'name': 'Female Futures', 'logo': 'FF'},
-        {'name': 'Pre Episodes', 'logo': 'PE'},
-        {'name': 'Future Classs', 'logo': 'FC'},
-        {'name': 'Environmental Platforms', 'logo': 'EP'},
-        {'name': 'Able Platforms', 'logo': 'AP'},
-        {'name': 'Gross Taxs', 'logo': 'GT'},
-        {'name': 'High Citys', 'logo': 'HC'},
-        {'name': 'Particular Acquisitions', 'logo': 'PA'},
-        {'name': 'Successful Futures', 'logo': 'SF'},
-        {'name': 'Genuine Orbits', 'logo': 'GO'},
-        {'name': 'Wrong Researchs', 'logo': 'WR'},
-        {'name': 'Subject Prices', 'logo': 'SP'},
-        {'name': 'Clear Softwares', 'logo': 'CS'},
-        {'name': 'Late Presidents', 'logo': 'LP'},
-        {'name': 'Small Foods', 'logo': 'SF'},
-        {'name': 'Hard Studios', 'logo': 'HS'},
-        {'name': 'Key Rates', 'logo': 'KR'},
-        {'name': 'Long Sciences', 'logo': 'LS'},
-        {'name': 'Financial Carbons', 'logo': 'FC'},
-        {'name': 'Female Categorys', 'logo': 'FC'},
-        {'name': 'Negative Laws', 'logo': 'NL'},
-        {'name': 'Cool Players', 'logo': 'CP'},
-        {'name': 'Physical Capitals', 'logo': 'PC'},
-        {'name': 'Gross Rounds', 'logo': 'GR'},
-        {'name': 'Valuable Players', 'logo': 'VP'},
-        {'name': 'Available Countrys', 'logo': 'AC'},
-        {'name': 'Pre Models', 'logo': 'PM'},
-        {'name': 'Able Providers', 'logo': 'AP'},
-        {'name': 'Educational Customers', 'logo': 'EC'},
-        {'name': 'Environmental Investors', 'logo': 'EI'},
-        {'name': 'Attractive Needs', 'logo': 'AN'},
-        {'name': 'Great Fundings', 'logo': 'GF'},
-        {'name': 'Human Kids', 'logo': 'HK'},
-        {'name': 'Sustainable Couples', 'logo': 'SC'},
-        {'name': 'Wide Companys', 'logo': 'WC'},
-        {'name': 'Low Flights', 'logo': 'LF'},
-        {'name': 'Unique Investors', 'logo': 'UI'},
-        {'name': 'Negative Entrepreneurs', 'logo': 'NE'},
-        {'name': 'Critical Softwares', 'logo': 'CS'},
-        {'name': 'Massive Rates', 'logo': 'MR'},
-        {'name': 'Short Apps', 'logo': 'SA'},
-        {'name': 'Similar Machines', 'logo': 'SM'},
-        {'name': 'Great Episodes', 'logo': 'GE'},
-        {'name': 'Excited Carbons', 'logo': 'EC'},
-        {'name': 'Healthy Views', 'logo': 'HV'},
-        {'name': 'Excited Languages', 'logo': 'EL'},
-        {'name': 'Wide Revenues', 'logo': 'WR'},
-        {'name': 'Major Innovations', 'logo': 'MI'},
-        {'name': 'High Networks', 'logo': 'HN'},
-        {'name': 'Autologous Talents', 'logo': 'AT'},
-        {'name': 'Medical Costs', 'logo': 'MC'},
-        {'name': 'High Devices', 'logo': 'HD'},
-        {'name': 'Renewable Pandemics', 'logo': 'RP'},
-        {'name': 'Lunar Results', 'logo': 'LR'},
-        {'name': 'Separate Sciences', 'logo': 'SS'},
-        {'name': 'Tough Carbons', 'logo': 'TC'},
-        {'name': 'Total Services', 'logo': 'TS'},
-        {'name': 'Future Homes', 'logo': 'FH'},
-        {'name': 'Net Mediums', 'logo': 'NM'},
-        {'name': 'Vaccinated Healths', 'logo': 'VH'},
-        {'name': 'Generous Prices', 'logo': 'GP'},
-        {'name': 'Illegal Incomes', 'logo': 'II'},
-        {'name': 'Basic Decisions', 'logo': 'BD'},
-        {'name': 'Difficult Policys', 'logo': 'DP'},
-        {'name': 'Global Leaders', 'logo': 'GL'},
-        {'name': 'Close Quarters', 'logo': 'CQ'},
-        {'name': 'Hybrid Leaders', 'logo': 'HL'},
-        {'name': 'Renewable Policys', 'logo': 'RP'},
-        {'name': 'Particular Games', 'logo': 'PG'},
-        {'name': 'Able Investors', 'logo': 'AI'},
-        {'name': 'Current Worlds', 'logo': 'CW'},
-        {'name': 'Fake Results', 'logo': 'FR'},
-        {'name': 'Special Founders', 'logo': 'SF'},
-        {'name': 'Fake Weeks', 'logo': 'FW'},
-        {'name': 'Affordable Products', 'logo': 'AP'},
-        {'name': 'Specific Foots', 'logo': 'SF'},
-        {'name': 'New Sales', 'logo': 'NS'},
-        {'name': 'New Events', 'logo': 'NE'},
-        {'name': 'International Flights', 'logo': 'IF'},
-        {'name': 'Professional Startups', 'logo': 'PS'},
-        {'name': 'Promotional Talents', 'logo': 'PT'},
-        {'name': 'Industrial Sites', 'logo': 'IS'},
-        {'name': 'Open Incomes', 'logo': 'OI'},
-        {'name': 'Clinical Centers', 'logo': 'CC'},
-        {'name': 'Gross Leaders', 'logo': 'GL'},
-        {'name': 'Past Customers', 'logo': 'PC'},
-        {'name': 'Virtual Games', 'logo': 'VG'},
-        {'name': 'Public Deals', 'logo': 'PD'},
-        {'name': 'Annual Stores', 'logo': 'AS'},
-        {'name': 'Local Storys', 'logo': 'LS'},
-        {'name': 'Recent Organizations', 'logo': 'RO'},
-        {'name': 'Tiny Needs', 'logo': 'TN'},
-        {'name': 'Young Groups', 'logo': 'YG'},
-        {'name': 'Important Tests', 'logo': 'IT'},
-        {'name': 'Important Products', 'logo': 'IP'},
-        {'name': 'Broad Acquisitions', 'logo': 'BA'},
-        {'name': 'Underway Works', 'logo': 'UW'},
-        {'name': 'Valuable Samples', 'logo': 'VS'},
-        {'name': 'Lucky Actions', 'logo': 'LA'},
-        {'name': 'Potential Videos', 'logo': 'PV'},
-        {'name': 'Fast Cases', 'logo': 'FC'},
-        {'name': 'Deep Informations', 'logo': 'DI'},
-        {'name': 'Successful Energys', 'logo': 'SE'},
-        {'name': 'Genuine Costs', 'logo': 'GC'},
-        {'name': 'Interesting Prices', 'logo': 'IP'},
-        {'name': 'Additional Peoples', 'logo': 'AP'},
-        {'name': 'Educational Programs', 'logo': 'EP'},
-        {'name': 'Focused Cases', 'logo': 'FC'},
-        {'name': 'Great Systems', 'logo': 'GS'},
-        {'name': 'Multi Hours', 'logo': 'MH'},
-        {'name': 'Net Quarters', 'logo': 'NQ'},
-        {'name': 'Antitrust Covid-19s', 'logo': 'AC'},
-        {'name': 'Public Days', 'logo': 'PD'},
-        {'name': 'Racial Ends', 'logo': 'RE'},
-        {'name': 'True Internets', 'logo': 'TI'},
-        {'name': 'Focused Sales', 'logo': 'FS'},
-        {'name': 'Renewable Areas', 'logo': 'RA'},
-        {'name': 'Normal Researchers', 'logo': 'NR'},
-        {'name': 'Incredible Factors', 'logo': 'IF'},
-        {'name': 'Massive Reviews', 'logo': 'MR'},
-        {'name': 'Non Places', 'logo': 'NP'},
-        {'name': 'Antitrust Teachers', 'logo': 'AT'},
-        {'name': 'Genuine Boards', 'logo': 'GB'},
-        {'name': 'Real Diseases', 'logo': 'RD'},
-        {'name': 'Virtual Stores', 'logo': 'VS'},
-        {'name': 'Future Persons', 'logo': 'FP'},
-        {'name': 'Federal Dollars', 'logo': 'FD'},
-        {'name': 'Commercial Dollars', 'logo': 'CD'},
-        {'name': 'Free Needs', 'logo': 'FN'},
-        {'name': 'Powerful Spacexs', 'logo': 'PS'},
-        {'name': 'Renewable Learnings', 'logo': 'RL'},
-        {'name': 'Traditional Futures', 'logo': 'TF'},
-        {'name': 'Worth Entrepreneurs', 'logo': 'WE'},
-        {'name': 'Federal Accesss', 'logo': 'FA'},
-        {'name': 'Key Podcasts', 'logo': 'KP'},
-        {'name': 'Little Programs', 'logo': 'LP'},
-        {'name': 'Alive States', 'logo': 'AS'},
-        {'name': 'Senior Innovations', 'logo': 'SI'},
-        {'name': 'Able Services', 'logo': 'AS'},
-        {'name': 'Social Devices', 'logo': 'SD'},
-        {'name': 'Genuine Tests', 'logo': 'GT'},
-        {'name': 'Additional Experiences', 'logo': 'AE'},
-        {'name': 'Gross Terms', 'logo': 'GT'},
-        {'name': 'Unlikely Views', 'logo': 'UV'},
-        {'name': 'Economic Systems', 'logo': 'ES'},
-        {'name': 'Huge Policys', 'logo': 'HP'},
-        {'name': 'Important Ventures', 'logo': 'IV'},
-        {'name': 'High Offices', 'logo': 'HO'},
-        {'name': 'Worth Newss', 'logo': 'WN'},
-        {'name': 'Available Programs', 'logo': 'AP'},
-        {'name': 'Special Orbits', 'logo': 'SO'},
-        {'name': 'Environmental Clouds', 'logo': 'EC'},
-        {'name': 'Giant Offices', 'logo': 'GO'},
-        {'name': 'Beautiful Buildings', 'logo': 'BB'},
-        {'name': 'New Missions', 'logo': 'NM'},
-        {'name': 'Net Offices', 'logo': 'NO'},
-        {'name': 'Tough Schools', 'logo': 'TS'},
-        {'name': 'Exciting Mediums', 'logo': 'EM'},
-        {'name': 'Available Studios', 'logo': 'AS'},
-        {'name': 'Professional Changes', 'logo': 'PC'},
-        {'name': 'Little Deliverys', 'logo': 'LD'},
-        {'name': 'Facial Experiences', 'logo': 'FE'},
-        {'name': 'Promotional Statements', 'logo': 'PS'},
-        {'name': 'Executive Giants', 'logo': 'EG'},
-        {'name': 'Single Kids', 'logo': 'SK'},
-        {'name': 'Virtual Roles', 'logo': 'VR'},
-        {'name': 'Fast Buildings', 'logo': 'FB'},
-        {'name': 'Giveaway Stages', 'logo': 'GS'},
-        {'name': 'Upcoming Innovations', 'logo': 'UI'},
-        {'name': 'Extraordinary Acquisitions', 'logo': 'EA'},
-        {'name': 'Secret Solutions', 'logo': 'SS'},
-        {'name': 'Important Carbons', 'logo': 'IC'},
-        {'name': 'Huge Opportunitys', 'logo': 'HO'},
-        {'name': 'Technical Operations', 'logo': 'TO'},
-        {'name': 'Cool Reviews', 'logo': 'CR'},
-        {'name': 'Hot Costs', 'logo': 'HC'},
-        {'name': 'Technical Energys', 'logo': 'TE'},
-        {'name': 'Annual Jobs', 'logo': 'AJ'},
-        {'name': 'Attractive Capitals', 'logo': 'AC'},
-        {'name': 'Natural Spaces', 'logo': 'NS'},
-        {'name': 'Mobile Technologys', 'logo': 'MT'},
-        {'name': 'Vaccinated Plans', 'logo': 'VP'},
-        {'name': 'Covid Citys', 'logo': 'CC'},
-        {'name': 'Strong Foods', 'logo': 'SF'},
-        {'name': 'Incredible Dollars', 'logo': 'ID'},
-        {'name': 'True Trials', 'logo': 'TT'},
-        {'name': 'Annual Players', 'logo': 'AP'},
-        {'name': 'Separate Statements', 'logo': 'SS'},
-        {'name': 'Scientific Mixs', 'logo': 'SM'},
-        {'name': 'Industrial Diseases', 'logo': 'ID'},
-        {'name': 'Total Customers', 'logo': 'TC'},
-        {'name': 'Early Actions', 'logo': 'EA'},
-        {'name': 'Particular Leaders', 'logo': 'PL'},
-        {'name': 'Long Episodes', 'logo': 'LE'},
-        {'name': 'Basic Changes', 'logo': 'BC'},
-        {'name': 'Global Rounds', 'logo': 'GR'},
-        {'name': 'Net Policys', 'logo': 'NP'},
-        {'name': 'Critical Problems', 'logo': 'CP'},
-        {'name': 'Explainable Customers', 'logo': 'EC'},
-        {'name': 'Autologous Mediums', 'logo': 'AM'},
-        {'name': 'Undisclosed Consumers', 'logo': 'UC'},
-        {'name': 'Strong Rates', 'logo': 'SR'},
-        {'name': 'Complex Countrys', 'logo': 'CC'},
-        {'name': 'Big Needs', 'logo': 'BN'},
-        {'name': 'Traditional Quarters', 'logo': 'TQ'},
-        {'name': 'Safe Plans', 'logo': 'SP'},
-        {'name': 'Medical Levels', 'logo': 'ML'},
-        {'name': 'Small Dollars', 'logo': 'SD'},
-        {'name': 'Short Vaccinations', 'logo': 'SV'},
-        {'name': 'Suppository Points', 'logo': 'SP'},
-        {'name': 'Gross Researchers', 'logo': 'GR'},
-        {'name': 'New Missions', 'logo': 'NM'},
-        {'name': 'Diagnostic Plans', 'logo': 'DP'},
-        {'name': 'Fast Pandemics', 'logo': 'FP'},
-        {'name': 'Amazing Sciences', 'logo': 'AS'},
-        {'name': 'Artificial Stages', 'logo': 'AS'},
-        {'name': 'Human Talents', 'logo': 'HT'},
-        {'name': 'Beautiful Things', 'logo': 'BT'},
-        {'name': 'Lucky Tests', 'logo': 'LT'},
-        {'name': 'Fast Numbers', 'logo': 'FN'},
-        {'name': 'Low Trials', 'logo': 'LT'},
-        {'name': 'Certain Studys', 'logo': 'CS'},
-        {'name': 'Able Weeks', 'logo': 'AW'},
-        {'name': 'True Quarters', 'logo': 'TQ'},
-        {'name': 'Actual Energys', 'logo': 'AE'},
-        {'name': 'Remote Weeks', 'logo': 'RW'},
-        {'name': 'Natural Healths', 'logo': 'NH'},
-        {'name': 'Independent Tests', 'logo': 'IT'},
-        {'name': 'Excited Events', 'logo': 'EE'},
-        {'name': 'Sure Days', 'logo': 'SD'},
-        {'name': 'Official Technologys', 'logo': 'OT'},
-        {'name': 'Bad Terms', 'logo': 'BT'},
-        {'name': 'Attractive Finalists', 'logo': 'AF'},
-        {'name': 'Single Jobs', 'logo': 'SJ'},
-        {'name': 'Clinical Goals', 'logo': 'CG'},
-        {'name': 'Primary Episodes', 'logo': 'PE'},
-        {'name': 'Tough Teachers', 'logo': 'TT'},
-        {'name': 'Incredible Apps', 'logo': 'IA'},
-        {'name': 'General Benefits', 'logo': 'GB'},
-        {'name': 'Powerful Childs', 'logo': 'PC'},
-        {'name': 'Operational Times', 'logo': 'OT'},
-        {'name': 'Broad Videos', 'logo': 'BV'},
-        {'name': 'Saas Investors', 'logo': 'SI'},
-        {'name': 'Popular Mixs', 'logo': 'PM'},
-        {'name': 'Educational Orbits', 'logo': 'EO'},
-        {'name': 'Black Diseases', 'logo': 'BD'},
-        {'name': 'Remote Lifes', 'logo': 'RL'},
-        {'name': 'Vaccinated Places', 'logo': 'VP'},
-        {'name': 'Human Accesss', 'logo': 'HA'},
-        {'name': 'Smart Problems', 'logo': 'SP'},
-        {'name': 'Chief Innovations', 'logo': 'CI'},
-        {'name': 'Subject Acquisitions', 'logo': 'SA'},
-        {'name': 'Nice Vaccinations', 'logo': 'NV'},
-        {'name': 'Early Familys', 'logo': 'EF'},
-        {'name': 'Beneficial Samples', 'logo': 'BS'},
-        {'name': 'Little Homes', 'logo': 'LH'},
-        {'name': 'Right Trials', 'logo': 'RT'},
-        {'name': 'Short Goals', 'logo': 'SG'},
-        {'name': 'Rare Technologys', 'logo': 'RT'},
-        {'name': 'Oral Concerns', 'logo': 'OC'},
-        {'name': 'Educational Lots', 'logo': 'EL'},
-        {'name': 'Well Persons', 'logo': 'WP'},
-        {'name': 'Great Levels', 'logo': 'GL'},
-        {'name': 'Educational Goals', 'logo': 'EG'},
-        {'name': 'Massive Reports', 'logo': 'MR'},
-        {'name': 'Hard Terms', 'logo': 'HT'},
-        {'name': 'Right Needs', 'logo': 'RN'},
-        {'name': 'Renewable Orbits', 'logo': 'RO'},
-        {'name': 'Legal Problems', 'logo': 'LP'},
-        {'name': 'Tiny Investors', 'logo': 'TI'},
-        {'name': 'Antitrust Giants', 'logo': 'AG'},
-        {'name': 'Beautiful Languages', 'logo': 'BL'},
-        {'name': 'Ready Growths', 'logo': 'RG'},
-        {'name': 'Sustainable Places', 'logo': 'SP'},
-        {'name': 'Legal Finalists', 'logo': 'LF'},
-        {'name': 'Medical Trials', 'logo': 'MT'},
-        {'name': 'Annual Communitys', 'logo': 'AC'},
-        {'name': 'Chief Missions', 'logo': 'CM'},
-        {'name': 'Exclusive Futures', 'logo': 'EF'},
-        {'name': 'Human Games', 'logo': 'HG'},
-        {'name': 'Single Deliverys', 'logo': 'SD'},
-        {'name': 'Medical Devices', 'logo': 'MD'},
-        {'name': 'Ready Classs', 'logo': 'RC'},
-        {'name': 'Early Growths', 'logo': 'EG'},
-        {'name': 'Microbiome Games', 'logo': 'MG'},
-        {'name': 'Senior Growths', 'logo': 'SG'},
-        {'name': 'Non Datums', 'logo': 'ND'},
-        {'name': 'Physical Foots', 'logo': 'PF'},
-        {'name': 'Successful Cooks', 'logo': 'SC'},
-        {'name': 'Musical Groups', 'logo': 'MG'},
-        {'name': 'Legal Generations', 'logo': 'LG'},
-        {'name': 'Successful Trials', 'logo': 'ST'},
-        {'name': 'Financial Acquisitions', 'logo': 'FA'},
-        {'name': 'Focused Organizations', 'logo': 'FO'},
-        {'name': 'Medical Trials', 'logo': 'MT'},
-        {'name': 'Worth Ventures', 'logo': 'WV'},
-        {'name': 'True Worlds', 'logo': 'TW'},
-        {'name': 'Hot Acquisitions', 'logo': 'HA'},
-        {'name': 'Focused Customers', 'logo': 'FC'},
-        {'name': 'Simple Things', 'logo': 'ST'},
-        {'name': 'Clinical Languages', 'logo': 'CL'},
-        {'name': 'Clean Languages', 'logo': 'CL'},
-        {'name': 'Real Accesss', 'logo': 'RA'},
-        {'name': 'Microbiome Jobs', 'logo': 'MJ'},
-        {'name': 'Genuine Diseases', 'logo': 'GD'},
-        {'name': 'Long Softwares', 'logo': 'LS'},
-        {'name': 'Chief Networks', 'logo': 'CN'},
-        {'name': 'Lunar Startups', 'logo': 'LS'},
-        {'name': 'Safe Videos', 'logo': 'SV'},
-        {'name': 'Positive Companys', 'logo': 'PC'},
-        {'name': 'Renewable Things', 'logo': 'RT'},
-        {'name': 'Undisclosed Questions', 'logo': 'UQ'},
-        {'name': 'Physical Months', 'logo': 'PM'},
-        {'name': 'Multiple Times', 'logo': 'MT'},
-        {'name': 'Underway Services', 'logo': 'US'},
-        {'name': 'Legal Industrys', 'logo': 'LI'},
-        {'name': 'Difficult Things', 'logo': 'DT'},
-        {'name': 'Negative Laws', 'logo': 'NL'},
-        {'name': 'Critical Projects', 'logo': 'CP'},
-        {'name': 'Virtual Generations', 'logo': 'VG'},
-        {'name': 'Young Views', 'logo': 'YV'},
-        {'name': 'High Goals', 'logo': 'HG'},
-        {'name': 'Corporate Peoples', 'logo': 'CP'},
-        {'name': 'Social Groups', 'logo': 'SG'},
-        {'name': 'Beautiful Systems', 'logo': 'BS'},
-        {'name': 'Illegal Carbons', 'logo': 'IC'},
-        {'name': 'Available Questions', 'logo': 'AQ'},
-        {'name': 'Additional Informations', 'logo': 'AI'},
-        {'name': 'Pandemic Users', 'logo': 'PU'},
-        {'name': 'Explainable Values', 'logo': 'EV'},
-        {'name': 'New Processs', 'logo': 'NP'},
-        {'name': 'Possible Stars', 'logo': 'PS'},
-        {'name': 'Strong Businesss', 'logo': 'SB'},
-        {'name': 'Online Organizations', 'logo': 'OO'},
-        {'name': 'Smart Enterprises', 'logo': 'SE'},
-        {'name': 'Actual Costs', 'logo': 'AC'},
-        {'name': 'Incredible Worlds', 'logo': 'IW'},
-        {'name': 'Retail Teams', 'logo': 'RT'},
-        {'name': 'Open Childs', 'logo': 'OC'},
-        {'name': 'Interesting Quarters', 'logo': 'IQ'},
-        {'name': 'Gross Classs', 'logo': 'GC'},
-        {'name': 'Total Categorys', 'logo': 'TC'},
-        {'name': 'Entire Vaccines', 'logo': 'EV'},
-        {'name': 'Incredible Areas', 'logo': 'IA'},
-        {'name': 'General Providers', 'logo': 'GP'},
-        {'name': 'Healthy Questions', 'logo': 'HQ'},
-        {'name': 'Remote Cooks', 'logo': 'RC'},
-        {'name': 'Unique Brands', 'logo': 'UB'},
-        {'name': 'Deep Couples', 'logo': 'DC'},
-        {'name': 'Massive Sellers', 'logo': 'MS'},
-        {'name': 'Big Researchs', 'logo': 'BR'},
-        {'name': 'Interesting Platforms', 'logo': 'IP'},
-        {'name': 'Tough Benefits', 'logo': 'TB'},
-        {'name': 'Sustainable Highlights', 'logo': 'SH'},
-        {'name': 'Cool Questions', 'logo': 'CQ'},
-        {'name': 'Chief Operations', 'logo': 'CO'},
-        {'name': 'Upcoming Networks', 'logo': 'UN'},
-        {'name': 'Direct Directors', 'logo': 'DD'},
-        {'name': 'General Roles', 'logo': 'GR'},
-        {'name': 'Virtual Tools', 'logo': 'VT'},
-        {'name': 'Sure Todays', 'logo': 'ST'},
-        {'name': 'Interested Investments', 'logo': 'II'},
-        {'name': 'Fine Leaderships', 'logo': 'FL'},
-        {'name': 'Low Covid-19s', 'logo': 'LC'},
-        {'name': 'Complex Taxs', 'logo': 'CT'},
-        {'name': 'Legal Cos', 'logo': 'LC'},
-        {'name': 'Subject Industrys', 'logo': 'SI'},
-        {'name': 'Interested Employees', 'logo': 'IE'},
-        {'name': 'Saas Concerns', 'logo': 'SC'},
-        {'name': 'Wide Companys', 'logo': 'WC'},
-        {'name': 'Net Groups', 'logo': 'NG'},
-        {'name': 'Multiple Softwares', 'logo': 'MS'},
-        {'name': 'Local Startups', 'logo': 'LS'},
-        {'name': 'Old Sciences', 'logo': 'OS'},
-        {'name': 'Black Times', 'logo': 'BT'},
-        {'name': 'Separate Hours', 'logo': 'SH'},
-        {'name': 'Different Times', 'logo': 'DT'},
-        {'name': 'Unlikely Points', 'logo': 'UP'},
-        {'name': 'Alive Missions', 'logo': 'AM'},
-        {'name': 'Past Leaders', 'logo': 'PL'},
-        {'name': 'Clean Costs', 'logo': 'CC'},
-        {'name': 'Wide Consumers', 'logo': 'WC'},
-        {'name': 'Unlikely Projects', 'logo': 'UP'},
-        {'name': 'Racial Vaccinations', 'logo': 'RV'},
-        {'name': 'Short Operations', 'logo': 'SO'},
-        {'name': 'Actual Groups', 'logo': 'AG'},
-        {'name': 'Massive Pieces', 'logo': 'MP'},
-        {'name': 'Smart Problems', 'logo': 'SP'},
-        {'name': 'Good Views', 'logo': 'GV'},
-        {'name': 'Early Capitals', 'logo': 'EC'},
-        {'name': 'Happy Prizes', 'logo': 'HP'},
-        {'name': 'Possible Videos', 'logo': 'PV'},
-        {'name': 'Renewable Satellites', 'logo': 'RS'},
-        {'name': 'Bad Things', 'logo': 'BT'},
-        {'name': 'Well Operations', 'logo': 'WO'},
-        {'name': 'Local Platforms', 'logo': 'LP'},
-        {'name': 'Exciting Prizes', 'logo': 'EP'},
-        {'name': 'Human Orders', 'logo': 'HO'},
-        {'name': 'Early Technologys', 'logo': 'ET'},
-        {'name': 'Hard Numbers', 'logo': 'HN'},
-        {'name': 'Broad Markets', 'logo': 'BM'},
-        {'name': 'Antitrust Innovations', 'logo': 'AI'},
-        {'name': 'Senior Devices', 'logo': 'SD'},
-        {'name': 'Retail Days', 'logo': 'RD'},
-        {'name': 'Safe Moneys', 'logo': 'SM'},
-        {'name': 'Clean Missions', 'logo': 'CM'},
-        {'name': 'Rare Laws', 'logo': 'RL'},
-        {'name': 'Facial Leaderships', 'logo': 'FL'},
-        {'name': 'Hot Newss', 'logo': 'HN'},
-        {'name': 'Robust Communitys', 'logo': 'RC'},
-        {'name': 'Pandemic Shares', 'logo': 'PS'},
-        {'name': 'Explainable Apps', 'logo': 'EA'},
-        {'name': 'Patient Vaccines', 'logo': 'PV'},
-        {'name': 'Federal Lots', 'logo': 'FL'},
-        {'name': 'Social Sellers', 'logo': 'SS'},
-        {'name': 'Current Centers', 'logo': 'CC'},
-        {'name': 'Good Costs', 'logo': 'GC'},
-        {'name': 'Fake Programs', 'logo': 'FP'},
-        {'name': 'Valuable Members', 'logo': 'VM'},
-        {'name': 'Wrong Players', 'logo': 'WP'},
-        {'name': 'Particular Works', 'logo': 'PW'},
-        {'name': 'Beneficial Terms', 'logo': 'BT'},
-        {'name': 'Remote Lots', 'logo': 'RL'},
-        {'name': 'Multiple Accesss', 'logo': 'MA'},
-        {'name': 'Fake Ways', 'logo': 'FW'},
-        {'name': 'Educational Leaders', 'logo': 'EL'},
-        {'name': 'Worth Vaccines', 'logo': 'WV'},
-        {'name': 'Tough Studios', 'logo': 'TS'},
-        {'name': 'Upcoming States', 'logo': 'US'},
-        {'name': 'Special Uses', 'logo': 'SU'},
-        {'name': 'Tough Persons', 'logo': 'TP'},
-        {'name': 'Illegal Presidents', 'logo': 'IP'},
-        {'name': 'Positive Foots', 'logo': 'PF'},
-        {'name': 'Key Models', 'logo': 'KM'},
-        {'name': 'Ready Flights', 'logo': 'RF'},
-        {'name': 'New Schools', 'logo': 'NS'},
-        {'name': 'Tiny Trials', 'logo': 'TT'},
-        {'name': 'Scientific Months', 'logo': 'SM'},
-        {'name': 'Key Lots', 'logo': 'KL'},
-        {'name': 'Cool Womans', 'logo': 'CW'},
-        {'name': 'Racial Sciences', 'logo': 'RS'},
-        {'name': 'Disconnected Flights', 'logo': 'DF'},
-        {'name': 'Single Ventures', 'logo': 'SV'},
-        {'name': 'Low Classs', 'logo': 'LC'},
-        {'name': 'Actual Organizations', 'logo': 'AO'},
-        {'name': 'Strong Categorys', 'logo': 'SC'},
-        {'name': 'Potential Roles', 'logo': 'PR'},
-        {'name': 'Operational Events', 'logo': 'OE'},
-        {'name': 'Gross Episodes', 'logo': 'GE'},
-        {'name': 'Robust Growths', 'logo': 'RG'},
-        {'name': 'Early Concerns', 'logo': 'EC'},
-        {'name': 'Alive Machines', 'logo': 'AM'},
-        {'name': 'Deep Stars', 'logo': 'DS'},
-        {'name': 'Facial Founders', 'logo': 'FF'},
-        {'name': 'Excited Clouds', 'logo': 'EC'},
-        {'name': 'Pre Works', 'logo': 'PW'},
-        {'name': 'Sustainable Supports', 'logo': 'SS'},
-        {'name': 'Eligible Patients', 'logo': 'EP'},
-        {'name': 'Rare Startups', 'logo': 'RS'},
-        {'name': 'Interested Founders', 'logo': 'IF'},
-        {'name': 'Excited Organizations', 'logo': 'EO'},
-        {'name': 'Industrial Sites', 'logo': 'IS'},
-        {'name': 'Professional Diseases', 'logo': 'PD'},
-        {'name': 'Medical Reports', 'logo': 'MR'},
-        {'name': 'Vaccinated Questions', 'logo': 'VQ'},
-        {'name': 'Human Days', 'logo': 'HD'},
-        {'name': 'Future Pieces', 'logo': 'FP'},
-        {'name': 'Broad Solutions', 'logo': 'BS'},
-        {'name': 'Primary Vaccinations', 'logo': 'PV'},
-        {'name': 'Positive Results', 'logo': 'PR'},
-        {'name': 'Eligible Directors', 'logo': 'ED'},
-        {'name': 'Upcoming Cases', 'logo': 'UC'},
-        {'name': 'Independent Quarters', 'logo': 'IQ'},
-        {'name': 'Giant Moneys', 'logo': 'GM'},
-        {'name': 'Focused Supports', 'logo': 'FS'},
-        {'name': 'Multi Models', 'logo': 'MM'},
-        {'name': 'Longtime Boards', 'logo': 'LB'},
-        {'name': 'Hopeful Womans', 'logo': 'HW'},
-        {'name': 'Underway Ceos', 'logo': 'UC'},
-        {'name': 'Senior Issues', 'logo': 'SI'},
-        {'name': 'Wide Ideas', 'logo': 'WI'},
-        {'name': 'True Storys', 'logo': 'TS'},
-        {'name': 'Normal Places', 'logo': 'NP'},
-        {'name': 'Renewable Researchers', 'logo': 'RR'},
-        {'name': 'Smart Communitys', 'logo': 'SC'},
-        {'name': 'Close Schools', 'logo': 'CS'},
-        {'name': 'Educational Offices', 'logo': 'EO'},
-        {'name': 'Professional Storys', 'logo': 'PS'},
-        {'name': 'Technical Roles', 'logo': 'TR'},
-        {'name': 'Important Points', 'logo': 'IP'},
-        {'name': 'Ready Energys', 'logo': 'RE'},
-        {'name': 'Small Costs', 'logo': 'SC'},
-        {'name': 'Entire Members', 'logo': 'EM'},
-        {'name': 'Early Storys', 'logo': 'ES'},
-        {'name': 'Antitrust Questions', 'logo': 'AQ'},
-        {'name': 'Safe Finalists', 'logo': 'SF'},
-        {'name': 'Potential Capitals', 'logo': 'PC'},
-        {'name': 'Longtime Newss', 'logo': 'LN'},
-        {'name': 'Unique Worlds', 'logo': 'UW'},
-        {'name': 'Clear Needs', 'logo': 'CN'},
-        {'name': 'International Deliverys', 'logo': 'ID'},
-        {'name': 'Natural Systems', 'logo': 'NS'},
-        {'name': 'Vaccinated Policys', 'logo': 'VP'},
-        {'name': 'Exclusive Groups', 'logo': 'EG'},
-        {'name': 'Positive Players', 'logo': 'PP'},
-        {'name': 'Cool Trials', 'logo': 'CT'},
-        {'name': 'Scientific Times', 'logo': 'ST'},
-        {'name': 'Focused Revenues', 'logo': 'FR'},
-        {'name': 'Giveaway Podcasts', 'logo': 'GP'},
-        {'name': 'Operational Pandemics', 'logo': 'OP'},
-        {'name': 'Diagnostic Growths', 'logo': 'DG'},
-        {'name': 'Alive Spacexs', 'logo': 'AS'},
-        {'name': 'Affordable Brands', 'logo': 'AB'},
-        {'name': 'Big Models', 'logo': 'BM'},
-        {'name': 'Chief Shares', 'logo': 'CS'},
-        {'name': 'Secret Giants', 'logo': 'SG'},
-        {'name': 'Upcoming Leaderships', 'logo': 'UL'},
-        {'name': 'Hopeful Events', 'logo': 'HE'},
-        {'name': 'Resupply Users', 'logo': 'RU'},
-        {'name': 'Technical Shares', 'logo': 'TS'},
-        {'name': 'Economic Lots', 'logo': 'EL'},
-        {'name': 'Specific Moneys', 'logo': 'SM'},
-        {'name': 'International Roles', 'logo': 'IR'},
-        {'name': 'Clean Times', 'logo': 'CT'},
-        {'name': 'Complex Clouds', 'logo': 'CC'},
-        {'name': 'Genuine Kids', 'logo': 'GK'},
-        {'name': 'Independent Employees', 'logo': 'IE'},
-        {'name': 'Small Capitals', 'logo': 'SC'},
-        {'name': 'Potential Years', 'logo': 'PY'},
-        {'name': 'Happy Moneys', 'logo': 'HM'},
-        {'name': 'Few Things', 'logo': 'FT'},
-        {'name': 'Robust Homes', 'logo': 'RH'},
-        {'name': 'Major Finalists', 'logo': 'MF'},
-        {'name': 'Real Presidents', 'logo': 'RP'},
-        {'name': 'Future Learnings', 'logo': 'FL'},
-        {'name': 'Attractive Partners', 'logo': 'AP'},
-        {'name': 'Bad Months', 'logo': 'BM'},
-        {'name': 'Safe Schools', 'logo': 'SS'},
-        {'name': 'Ready Changes', 'logo': 'RC'},
-        {'name': 'Big Generations', 'logo': 'BG'},
-        {'name': 'Available Programs', 'logo': 'AP'},
-        {'name': 'Nice Plans', 'logo': 'NP'},
-        {'name': 'Positive Studys', 'logo': 'PS'},
-        {'name': 'Low Satellites', 'logo': 'LS'},
-        {'name': 'Short Organizations', 'logo': 'SO'},
-        {'name': 'Genuine Terms', 'logo': 'GT'},
-        {'name': 'Solar Students', 'logo': 'SS'},
-        {'name': 'Interested Lifes', 'logo': 'IL'},
-        {'name': 'Independent Communitys', 'logo': 'IC'},
-        {'name': 'Racial Peoples', 'logo': 'RP'},
-        {'name': 'Wide Decisions', 'logo': 'WD'},
-        {'name': 'Healthy Problems', 'logo': 'HP'},
-        {'name': 'Well Buildings', 'logo': 'WB'},
-        {'name': 'Valuable Hours', 'logo': 'VH'},
-        {'name': 'Difficult Deliverys', 'logo': 'DD'},
-        {'name': 'Ready Studios', 'logo': 'RS'},
-        {'name': 'Current Sites', 'logo': 'CS'},
-        {'name': 'Short Persons', 'logo': 'SP'},
-        {'name': 'Actual Researchs', 'logo': 'AR'},
-        {'name': 'Great Programs', 'logo': 'GP'},
-        {'name': 'Direct Statements', 'logo': 'DS'},
-        {'name': 'Direct Worlds', 'logo': 'DW'},
-        {'name': 'General Numbers', 'logo': 'GN'},
-        {'name': 'Specific Entrepreneurs', 'logo': 'SE'},
-        {'name': 'Personal Samples', 'logo': 'PS'},
-        {'name': 'Massive Firms', 'logo': 'MF'},
-        {'name': 'Incredible Offices', 'logo': 'IO'},
-        {'name': 'Direct Developments', 'logo': 'DD'},
-        {'name': 'Operational Centers', 'logo': 'OC'},
-        {'name': 'Powerful Students', 'logo': 'PS'},
-        {'name': 'Certain Satellites', 'logo': 'CS'},
-        {'name': 'Global Vaccines', 'logo': 'GV'},
-        {'name': 'Chief Supports', 'logo': 'CS'},
-        {'name': 'Focused Presidents', 'logo': 'FP'},
-        {'name': 'Well Studios', 'logo': 'WS'},
-        {'name': 'Renewable Students', 'logo': 'RS'},
-        {'name': 'Human Factors', 'logo': 'HF'},
-        {'name': 'Past Moneys', 'logo': 'PM'},
-        {'name': 'Major Futures', 'logo': 'MF'},
-        {'name': 'Competitive Issues', 'logo': 'CI'},
-        {'name': 'Big Vaccinations', 'logo': 'BV'},
-        {'name': 'Traditional Weeks', 'logo': 'TW'},
-        {'name': 'Beneficial Apps', 'logo': 'BA'},
-        {'name': 'True Informations', 'logo': 'TI'},
-        {'name': 'Retail Players', 'logo': 'RP'},
-        {'name': 'Safe Devices', 'logo': 'SD'},
-        {'name': 'Hot Operations', 'logo': 'HO'},
-        {'name': 'Simple Games', 'logo': 'SG'},
-        {'name': 'Clean Experiences', 'logo': 'CE'},
-        {'name': 'Virtual Members', 'logo': 'VM'},
-        {'name': 'Free Times', 'logo': 'FT'},
-        {'name': 'Annual Experiences', 'logo': 'AE'},
-        {'name': 'Gross Teachers', 'logo': 'GT'},
-        {'name': 'Focused Foods', 'logo': 'FF'},
-        {'name': 'Focused Directors', 'logo': 'FD'},
-        {'name': 'Economic Couples', 'logo': 'EC'},
-        {'name': 'Giveaway Carbons', 'logo': 'GC'},
-        {'name': 'Oral Offices', 'logo': 'OO'},
-        {'name': 'Independent Classs', 'logo': 'IC'},
-        {'name': 'Separate Cooks', 'logo': 'SC'},
-        {'name': 'Secret Covid-19s', 'logo': 'SC'},
-        {'name': 'Hybrid Times', 'logo': 'HT'},
-        {'name': 'Negative Consumers', 'logo': 'NC'},
-        {'name': 'Renewable Problems', 'logo': 'RP'},
-        {'name': 'Cool Educations', 'logo': 'CE'},
-        {'name': 'Generous Todays', 'logo': 'GT'},
-        {'name': 'Alive Weeks', 'logo': 'AW'},
-        {'name': 'Ready Countrys', 'logo': 'RC'},
-        {'name': 'Disconnected Jobs', 'logo': 'DJ'},
-        {'name': 'Autologous States', 'logo': 'AS'},
-        {'name': 'Racial Quarters', 'logo': 'RQ'},
-        {'name': 'Real Dollars', 'logo': 'RD'},
-        {'name': 'Illegal Mixs', 'logo': 'IM'},
-        {'name': 'Sure Cos', 'logo': 'SC'},
-        {'name': 'Affordable Vaccines', 'logo': 'AV'},
-        {'name': 'Solar Techs', 'logo': 'ST'},
-        {'name': 'Open Experiences', 'logo': 'OE'},
-        {'name': 'Relevant Educations', 'logo': 'RE'},
-        {'name': 'Private Roles', 'logo': 'PR'},
-        {'name': 'Amazing Groups', 'logo': 'AG'},
-        {'name': 'Recent Terms', 'logo': 'RT'},
-        {'name': 'Safe Informations', 'logo': 'SI'},
-        {'name': 'Secret Markets', 'logo': 'SM'},
-        {'name': 'Amazing Offices', 'logo': 'AO'},
-        {'name': 'Huge Investments', 'logo': 'HI'},
-        {'name': 'Close Markets', 'logo': 'CM'},
-        {'name': 'Good Reviews', 'logo': 'GR'},
-        {'name': 'Low Deals', 'logo': 'LD'},
-        {'name': 'Few Foots', 'logo': 'FF'},
-        {'name': 'Open Taxs', 'logo': 'OT'},
-        {'name': 'Likely Workers', 'logo': 'LW'},
-        {'name': 'Major Homes', 'logo': 'MH'},
-        {'name': 'Possible Networks', 'logo': 'PN'},
-        {'name': 'Antitrust Satellites', 'logo': 'AS'},
-        {'name': 'Personal Stars', 'logo': 'PS'},
-        {'name': 'Explainable Cases', 'logo': 'EC'},
-        {'name': 'Net Innovations', 'logo': 'NI'},
-        {'name': 'Valuable Schools', 'logo': 'VS'},
-        {'name': 'Solar Classs', 'logo': 'SC'},
-        {'name': 'Available Trials', 'logo': 'AT'},
-        {'name': 'Particular Accesss', 'logo': 'PA'},
-        {'name': 'Incredible Giants', 'logo': 'IG'},
-        {'name': 'Educational Students', 'logo': 'ES'},
-        {'name': 'Separate Actions', 'logo': 'SA'},
-        {'name': 'Explainable Mediums', 'logo': 'EM'},
-        {'name': 'Chief Podcasts', 'logo': 'CP'},
-        {'name': 'Few Programs', 'logo': 'FP'},
-        {'name': 'True Solutions', 'logo': 'TS'},
-        {'name': 'Attractive Generations', 'logo': 'AG'},
-        {'name': 'Beneficial Hours', 'logo': 'BH'},
-        {'name': 'Actual Mediums', 'logo': 'AM'},
-        {'name': 'Chief Newss', 'logo': 'CN'},
-        {'name': 'Late Diseases', 'logo': 'LD'},
-        {'name': 'Giveaway Womans', 'logo': 'GW'},
-        {'name': 'Pre Rounds', 'logo': 'PR'},
-        {'name': 'Possible Highlights', 'logo': 'PH'},
-        {'name': 'Suppository Todays', 'logo': 'ST'},
-        {'name': 'Educational Actions', 'logo': 'EA'},
-        {'name': 'Bad Familys', 'logo': 'BF'},
-        {'name': 'Local Projects', 'logo': 'LP'},
-        {'name': 'Traditional Platforms', 'logo': 'TP'},
-        {'name': 'Massive Peoples', 'logo': 'MP'},
-        {'name': 'Digital Finalists', 'logo': 'DF'},
-        {'name': 'True Pandemics', 'logo': 'TP'},
-        {'name': 'Previous Covid-19s', 'logo': 'PC'},
-        {'name': 'Successful Fundings', 'logo': 'SF'},
-        {'name': 'Current Schools', 'logo': 'CS'},
-        {'name': 'Second Languages', 'logo': 'SL'},
-        {'name': 'Close Presidents', 'logo': 'CP'},
-        {'name': 'Ready Learnings', 'logo': 'RL'},
-        {'name': 'Operational States', 'logo': 'OS'},
-        {'name': 'Safe Ideas', 'logo': 'SI'},
-        {'name': 'Important Businesss', 'logo': 'IB'},
-        {'name': 'Total Covid-19s', 'logo': 'TC'},
-        {'name': 'Autologous Actions', 'logo': 'AA'},
-        {'name': 'Easy Centers', 'logo': 'EC'},
-        {'name': 'Current Members', 'logo': 'CM'},
-        {'name': 'Important Approachs', 'logo': 'IA'},
-        {'name': 'Good Deliverys', 'logo': 'GD'},
-        {'name': 'Actual Consumers', 'logo': 'AC'},
-        {'name': 'Tiny Roles', 'logo': 'TR'},
-        {'name': 'Hard Deals', 'logo': 'HD'},
-        {'name': 'Successful Users', 'logo': 'SU'},
-        {'name': 'Single Rates', 'logo': 'SR'},
-        {'name': 'True Solutions', 'logo': 'TS'},
-        {'name': 'Bad Uses', 'logo': 'BU'},
-        {'name': 'Renewable Datums', 'logo': 'RD'},
-        {'name': 'Massive Sites', 'logo': 'MS'},
-        {'name': 'Successful Years', 'logo': 'SY'},
-        {'name': 'Attractive Reviews', 'logo': 'AR'},
-        {'name': 'Lunar Changes', 'logo': 'LC'},
-        {'name': 'Different Factors', 'logo': 'DF'},
-        {'name': 'Undisclosed Works', 'logo': 'UW'},
-        {'name': 'Available Days', 'logo': 'AD'},
-        {'name': 'Electric Entrepreneurs', 'logo': 'EE'},
-        {'name': 'Net Todays', 'logo': 'NT'},
-        {'name': 'Little Areas', 'logo': 'LA'},
-        {'name': 'Oral Consumers', 'logo': 'OC'},
-        {'name': 'Hard Ventures', 'logo': 'HV'},
-        {'name': 'Autologous Familys', 'logo': 'AF'},
-        {'name': 'Annual Students', 'logo': 'AS'},
-        {'name': 'Attractive Goals', 'logo': 'AG'},
-        {'name': 'Chief Weeks', 'logo': 'CW'},
-        {'name': 'Saas Giants', 'logo': 'SG'},
-        {'name': 'Previous Processs', 'logo': 'PP'},
-        {'name': 'Attractive Shares', 'logo': 'AS'},
-        {'name': 'Subject Changes', 'logo': 'SC'},
-        {'name': 'Few Players', 'logo': 'FP'},
-        {'name': 'Artificial Accesss', 'logo': 'AA'},
-        {'name': 'Online Enterprises', 'logo': 'OE'},
-        {'name': 'Human Spaces', 'logo': 'HS'},
-        {'name': 'Giveaway Sales', 'logo': 'GS'},
-        {'name': 'Right Platforms', 'logo': 'RP'},
-        {'name': 'Renewable Impacts', 'logo': 'RI'},
-        {'name': 'Right Carbons', 'logo': 'RC'},
-        {'name': 'Private Employees', 'logo': 'PE'},
-        {'name': 'Little Couples', 'logo': 'LC'},
-        {'name': 'Additional Jobs', 'logo': 'AJ'},
-        {'name': 'Gross Values', 'logo': 'GV'},
-        {'name': 'Multi Months', 'logo': 'MM'},
-        {'name': 'Single Uses', 'logo': 'SU'},
-        {'name': 'Hopeful Laws', 'logo': 'HL'},
-        {'name': 'Clear Reviews', 'logo': 'CR'},
-        {'name': 'Mobile Brands', 'logo': 'MB'},
-        {'name': 'Amazing Cases', 'logo': 'AC'},
-        {'name': 'Unlikely Questions', 'logo': 'UQ'},
-        {'name': 'Oral Rounds', 'logo': 'OR'},
-        {'name': 'Natural Orbits', 'logo': 'NO'},
-        {'name': 'Exciting Reviews', 'logo': 'ER'},
-        {'name': 'Illegal States', 'logo': 'IS'},
-        {'name': 'Smart Supports', 'logo': 'SS'},
-        {'name': 'Valuable Points', 'logo': 'VP'},
-        {'name': 'Private Stores', 'logo': 'PS'},
-        {'name': 'Giveaway Opportunitys', 'logo': 'GO'},
-        {'name': 'Vaccinated Talents', 'logo': 'VT'},
-        {'name': 'Valuable Sales', 'logo': 'VS'},
-        {'name': 'Relevant Impacts', 'logo': 'RI'},
-        {'name': 'Second Pieces', 'logo': 'SP'},
-        {'name': 'Separate Businesss', 'logo': 'SB'},
-        {'name': 'Global Stages', 'logo': 'GS'},
-        {'name': 'Educational Capitals', 'logo': 'EC'},
-        {'name': 'Rare Results', 'logo': 'RR'},
-        {'name': 'Specific Spacexs', 'logo': 'SS'},
-        {'name': 'Social Times', 'logo': 'ST'},
-        {'name': 'Financial Brands', 'logo': 'FB'},
-        {'name': 'Recent Leaders', 'logo': 'RL'},
-        {'name': 'Pre Prices', 'logo': 'PP'},
-        {'name': 'Normal Stores', 'logo': 'NS'},
-        {'name': 'Hopeful Internets', 'logo': 'HI'},
-        {'name': 'Complex Industrys', 'logo': 'CI'},
-        {'name': 'Nice Issues', 'logo': 'NI'},
-        {'name': 'Safe Brands', 'logo': 'SB'},
-        {'name': 'Possible Entrepreneurs', 'logo': 'PE'},
-        {'name': 'Multiple Factors', 'logo': 'MF'},
-        {'name': 'Major Categorys', 'logo': 'MC'},
-        {'name': 'Successful Results', 'logo': 'SR'},
-        {'name': 'Vaccinated Players', 'logo': 'VP'},
-        {'name': 'Late Peoples', 'logo': 'LP'},
-        {'name': 'Secret Revenues', 'logo': 'SR'},
-        {'name': 'Non Models', 'logo': 'NM'},
-        {'name': 'Virtual Kids', 'logo': 'VK'},
-        {'name': 'Net Researchs', 'logo': 'NR'},
-        {'name': 'Small Consumers', 'logo': 'SC'},
-        {'name': 'Private Covid-19s', 'logo': 'PC'},
-        {'name': 'Physical Startups', 'logo': 'PS'},
-        {'name': 'Amazing Stars', 'logo': 'AS'},
-        {'name': 'Certain Consumers', 'logo': 'CC'},
-        {'name': 'Female Statements', 'logo': 'FS'},
-        {'name': 'Powerful Carbons', 'logo': 'PC'},
-        {'name': 'Virtual Dollars', 'logo': 'VD'},
-        {'name': 'Global Revenues', 'logo': 'GR'},
-        {'name': 'Non Factors', 'logo': 'NF'},
-        {'name': 'Possible Homes', 'logo': 'PH'},
-        {'name': 'Physical Results', 'logo': 'PR'},
-        {'name': 'Popular Results', 'logo': 'PR'},
-        {'name': 'Original Foods', 'logo': 'OF'},
-        {'name': 'Exclusive Questions', 'logo': 'EQ'},
-        {'name': 'Likely Days', 'logo': 'LD'},
-        {'name': 'Giant Reviews', 'logo': 'GR'},
-        {'name': 'Traditional Statements', 'logo': 'TS'},
-        {'name': 'Local Learnings', 'logo': 'LL'},
-        {'name': 'Old Enterprises', 'logo': 'OE'},
-        {'name': 'Pandemic Mediums', 'logo': 'PM'},
-        {'name': 'Good Statements', 'logo': 'GS'},
-        {'name': 'Major Shares', 'logo': 'MS'},
-        {'name': 'Possible Familys', 'logo': 'PF'},
-        {'name': 'Virtual Ends', 'logo': 'VE'},
-        {'name': 'Significant Changes', 'logo': 'SC'},
-        {'name': 'Worth Trials', 'logo': 'WT'},
-        {'name': 'Original Flights', 'logo': 'OF'},
-        {'name': 'Industrial Studys', 'logo': 'IS'},
-        {'name': 'Ready Supports', 'logo': 'RS'},
-        {'name': 'Lucky Researchers', 'logo': 'LR'},
-        {'name': 'Single Systems', 'logo': 'SS'},
-        {'name': 'Exciting Mixs', 'logo': 'EM'},
-        {'name': 'Suppository Projects', 'logo': 'SP'},
-        {'name': 'Vaccinated Growths', 'logo': 'VG'},
-        {'name': 'Fine Studios', 'logo': 'FS'},
-        {'name': 'Undisclosed Orbits', 'logo': 'UO'},
-        {'name': 'Promotional Consumers', 'logo': 'PC'},
-        {'name': 'Valuable Industrys', 'logo': 'VI'},
-        {'name': 'Hopeful Lots', 'logo': 'HL'},
-        {'name': 'Short Foots', 'logo': 'SF'},
-        {'name': 'Low Datums', 'logo': 'LD'},
-        {'name': 'Lunar Tests', 'logo': 'LT'},
-        {'name': 'Strong Decisions', 'logo': 'SD'},
-        {'name': 'Amazing Values', 'logo': 'AV'},
-        {'name': 'Basic Members', 'logo': 'BM'},
-        {'name': 'Patient Stages', 'logo': 'PS'},
-        {'name': 'Global Benefits', 'logo': 'GB'},
-        {'name': 'Wide Quarters', 'logo': 'WQ'},
-        {'name': 'Certain Revenues', 'logo': 'CR'},
-        {'name': 'Original Goals', 'logo': 'OG'},
-        {'name': 'Potential Statements', 'logo': 'PS'},
-        {'name': 'Old Uses', 'logo': 'OU'},
-        {'name': 'Pre Sciences', 'logo': 'PS'},
-        {'name': 'Huge Places', 'logo': 'HP'},
-        {'name': 'Chief Stores', 'logo': 'CS'},
-        {'name': 'Simple Languages', 'logo': 'SL'},
-        {'name': 'Easy Views', 'logo': 'EV'},
-        {'name': 'Federal Homes', 'logo': 'FH'},
-        {'name': 'Technical Informations', 'logo': 'TI'},
-        {'name': 'Great Problems', 'logo': 'GP'},
-        {'name': 'Net Citys', 'logo': 'NC'},
-        {'name': 'Likely Softwares', 'logo': 'LS'},
-        {'name': 'Extraordinary Shares', 'logo': 'ES'},
-        {'name': 'Young Revenues', 'logo': 'YR'},
-        {'name': 'Future Centers', 'logo': 'FC'},
-        {'name': 'Official Issues', 'logo': 'OI'},
-        {'name': 'Big Citys', 'logo': 'BC'},
-        {'name': 'Electric Vaccinations', 'logo': 'EV'},
-        {'name': 'Multiple Vaccinations', 'logo': 'MV'},
-        {'name': 'Illegal Efforts', 'logo': 'IE'},
-        {'name': 'High Worlds', 'logo': 'HW'},
-        {'name': 'Sure Pandemics', 'logo': 'SP'},
-        {'name': 'Positive Experiences', 'logo': 'PE'},
-        {'name': 'Clinical Stars', 'logo': 'CS'},
-        {'name': 'High Developments', 'logo': 'HD'},
-        {'name': 'Great Couples', 'logo': 'GC'},
-        {'name': 'Possible Giants', 'logo': 'PG'},
-        {'name': 'Long Firms', 'logo': 'LF'},
-        {'name': 'Focused Giants', 'logo': 'FG'},
-        {'name': 'Legal Solutions', 'logo': 'LS'},
-        {'name': 'Illegal Levels', 'logo': 'IL'},
-        {'name': 'Industrial Changes', 'logo': 'IC'},
-        {'name': 'Professional Developments', 'logo': 'PD'},
-        {'name': 'Large Machines', 'logo': 'LM'},
-        {'name': 'Giveaway Solutions', 'logo': 'GS'},
-        {'name': 'Pre Benefits', 'logo': 'PB'},
-        {'name': 'Possible Persons', 'logo': 'PP'},
-        {'name': 'Important Companys', 'logo': 'IC'},
-        {'name': 'Annual Centers', 'logo': 'AC'},
-        {'name': 'Legal Goals', 'logo': 'LG'},
-        {'name': 'Right Stars', 'logo': 'RS'},
-        {'name': 'Past Generations', 'logo': 'PG'},
-        {'name': 'Net Networks', 'logo': 'NN'},
-        {'name': 'Low Languages', 'logo': 'LL'},
-        {'name': 'Private Datums', 'logo': 'PD'},
-        {'name': 'Current Spacexs', 'logo': 'CS'},
-        {'name': 'Gross Flights', 'logo': 'GF'},
-        {'name': 'Underway Womans', 'logo': 'UW'},
-        {'name': 'Basic Rates', 'logo': 'BR'},
-        {'name': 'Rare Quarters', 'logo': 'RQ'},
-        {'name': 'Few Industrys', 'logo': 'FI'},
-        {'name': 'Resupply Cos', 'logo': 'RC'},
-        {'name': 'Unlikely Weeks', 'logo': 'UW'},
-        {'name': 'Open Vaccines', 'logo': 'OV'},
-        {'name': 'Wrong Investors', 'logo': 'WI'},
-        {'name': 'Resupply Numbers', 'logo': 'RN'},
-        {'name': 'Robust Questions', 'logo': 'RQ'},
-        {'name': 'Alive Ideas', 'logo': 'AI'},
-        {'name': 'Technical Values', 'logo': 'TV'},
-        {'name': 'Beautiful Orders', 'logo': 'BO'},
-        {'name': 'Social Giants', 'logo': 'SG'},
-        {'name': 'Multiple Directors', 'logo': 'MD'},
-        {'name': 'Bad Countrys', 'logo': 'BC'},
-        {'name': 'Major Patients', 'logo': 'MP'},
-        {'name': 'Legal Lots', 'logo': 'LL'},
-        {'name': 'Second Costs', 'logo': 'SC'},
-        {'name': 'Alive Techs', 'logo': 'AT'},
-        {'name': 'Successful Moneys', 'logo': 'SM'},
-        {'name': 'Clean Deals', 'logo': 'CD'},
-        {'name': 'Underway Apps', 'logo': 'UA'},
-        {'name': 'Senior Costs', 'logo': 'SC'},
-        {'name': 'Able Videos', 'logo': 'AV'},
-        {'name': 'Affordable Benefits', 'logo': 'AB'},
-        {'name': 'Successful Acquisitions', 'logo': 'SA'},
-        {'name': 'Safe Uses', 'logo': 'SU'},
-        {'name': 'Local Devices', 'logo': 'LD'},
-        {'name': 'Pandemic Studys', 'logo': 'PS'},
-        {'name': 'Previous Investors', 'logo': 'PI'},
-        {'name': 'Wrong Policys', 'logo': 'WP'},
-        {'name': 'Powerful Prices', 'logo': 'PP'},
-        {'name': 'Low Patients', 'logo': 'LP'},
-        {'name': 'Exclusive Sellers', 'logo': 'ES'},
-        {'name': 'Patient Ventures', 'logo': 'PV'},
-        {'name': 'Pandemic Stores', 'logo': 'PS'},
-        {'name': 'Chief Shares', 'logo': 'CS'},
-        {'name': 'Virtual Informations', 'logo': 'VI'},
-        {'name': 'High Brands', 'logo': 'HB'},
-        {'name': 'Small Roles', 'logo': 'SR'},
-        {'name': 'Hard Presidents', 'logo': 'HP'},
-        {'name': 'New Foots', 'logo': 'NF'},
-        {'name': 'Clean Events', 'logo': 'CE'},
-        {'name': 'Human Learnings', 'logo': 'HL'},
-        {'name': 'Disconnected Tools', 'logo': 'DT'},
-        {'name': 'Local Rates', 'logo': 'LR'},
-        {'name': 'Key Powers', 'logo': 'KP'},
-        {'name': 'High Foods', 'logo': 'HF'},
-        {'name': 'Potential Stages', 'logo': 'PS'},
-        {'name': 'Independent Healths', 'logo': 'IH'},
-        {'name': 'Separate Reviews', 'logo': 'SR'},
-        {'name': 'Able Studios', 'logo': 'AS'},
-        {'name': 'Autologous Jobs', 'logo': 'AJ'},
-        {'name': 'Professional Finalists', 'logo': 'PF'},
-        {'name': 'Suppository Devices', 'logo': 'SD'},
-        {'name': 'Electric Deals', 'logo': 'ED'},
-        {'name': 'Racial Ideas', 'logo': 'RI'},
-        {'name': 'Medical Couples', 'logo': 'MC'},
-        {'name': 'Few Acquisitions', 'logo': 'FA'},
-        {'name': 'General Mixs', 'logo': 'GM'},
-        {'name': 'Official Storys', 'logo': 'OS'},
-        {'name': 'Annual Cooks', 'logo': 'AC'},
-        {'name': 'Regulatory Quarters', 'logo': 'RQ'},
-        {'name': 'Great Consumers', 'logo': 'GC'},
-        {'name': 'Multiple Programs', 'logo': 'MP'},
-        {'name': 'Natural Futures', 'logo': 'NF'},
-        {'name': 'Able Researchers', 'logo': 'AR'},
-        {'name': 'Microbiome Reviews', 'logo': 'MR'},
-        {'name': 'Attractive Patients', 'logo': 'AP'},
-        {'name': 'Remote Cases', 'logo': 'RC'},
-        {'name': 'Suppository Techs', 'logo': 'ST'},
-        {'name': 'Facial Storys', 'logo': 'FS'},
-        {'name': 'Extraordinary Employees', 'logo': 'EE'},
-        {'name': 'Happy Womans', 'logo': 'HW'},
-        {'name': 'Beautiful Costs', 'logo': 'BC'},
-        {'name': 'Natural Stars', 'logo': 'NS'},
-        {'name': 'Young Capitals', 'logo': 'YC'},
-        {'name': 'Renewable Entrepreneurs', 'logo': 'RE'},
-        {'name': 'Illegal Laws', 'logo': 'IL'},
-        {'name': 'Open Problems', 'logo': 'OP'},
-        {'name': 'Normal Vaccinations', 'logo': 'NV'},
-        {'name': 'Digital Childs', 'logo': 'DC'},
-        {'name': 'Beneficial Prices', 'logo': 'BP'},
-        {'name': 'Focused Enterprises', 'logo': 'FE'},
-        {'name': 'Current Vaccines', 'logo': 'CV'},
-        {'name': 'Tiny Firms', 'logo': 'TF'},
-        {'name': 'Secret Years', 'logo': 'SY'},
-        {'name': 'Black Groups', 'logo': 'BG'},
-        {'name': 'Safe Years', 'logo': 'SY'},
-        {'name': 'True Studys', 'logo': 'TS'},
-        {'name': 'Healthy Generations', 'logo': 'HG'},
-        {'name': 'Safe Stages', 'logo': 'SS'},
-        {'name': 'Hard Covid-19s', 'logo': 'HC'},
-        {'name': 'Corporate Experiences', 'logo': 'CE'},
-        {'name': 'Annual Times', 'logo': 'AT'},
-        {'name': 'Excited Founders', 'logo': 'EF'},
-        {'name': 'Focused Episodes', 'logo': 'FE'},
-        {'name': 'Chief Results', 'logo': 'CR'},
-        {'name': 'Professional Teachers', 'logo': 'PT'},
-        {'name': 'Vaccinated Issues', 'logo': 'VI'},
-        {'name': 'Strong Generations', 'logo': 'SG'}
-    ]
+    const names = {
+        "Telemedicine": [
+            { 
+                name: "Pillsly",
+                image: "pills.png",
+                mission: "To revolutionize the way you buy medicine by delivering trusted pills at the best prices",
+                test1: "Wow! I have been looking for an easy way to get my wife her vitamins. I was so happy when I came across Pillsly.com. Great concept and awesome execution!",
+                test2: "Pillsy is a great way to order your daily supplements. It's super easy to use and I love that I get my supplements so quickly.",
+                test3: "Pillsy gives you the opportunity to order your prescription medications directly from a licensed pharmacy. Pillsy eliminates the need for going to the doctor and waiting in line at the pharmacy.",
+                test4: "Pillsly is a simple, beautiful way to order medications online. You can order the next day and have your medication directly at your front door; it's a game changer."
+            },
 
-    const generateName = (users, category, location, buzzword) => {
-        const nameObj = names[Math.floor(Math.random() * (names.length-1))]
-        const name = nameObj["name"]
-        const description = `We\’re making the world a better place, by bringing ${ buzzword } ${ category } products to ${ users } near ${ location }`
-        const logo = nameObj["logo"]
+            {
+                name: "Medsme",
+                image: "meds.png",
+                mission: "To create a decentralized medical marketplace, where consumers can buy high quality medical supplements directly from manufacturers at prices that are 30-50% cheaper than average price on the market.",
+                test1: "I've tried several direct-to-consumer medical supplements startups - Medsme is the best. The customer service is excellent and they have the most comprehensive product line we could find.",
+                test2: "Medsme is a great way to get the supplements you need delivered right to your door. No more weekly visits to the same drug store & no more waiting in line to pick up your order.",
+                test3: "I was introduced to Medsme by a friend and I'm a huge fan of what they've done. The founders are young entrepreneurs with great stories, the website is beautiful, and the supplements are top notch!",
+                test4: "Medsme is a great way to get your supplements. I never have to leave my house, and get affordable supplements that are usually only available from doctors. I can't think of a better way to get my supplements than this!"
+            },
 
-        return {
-            name, 
-            description,
-            logo
-        }
+            {
+                name: "Nursely",
+                image: "nurse.png",
+                mission: "To empower patients with direct access to licensed and professional healthcare consultants who can help them navigate the complex healthcare insurance and system in the U.S",
+                test1: "I absolutely love Nursely. I've been searching online and in real life for a healthcare consultant for years with no luck. This platform makes it easy to find a qualified person for you.",
+                test2: "I love Nursely because it is an easy way to find a personal healthcare consultant to help you with your healthcare related needs. You don't have to be seriously ill... Nursely can help you navigate the healthcare system, manage your medications and stay healthy.",
+                test3: "I was very impressed with the quality of service and professionalism of Nursely. All my questions were answered promptly, and I got more information than I expected. I would definitely recommend Nursely to my friends.",
+                test4: "I have been working with Nursely for 3 months in their beta version. I really like their service. They are very responsive and have a great support team that is easy to reach."
+            },
+
+            {
+                name: "Riley",
+                image: "package.png",
+                mission: "Making women's health more friendly, delightful and easy to navigate.",
+                test1: "I am so happy that I ran across your product and website. I have never been so confident in an online purchase as I was with yours. I love that you are a woman owned business and the products are made right here in the USA.",
+                test2: "I love Riley Health! I've used their products for the past few months and have been consistently impressed with the quality of the products, the packaging, and the overall user experience.",
+                test3: "Riley helps you find the right product for your health, with no hassle and no time wasted",
+                test4: "My favorite part about your site is how easy it is to navigate and purchase items. I've been recommending your site to everyone I know."
+            },
+
+            {
+                name: "Docster",
+                image: "doctor.png",
+                mission: "To connect you directly with doctors so you can make informed decisions about your health.",
+                test1: "I'm a huge believer in the idea that more affordable, online healthcare is a net positive for the country. Docster is providing a great service to consumers by connecting them with doctors they can trust at prices that don't break the bank.",
+                test2: "I have been very happy with Docster and plan to continue using them for some time. The platform is easy to use, the customer service is great, and I love how easy it is for our patients to schedule appointments with us.",
+                test3: "The Internet has made it possible for people to order products from all over the world at any time. The next thing is to be able to order a professional service from anywhere in the world. Docster is the first step towards this reality.",
+                test4: "Docster has changed my life by connecting me with a licensed and professional doctor for only $25. I had ongoing health issues that needed to be addressed but never had the time to go see a doctor. Docster is saving me time and money, and I am able to connect with a licensed and professional doctor at any time from the comfort of my home!"
+            }
+        ],
+
+        "Pets": [
+            {
+                name: "Wagly",
+                image: "dogtoy.png",
+                mission: "To make amazing, high quality pet toys that are also FUN for the pet parent.",
+                test1: "I love what you do. I love dogs. I have a dog and I love that you make toys for them, and sell them directly to me. Thanks for making it easy!",
+                test2: "My canine companion, Dobby, is very much a toy connoisseur. She's pretty discerning and can tell the difference between trash and quality toys. I've been testing Wagsly toys on her for a couple of weeks now, and although she's not quite ready to reveal her favorites (she wants to savor this secret), I can tell you that she is LOVING the new line of toys!",
+                test3: "Wagsly is an excellent pet toy company that sells pet toys directly to dog owners. Their product line is of the highest quality and very reasonably priced. They also have a great customer service team who are friendly, helpful and knowledgeable.'",
+                test4: "Wagsly allows customers to purchase a wide variety of pet toys in bulk at an affordable price. The selection is amazing and the product is of high quality."
+            },
+
+            {
+                name: "Petsly",
+                image: "puppy.png",
+                mission: "To make sure the best food for pets shows up at your doorstep.",
+                test1: "Petsly is a great place to buy your pet food. They are direct to consumer, which cuts out the middle man, and they have excellent customer service.",
+                test2: "I love Petsly because they are a great company to work with. They have been very helpful and answered all of my questions. They have helped me make sure that I am ordering the right amount of food and treats for my pets. Whenever I call, someone always answers the phone and they know who I am when I call. I have recommended Petsly to many of my friends here in St. Louis.",
+                test3: "Petsly is a great place to buy Top-Quality Pet Food. They are the Amazon of pet food and they have the best prices on the internet.",
+                test4: "Petsly is a great website. It's easy to use and it has a lot of products to choose from. I would recommend Petsly to anyone looking for a great place to get their pets food delivered to their home!"
+            },
+
+            {
+                name: "Purrr",
+                image: "cat.png",
+                mission: "To help kitties have more fun! The future of cat toys is here.",
+                test1: "My cats and I love Purrr! The toys are high quality and made here in the USA. They are easy to order from Purrr's website, which is simple and beautiful. In return for leaving a review of one of the toys I received for free, I received a coupon code for 20% off my next order. That was really nice customer service.",
+                test2: "Purrr is one of my favorite brands of cat toys and supplies. They use organic materials and make products with the highest quality standards in mind. Browse their website to find the perfect gift for your favorite feline or tech-savvy human.",
+                test3: "We have 3 furbabies, and one of them is over 10 years old. I'm grateful for the toys that encourage active play & keep our pets healthy! Purrr also sells these Cat Dancer wands which make a great gift!",
+                test4: "Purrr makes it easy to keep up with your cat’s love of playtime. Each toy is made with high quality materials, which makes for a durable product that will last."
+            },
+
+            {
+                name: "MeeYow",
+                image: "kitty.png",
+                mission: "To be the purrfect (sorry) pet delivery solution, feline-forward and designed to make your life easier!",
+                test1: "I love my MeeYow cat. She has a beautiful coat and a fantastic personality. I highly recommend you check out MeeYow.com!",
+                test2: "I have to say that this is the best cat app I've used so far. Everything about MeeYow makes it easy to connect with cats and find ones that you're interested in.",
+                test3: "Matchmaking can be hard, especially if you’re into cats. With MeeYow, finding the purr-fect cat partner is easy.",
+                test4: "I am a cat lover who has adopted from shelters and rescues before, but never considered buying a cat online. I visited all the local shelters and found some great kitties, but decided to look to the web for my next cat. MeeYow makes it easy to shop for cats online, and they have a great selection of purebreds and designer cats. The staff is helpful and friendly and they answered all my questions!"
+            }
+        ]
+    }
+
+    // Grab starutp data
+    const generateStartup = category => {
+        const idx = Math.floor((names[category].length) * Math.random())
+        const startup = names[category][idx]
+        return startup
+    }
+
+    // Create about sentence using user input
+    const generateAbout = ( users, category, location, name ) => {
+        const sentence1 = `${ name } is a ${ location } based direct to consumer ${ category } startup for ${ users }.`
+        const sentence2 = `At ${ name }, we're revolutionizing the ${ category } industry, by providing the best ${ category } products to ${ users } in ${ location }.`
+        const sentence3 = `Located in sunny ${ location }, ${ name } is disrupting the ${ category } industry, by bringing our target demographic, ${ users }, the best ${ category } products possible.`
+        
+        const sentences = [ sentence1, sentence2, sentence3 ]
+
+        return sentences[Math.floor(Math.random() * sentences.length)]
+    }
+
+    // Genereate short description
+    const shortDescription = category => {
+        const description = `Who says a direct to consumer ${ category } startup can't provide amazing and affordable products?`
+        
+        return description
     }
 
     const onSubmitHandler = e => {
         e.preventDefault()
 
+        // Retreive Data on Form Submit
         const users = e.target.elements.users.value
         const category = e.target.elements.category.value
         const location = e.target.elements.location.value
-        const buzzword = e.target.elements.buzzword.value
+        const color1 = e.target.elements.colorOne.value
+        const color2 = e.target.elements.colorTwo.value
 
-        const { name, description, logo } = generateName(users, category, location, buzzword)
-        
+        // Build Startup
+        const { name, image, mission, test1, test2, test3, test4 } = generateStartup(category)
+
+        // Generate Short Description
+        const desc = shortDescription(category)
+
+        // Generate Startup 'about' sentence
+        const sentence = generateAbout(users, category, location, name)
+
+        // Update About Section
         const nameOutput = document.querySelector("#name")
+        const descOutput = document.querySelector("#desc")
+        const imgOutput = document.querySelector("#image")
+        const aboutOutput = document.querySelector("#about")
+        const test1Output = document.querySelector("#test1")
+        const test2Output = document.querySelector("#test2")
+        const test3Output = document.querySelector("#test3")
+        const test4Output = document.querySelector("#test4")
+        const loveOutput = document.querySelector("#love")
+        const shareOutput = document.querySelector("#share")
+        const gradientOutput = document.querySelector("#gradient")
+
         nameOutput.textContent = name
-
-        const descriptionOutput = document.querySelector("#description")
-        descriptionOutput.textContent = description
-
-        const logoOutput = document.querySelector("#logo")
-        logoOutput.textContent = logo
-
-        const nameOutput2 = document.querySelector("#name2")
-        nameOutput2.textContent = name
-
-        const twitterText = 
-            "Check out my new startup! \n \n" 
-            + name
-            + ": " 
-            + description + ". \n \nBuild your own startup:" 
-        const twitterLink = 
-            "https://twitter.com/intent/tweet?text=" 
-            + twitterText 
-            + "&url=https://codemagic122.github.io/"
-        const twitterBtn = document.querySelector("#twitter")
-        twitterBtn.setAttribute("href", twitterLink)
+        loveOutput.textContent = name
+        shareOutput.textContent = name
+        descOutput.textContent = desc
+        imgOutput.setAttribute("src", image)
+        aboutOutput.textContent = `${ sentence } Our goal is ${ mission }`
+        test1Output.textContent = test1
+        test2Output.textContent = test2
+        test3Output.textContent = test3
+        test4Output.textContent = test4
+        gradientOutput.setAttribute("style", `background-image: linear-gradient(to right bottom, ${ color1 }, ${ color2 });`)
 
         const result = document.querySelector(".result")
         result.style.display = "flex"
         result.scrollIntoView()
+
+        const testimonials = document.querySelector(".testimonials")
+        testimonials.style.display = "flex"
+
+        const newUrl = `?hello`
+        history.pushState({}, null, newUrl);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const params = new URLSearchParams(window.location.search)
+        for (const param of params) {
+            console.log(param)
+        }
+    });
+
+    const scrollToTop = () => {
+        document.querySelector("#top").scrollIntoView()
     }
 </script>
 
+
 <body>
     <div class="body">
-        <div class="title">
-            <h1>Startup Name Generator</h1>
-            <p>Build your D2C Startup in seconds</p>
-        </div>
 
-        <form action="#" class="form" id="form" name="startupform" onsubmit=onSubmitHandler(event)>
+        <!------------------------------------------------------------------------------>
+        <!-------------------------------- HOME PAGE ----------------------------------->
+        <!------------------------------------------------------------------------------>
+
+        <!-- Page Content -->
+
+        <!-- Title -->
+        <h1 class=" u-gutter-top" id="top">Startup Name Generator</h1>
+        <p class="u-text-center u-my-sm">
+            We promise your brand will make the world a better place.
+            <br>
+            But first, we have a few questions. 
+        </p>
+
+        <!-- Form -->
+        <form class="u-my-lg" id="startup-form" onsubmit=onSubmitHandler(event)>
             <div class="form-group">
-                <h5 class="form-heading">What's your product category?</h5>
-                <select name="category" id="pet-select" required>
-                    <option value="" selected disabled hidden>Select an option</option>
-                    <option value="Health & Wellness">Health & Wellness</option>
-                    <option value="Pets">Pets</option>
-                    <option value="Legal">Legal</option>
-                    <option value="Fintech">Fintech</option>
-                    <option value="Video Games">Video Games</option>
-                    <option value="Media">Media</option>
-                    <option value="Education">Education</option>
-                    <option value="Apparel">Apparel</option>
-                    <option value="Food">Food</option>
-                </select>
+                <p class="u-text-white">What industry are you disrupting?</p>
+                <div class="select">
+                    <select name="category" required>
+                        <option value="" selected disabled hidden>Select an option</option>
+                        <option value="Telemedicine">Telemedicine</option>
+                        <option value="Pets">Pets</option>
+                        <option value="Nutrition">Nutrition</option>
+                        <option value="Fintech">Fintech</option>
+                        <option value="Mental Health">Mental Health</option>
+                        <option value="Dental">Dental</option>
+                        <option value="Retail">Retail</option>
+                        <option value="Apparell">Apparell</option>
+                        <option value="Food">Food</option>
+                    </select>
+                </div>
             </div>
 
-            <div class="form-group">
-                <h5 class="form-heading">Who are your target users?</h5>
-                <select name="users" id="pet-select" required>
-                    <option value="" selected disabled hidden>Select an option</option>
-                    <option value="Parents">Parents</option>
-                    <option value="Vegans">Vegans</option>
-                    <option value="Teens">Teens</option>
-                    <option value="Grandmas">Grandmas</option>
-                    <option value="Millenials">Millenials</option>
-                    <option value="Bitcoiners">Bitcoiners</option>
-                    <option value="Tech Bros">Tech Bros</option>
-                    <option value="Activists">Activists</option>
-                    <option value="VCs">VCs</option>
-                </select>
+            <div class="form-group u-my-md">
+                <p class="u-text-white">Who are your first users?</p>
+                <div class="select">
+                    <select name="users" required>
+                        <option value="" selected disabled hidden>Select an option</option>
+                        <option value="Parents">Parents</option>
+                        <option value="Vegans">Vegans</option>
+                        <option value="Teens">Teens</option>
+                        <option value="Grandmas">Grandmas</option>
+                        <option value="Millenials">Millenials</option>
+                        <option value="Bitcoiners">Bitcoiners</option>
+                        <option value="Tech Bros">Tech Bros</option>
+                        <option value="Activists">Activists</option>
+                        <option value="VCs">VCs</option>
+                    </select>
+                </div>
             </div>
 
-            <div class="form-group">
-                <h5 class="form-heading">What's your location?</h5>
-                <select name="location" id="pet-select" required>
-                    <option value="" selected disabled hidden>Select an option</option>
-                    <option value="San Francisco, CA">San Francisco, CA</option>
-                    <option value="Austin, TX">Austin, TX</option>
-                    <option value="New York, NY">New York, NY</option>
-                    <option value="Miami, FL">Miami, FL</option>
-                    <option value="Boston, MA">Boston, MA</option>
-                    <option value="Seattle, WA">Seattle, WA</option>
-                    <option value="Boulder, CO">Boulder, CO</option>
-                    <option value="Los Angeles, CA">Los Angeles, CA</option>
-                    <option value="Chicago, IL">Chicago, IL</option>
-                </select>
+            <div class="form-group u-my-md">
+                <p class="u-text-white">Where are you located?</p>
+                <div class="select">
+                    <select name="location" required>
+                        <option value="" selected disabled hidden>Select an option</option>
+                        <option value="San Francisco, CA">San Francisco, CA</option>
+                        <option value="Austin, TX">Austin, TX</option>
+                        <option value="New York, NY">New York, NY</option>
+                        <option value="Miami, FL">Miami, FL</option>
+                        <option value="Boston, MA">Boston, MA</option>
+                        <option value="Seattle, WA">Seattle, WA</option>
+                        <option value="Boulder, CO">Boulder, CO</option>
+                        <option value="Los Angeles, CA">Los Angeles, CA</option>
+                        <option value="Chicago, IL">Chicago, IL</option>
+                    </select>
+                </div>
             </div>
-
-            <div class="form-group">
-                <h5 class="form-heading">Pick your favorite buzzword!</h5>
-                <select name="buzzword" id="pet-select" required>
-                    <option value="" selected disabled hidden>Select an option</option>
-                    <option value="AI-Powered">AI-Powered</option>
-                    <option value="ML-Powered">ML-Powered</option>
-                    <option value="Reality-Extending">Reality-Extending</option>
-                    <option value="World-Changing">World-Changing</option>
-                    <option value="Super-Advanced">Super-Advanced</option>
-                </select>
-            </div>
-
-            <input type="submit" class="go-btn center" value="Build My Startup">
         </form>
+
+        <!-- Colors -->
+
+        <p class="u-my-lg">What are your brand’s favorite colors? (click the circles)</p>
+
+        <div class="row u-my-md">
+            <input type="color" form="startup-form" name="colorOne" value="#CC78FF" class="u-mx-md" required>
+            <input type="color" form="startup-form" name="colorTwo" value="#00B2FF" required>
+        </div>
+        
+        <!-- Form Submit -->
+
+        <button class="u-my-md u-gutter-bottom" type="submit" form="startup-form">Build my startup</button>
+
     </div>
 
-    <div class="result">
-        <p>Welcome to</p>
-        <h1 class="large u-margin-bottom" id="name">Company name</h1>
-        <p class="small u-margin-bottom" id="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis fugiat asperiores reiciendis harum nisi iste autem sapiente corporis corrupti optio quos minima molestiae, quo, iure laborum ipsam sequi labore possimus.</p>
+    <!------------------------------------------------------------------------------>
+    <!----------------------------- RESULT PAGE ------------------------------------>
+    <!------------------------------------------------------------------------------>
 
-        <div class="logo u-margin-bottom">
-            <h1>&#128640; <span id="logo">LG</span> &#128640;</h1>
+    <div class="result" id="gradient">
+
+        <!-- Heading Section -->
+
+        <h1 class="u-text-white u-gutter-top" id="name">Docster</h1>
+        <p class="u-text-center u-text-white u-my-sm u-width-50" id="desc">
+            Who says a direct-to-consumer cat food company can’t provide amazing and affordable products?
+        </p>
+
+        <!-- About Section -->
+
+        <div class="about u-my-lg u-gutter-bottom">
+
+            <!-- Image -->
+
+            <img src="docster.png" alt="docster" class="about-img" id="image">
+
+            <!-- Text Body -->
+
+            <h2 class="u-bold u-text-white u-text-center">ABOUT US</h2>
+            <p class="u-text-white u-text-center u-text-spaced u-my-sm" id="about">MeeYow cat food is a new direct-to-consumer brand, offering the highest quality natural foods in a wide variety of flavors from seafood to poultry to delicacies such as duck and rabbit. We deliver with free shipping to all 50 states and we never quit until you are satisfied. We love our pets, and we know you do too!</p>
+        </div>
+    </div>
+
+    <!------------------------------------------------------------------------------>
+    <!-------------------------- TESTIMONIALS PAGE --------------------------------->
+    <!------------------------------------------------------------------------------>
+
+    <div class="testimonials u-gutter-top u-gutter-bottom">
+        <h1>People <span class="red">&hearts;</span> <span id="love">Docster</span></h1>
+
+        <!-- Testimonials Container -->
+
+        <div class="testimonial-group u-my-lg">
+
+            <!-- Testmionial -->
+
+            <div class="testimonial">
+                <img src="rand1.jpeg" alt="user" class="u-mx-md">
+                <div class="content">
+                    <h2>Clarissa Leonardo</h2>
+                    <p class="u-my-sm u-text-spaced" id="test1">I'm a huge believer in the idea that more affordable, online healthcare is a net positive for the country. Docster is providing a great service to consumers by connecting them with doctors they can trust at prices that don't break the bank.</p>
+                </div>
+            </div>
+
+            <!-- Testmionial -->
+
+            <div class="testimonial">
+                <img src="rand2.jpeg" alt="user" class="u-mx-md">
+                <div class="content">
+                    <h2>Kayla Dumfries</h2>
+                    <p class="u-my-sm u-text-spaced" id="test2">I have been very happy with Docster and plan to continue using them for some time. The platform is easy to use, the customer service is great, and I love how easy it is for our patients to schedule appointments with us.</p>
+                </div>
+            </div>
+            
+            <!-- Testmionial -->
+
+            <div class="testimonial u-my-md">
+                <img src="rand3.jpeg" alt="user" class="u-mx-md">
+                <div class="content">
+                    <h2>George John</h2>
+                    <p class="u-my-sm u-text-spaced" id="test3">The Internet has made it possible for people to order products from all over the world at any time. The next thing is to be able to order a professional service from anywhere in the world. Docster is the first step towards this reality.</p>
+                </div>
+            </div>
+
+            <!-- Testmionial -->
+
+            <div class="testimonial u-my-md">
+                <img src="rand4.jpeg" alt="user" class="u-mx-md">
+                <div class="content">
+                    <h2>Jeff Daniels</h2>
+                    <p class="u-my-sm u-text-spaced" id="test4">Docster has changed my life by connecting me with a licensed and professional doctor for only $25. I had ongoing health issues that needed to be addressed but never had the time to go see a doctor. Docster is saving me time and money, and I am able to connect with a licensed and professional doctor at any time from the comfort of my home!</p>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Sharing -->
+
+        <h1 class="u-gutter-top share">Share <span id="share">Docster</span></h1>
+
+        <div class="share-buttons u-my-lg">
+            <a href="#" class="share-btn twt u-mx-md">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="share-btn fb u-mx-md">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="share-btn insta">
+                <i class="fab fa-instagram"></i>
+            </a>
         </div>
 
-        <p class="small u-margin-bottom u-margin-top">Tell others about <span id="name2">company name</span></p>
-
-        <div class="u-flex-center u-margin-top">
-            <a class="go-btn u-space-right" target="_blank" href="https://twitter.com/home?status=hello&url=https://codemagic122.github.io/" id="twitter">Twitter</a>
-            <a class="go-btn u-space-right" target="_blank" href="#" id="instagram">Instagram</a>
-            <a class="go-btn" target="_blank" href="#" id="facebook">Facebook</a>
-        </div>
+        <button class="u-gutter-top" onclick=scrollToTop()>Start another startup</button>
     </div>
 </body>
 
