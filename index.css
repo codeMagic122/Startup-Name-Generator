@@ -1,9 +1,17 @@
+/* Grab Font */
+
+@font-face {
+  font-family: "Open Sans Regular";
+  src: url("OpenSans-Regular.ttf");
+}
+
 /* Global Reset */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "roboto";
+  font-family: "Open Sans Regular";
   color: var(--color-black);
 }
 
