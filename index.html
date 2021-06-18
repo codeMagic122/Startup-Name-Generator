@@ -14,7 +14,7 @@
 <!-- Generator Logic -->
 
 <script>
-    const names = {
+    const startups = {
         "Telemedicine": [
             { 
                 name: "Pillsly",
@@ -106,22 +106,342 @@
                 test2: "I have to say that this is the best cat app I've used so far. Everything about MeeYow makes it easy to connect with cats and find ones that you're interested in.",
                 test3: "Matchmaking can be hard, especially if you’re into cats. With MeeYow, finding the purr-fect cat partner is easy.",
                 test4: "I am a cat lover who has adopted from shelters and rescues before, but never considered buying a cat online. I visited all the local shelters and found some great kitties, but decided to look to the web for my next cat. MeeYow makes it easy to shop for cats online, and they have a great selection of purebreds and designer cats. The staff is helpful and friendly and they answered all my questions!"
+            },
+
+            {
+                name: "CBDog",
+                image: "pug.png",
+                mission: "To make natural pet care mainstream by providing a transparent CBD pet dog treat ecosystem, that empowers users to educate themselves about their pets, from raw diet and nutrition to CBD wellness.",
+                test1: "My dog was diagnosed with grade 4 lymphoma in May and we had to put her down on June 12. I really wanted to find a CBD dog treat for him to help with the pain but couldn't find one that was reasonably priced. Not only did this company have great prices, but they also had a great story behind it.",
+                test2: "The CBD Dog Treats are great! They really help with my dog's anxiety.",
+                test3: "The CBD dog treats are a great way to get my dog to take his medication. The CBD dog treats have been a godsend.",
+                test4: "I needed a way to help my dog cope with the pain of his cancer diagnosis. To find relief for him, I looked online for the most effective solution. I found CBD treats and placed an order."
+            }
+        ],
+
+        "Nutrition": [
+            {
+                name: "Healthology",
+                image: "stethoscope.png",
+                mission: "To help reinvent the way people take control of their health.",
+                test1: "I am very impressed with the team at Healthology. They have an amazing product and are incredibly responsive. They really care about their consumers and it shows in their work.",
+                test2: "Healthology is the first of its kind platform that connects consumers directly with a health expert. This is a great alternative to help manage health care costs, and reduce unnecessary over prescribing by primary physicians.",
+                test3: "Healthology offers a unique service and it's the only one of its kind in the world. What I really like about it is that it's a great time saver. I would recommend everyone use Healthology while they're in their 20s or 30s to get a health checkup because no one does. You can do it right from your mobile device.",
+                test4: "I have been using Healthology for almost two years. I have had a great experience and the customer service is great! They always respond quickly and they are very knowledgeable."
+            },
+
+            {
+                name: "Foodsly",
+                image: "crackers.png",
+                mission: "To inspire health and wellness in people through direct food delivery.",
+                test1: "Foodsly is a unique concept where all you need to do is choose from a variety of healthy prepared foods and have them delivered straight to your doorstep.",
+                test2: "Foodsly is an awesome site for healthy foods and really good prices. I found them by accident and have placed several orders with them since. Foodsly is definitely a great company to do business with and I plan on ordering more in the future!",
+                test3: "I am extremely impressed with Foodsly and it's founder! The quality of the food is outstanding, the packaging is gorgeous, and they are so accommodating to my different needs! I love that they deliver anywhere in NYC and because I'm not cooking, I have been able to work more hours.",
+                test4: "Foodsly is a great concept. I love that they are making it as convenient as possible to eat healthy food. It's the perfect answer for someone who is unable to cook or shop for themselves."
+            },
+
+            {
+                name: "Nutriously",
+                image: "oranges.png",
+                mission: "To achieve optimal health through functional foods. Recognizing that illness and disease are caused by nutritional deficiencies, not by genetics or aging. We aim to improve overall health by optimizing blood nutrient levels with nutrients designed to boost energy.",
+                test1: "I couldn't be happier with the customer service and experience Nutritiously provides. I've been pleasantly surprised by how quickly the items arrive, and how delicious everything is!",
+                test2: "My experience with Nutritiously has been great! The website is simple and easy to use. I was able to order everything I wanted in just a few clicks.",
+                test3: "I'm a huge fan of Nutritiously.com, and have been using it for almost a year now to order vitamin-rich food. When they first launched, I was skeptical about the quality of their products, but after seeing the customer service and quality of their products - I am a believer.",
+                test4: "I was looking for a whole food nutrient delivery company, but there wasn't one. I found Nutritiously and they were the only ones I found doing it - great!"
+            },
+
+            {
+                name: "Anaphalactic Greens",
+                image: "juice.png",
+                mission: "to accelerate and evolve the smoothie as an optimal superfood delivery mechanism.",
+                test1: "Healthy smoothies are great, but not very tasty. Anaphalactic Greens makes the best tasting healthy smoothies I've had in a long time. They are all delicious!",
+                test2: "I was previously making my smoothies at home, which was a pain to make every day and it involved a lot of washing. I always had to carry my own smoothie cup and would spill quite a bit when on the go. Anaphalactic Greens makes it so convenient to get an awesome healthy AND tasty smoothie right when I need it and skip the hassle of making it myself!",
+                test3: "I got the smoothie and it was fantastic! It was exactly as described on your website, very fresh and tasty. I am going to order some more!",
+                test4: "I'm now a smoothie-addict and I'm so happy to be able to get my daily greens in an easy, convenient way!"
+            },
+
+            {
+                name: "Hydra",
+                image: "bottle.png",
+                mission: "To build a bridge between science and design, creating water bottles that hydrate and protect your health.",
+                test1: "Hydra bottles are the best way to carry water. The design is the best I have seen on the market. The attention to detail really shows through in a product that is both beautiful and functional.",
+                test2: "I absolutely love my Hydra. The water tastes great and it's so healthy for you, too! I'm a big fan of the minimalist design. ",
+                test3: "I love the sleek design of the Hydra, coupled with the awesome functionality of both the creative water bottle and the easy-to-use app that makes it possible to choose what you want from the convenience of your smartphone.",
+                test4: "I got a Hydra at the conference and I am loving it! It's really cool that you can order this thing in the size and color of your choice. I've been drinking a lot more water now because it's fun to have such a unique bottle."
+            }
+        ],
+
+        "Fintech": [
+            {
+                name: "AltCoinsly",
+                image: "coin.png",
+                mission: "To educate consumers and help them take part in the cryptocurrency revolution. The more people that have exclusive access to altcoins, the faster cryptocurrency will mature into a major global financial instrument.",
+                test1: "The AltCoinsly platform is a breath of fresh air in the cryptocurrency space. The platform allows consumers to buy and sell cryptocurrency directly with each other, without having to go through an exchange.",
+                test2: "AltCoinsly is a fast, easy and secure way to buy cryptocurrency. The platform also provides access to exclusive ICOs (Initial Coin Offerings) that are available only to AltCoinsly members. Highly reccomend.",
+                test3: "The AltCoinsly platform is the perfect place for both new and experienced bitcoin and altcoin enthusiasts to learn about the world of cryptocurrency. I highly recommend the site to anyone interested in learning more about cryptocurrency, as well as anyone interested in purchasing digital currency.",
+                test4: "AltCoinsly has an excellent concept, and the team is really on track. If you are looking to find a way to hold cryptocurrency without having to deal with all the technical aspects, then this is the right service for you."
+            },
+
+            {
+                name: "Virtuwallet",
+                image: "wallet.png",
+                mission: "To become the leading brand in cryptocurrency, spread the use of cryptocurrency wallets and speed up adoption of crypto digital assets.",
+                test1: "Virtuwallet is THE ultimate way to store and manage your cryptocurrency. It is the first of it's kind that I've seen that is completely encrypted and gives users a high level of control over their private keys. My favorite feature has to be the ability to create multiple wallets, each with its own level of security. The ease of use, combined with a sleek design, makes this an excellent choice for crypto newbies and veterans alike!",
+                test2: "VirtuWallet is a very easy and secure way to safely store cryptocurrency. It is great to see more products like this being created to help us, the consumers, put our trust in something that we use every day.",
+                test3: "A great product that I am proud to be a part of. The team is always improving and working hard. Thank you for such an awesome platform!",
+                test4: "I was looking for a cryptocurrency wallet that would allow me to store various cryptocurrencies, either on my computer or cell phone, and I came across Virtuwallet. Their team is always available to help out with any questions. Great work!"
+            },
+
+            {
+                name: "unBankly",
+                image: "vault.png",
+                mission: "To bring an Anonymous, no fee, non-bank direct banking experience to the world using Bitcoin smart contracts.",
+                test1: "I can't recommend Unbankly highly enough. They have created a platform that unifies the direct-to-consumer model with financial services in a way that is consistent with their values and mission.",
+                test2: "I am a true believer in the future of the digital bank. Unbankly is the bank that isn't a bank that's making it happen!",
+                test3: "I have been using Unbankly for the past few months now and they are doing amazing things! Their product is awesome and I highly recommend you check them out.",
+                test4: "We have the unique problem of not being able to do business with a traditional bank, or government, etc. Unbankly is an amazing solution - it's the bank that isn't!"
+            },
+
+            {
+                name: "Libraly",
+                image: "coins.png",
+                mission: "To give money back to the people, making crypto transactions simple for everyone.",
+                test1: "Libraly is the best and most advanced crypto product I've ever seen. The simplicity and low cost to entry is very attractive.",
+                test2: "I am a big fan of Libraly. It is a promising crypto currency and a great way to be anonymous when making purchases.",
+                test3: "If you are looking for a crypto coin to invest in, I recommend Libraly. It is a great company with a strong team behind it. And most of all, it's backed by the US Constitution (kind of)!",
+                test4: "I'm a huge fan of bitcoin and crypto currencies, but I'm also a fan of the principles that our country was founded on. When I learned about Libraly, it was love at first site."
+            }, 
+
+            {
+                name: "Maxxcoin",
+                image: "maxcoin.png",
+                mission: "To promote quality and excellence in all aspects of cryptocurrency's development.",
+                test1: "The people at Maxxcoin are making crypto easy and connecting the consumer to their favorite altcoins. I am really excited about what they're doing with the site and I think that it's a great way to get more people involved in cryptocurrency. Maxxcoin is a great example of how to bridge the gap between crypto and the mainstream. It's a great place to start for your next altcoin!",
+                test2: "A unique platform. The MaxxCoin team has been extremely helpful and responsive every step of the way. I've been very impressed by the coin's functionality, but it's how the team has conducted themselves that has made me a believer in this project.",
+                test3: "Maxxcoin is a great crypto trading platform. It allows me to instantly buy and sell coins directly at the best price with no third party and no fees.",
+                test4: "I've been in the crypto space since 2013, and have seen my share of scams, pump and dumps, and all sorts of crazy. Maxxcoin is one of the most professional teams I have ever worked with in the industry. They are constantly working on making their product better, and have a great track record of putting their community first!"
             }
         ]
     }
 
-    // Grab starutp data
+    const companyAdjectives = [
+        "At-home", 
+        "Subscription-based", 
+        "Next day", 
+        "Artisan-crafted", 
+        "Sustainable", 
+        "Eco-friendly", 
+        "Organic", 
+        "Plant-based", 
+        "Locally sourced", 
+        "Carbon Neutral", 
+        "AI-powered", 
+        "Proprietary", 
+        "VC-backed", 
+        "Compostable", 
+        "NFT-ready", 
+        "Machine learning based", 
+        "Vegan", 
+        "Meat-lovers", 
+        "Chef-prepared", 
+        "Blockchain powered", 
+        "Distributed ledger/blockchain enabled", 
+        "Members-only", 
+        "Consumer-driven", 
+        "Technology platform", 
+        "On demand", 
+        "Real-time", 
+        "Behavior change", 
+        "Digital transformation", 
+        "Networked", 
+        "Peer to peer", 
+        "Digital and online", 
+        "Mobile", 
+        "Distributed", 
+        "Connected", 
+        "Smart app enabled", 
+        "Mobile first", 
+        "Android", 
+        "Online and mobile", 
+        "Design centric", 
+        "Mobility focused", 
+        "Remote first", 
+        "Leading", 
+        "Integrated", 
+        "Transparent and fair", 
+        "Cloud-based", 
+        "Natural Language Enabled", 
+        "Clinically-proven", 
+        "Speciality", 
+        "Proactive", 
+        "Curated", 
+        "Private label", 
+        "Personalized", 
+        "Scientifically proven", 
+        "Keto", 
+        "Diet", 
+        "Patent pending", 
+        "Biometric", 
+        "Ultra-fresh", 
+        "Intelligent", 
+        "Catheter-based", 
+        "Value-added", 
+        "Voice-enabled", 
+        "Automated", 
+        "Information-driven", 
+        "Next-generation", 
+        "Premium", 
+        "Non-invasive", 
+        "FDA cleared", 
+        "Multi-channel", 
+        "Multi-device", 
+        "All in one", 
+        "Cutting-edge", 
+        "Evidence-based", 
+        "Financially responsible", 
+        "Virtual intelligence", 
+        "Decentralized", 
+        "Smart contract enabled", 
+        "Tokenized", 
+        "Innovative", 
+        "Paleo", 
+        "Socially responsible", 
+        "Web-based", 
+        "Bespoke", 
+        "Digitally-native", 
+        "Exceptional", 
+        "Non-surgical", 
+        "Transformative", 
+        "Easy-to-Use", 
+        "Holistic", 
+        "Revolutionary", 
+        "High protein", 
+        "Nootropics enhanced", 
+        "Data-driven", 
+        "Stylish", 
+        "Affordable", 
+        "Optimized", 
+        "Value-packed", 
+        "Wearable", 
+        "Unprecedented", 
+        "Novel", 
+        "Low glycemic index", 
+        "Therapeutic", 
+        "HIPPA compliant", 
+        "Biometric-sensor based", 
+        "Community-driven", 
+        "Wireless"
+    ]
+
+    const consumerAdjectives = [
+        "Discerning", 
+        "Hipster", 
+        "GenZ", 
+        "GenY", 
+        "Millennial", 
+        "Boomer", 
+        "Busy", 
+        "Everyday", 
+        "Professional", 
+        "Mobile first", 
+        "Distributed", 
+        "High income", 
+        "Struggling", 
+        "Remote", 
+        "Stylish", 
+        "Fashion-forward", 
+        "Freedom loving", 
+        "Menopausal", 
+        "Retired", 
+        "Reward-loving", 
+        "Deal-loving", 
+        "Overworked", 
+        "Inspired", 
+        "Fitness-obsessed", 
+        "the Modern", 
+        "On the go", 
+        "Category creating", 
+        "Growing", 
+        "Solution seeking", 
+        "Unique", 
+        "ICO loving", 
+        "NFT curious", 
+        "Connected", 
+        "Flexible", 
+        "Socially responsible", 
+        "Digitally-native", 
+        "Leading", 
+        "Curious", 
+        "Exceptional", 
+        "Healthy", 
+        "Passionate", 
+        "Everyday", 
+        "Bargain-seeking", 
+        "Proactive", 
+        "White collar", 
+        "Engaged", 
+        "Savvy", 
+        "Biohacking", 
+        "Independent", 
+        "Successful", 
+        "Highly educated", 
+        "College bound", 
+        "Online", 
+        "Digital currency holding", 
+        "Influential", 
+        "Community-oriented", 
+        "Extraordinary", 
+        "Networked", 
+        "Cord-cutting", 
+        "Thriving", 
+        "Knowledgeable", 
+        "Canny", 
+        "Intelligent", 
+        "Perceptive", 
+        "Sensible", 
+        "Astute", 
+        "Logical", 
+        "Prudent", 
+        "Rational", 
+        "Discriminating", 
+        "Informed", 
+        "Upscale", 
+        "Urban", 
+        "Suburban", 
+        "Chic", 
+        "Modern", 
+        "Burned out"
+    ]
+
+    // Grab startup data
     const generateStartup = category => {
-        const idx = Math.floor((names[category].length) * Math.random())
-        const startup = names[category][idx]
+        const idx = Math.floor((startups[category].length) * Math.random())
+        const startup = startups[category][idx]
         return startup
+    }
+
+    // Grab random company adjective
+    const randomCompanyAdjectives = () => {
+        const idx = Math.floor((companyAdjectives.length) * Math.random())
+        const idx2 = (idx !== (companyAdjectives.length - 1)) ? idx + 1 : idx
+        return [companyAdjectives[idx].toLowerCase(), companyAdjectives[idx2].toLowerCase()]
+    }
+
+    // Grab random consumer adjective
+    const randomConsumerAdjectives = () => {
+        const idx = Math.floor((consumerAdjectives.length) * Math.random())
+        const idx2 = (idx !== (consumerAdjectives.length - 1)) ? idx + 1 : idx
+        return [consumerAdjectives[idx].toLowerCase(), consumerAdjectives[idx2].toLowerCase()]
     }
 
     // Create about sentence using user input
     const generateAbout = ( users, category, location, name ) => {
-        const sentence1 = `${ name } is a ${ location } based direct to consumer ${ category } startup for ${ users }.`
-        const sentence2 = `At ${ name }, we're revolutionizing the ${ category } industry, by providing the best ${ category } products to ${ users } in ${ location }.`
-        const sentence3 = `Located in sunny ${ location }, ${ name } is disrupting the ${ category } industry, by bringing our target demographic, ${ users }, the best ${ category } products possible.`
+        const companyAdj = randomCompanyAdjectives()
+        const consumerAdj = randomConsumerAdjectives()
+
+        const sentence1 = `${ name } is a ${ location } based direct to consumer ${ companyAdj[0] } ${ companyAdj[1] } ${ category } startup for ${ consumerAdj[0] } ${ consumerAdj[1] } ${ users }.`
+        const sentence2 = `At ${ name }, we're revolutionizing the ${ category } industry, by providing the best ${ companyAdj[0] } ${ companyAdj[1] } ${ category } products to ${ consumerAdj[0] } ${ consumerAdj[1] } ${ users } in ${ location }.`
+        const sentence3 = `Located in sunny ${ location }, ${ name } is disrupting the ${ category } industry, by bringing our target demographic, ${ consumerAdj[0] } ${ consumerAdj[1] } ${ users }, the best ${ companyAdj[0] } ${ companyAdj[1] } ${ category } products possible.`
         
         const sentences = [ sentence1, sentence2, sentence3 ]
 
@@ -172,7 +492,7 @@
         shareOutput.textContent = name
         descOutput.textContent = desc
         imgOutput.setAttribute("src", image)
-        aboutOutput.textContent = `${ sentence } Our goal is ${ mission }`
+        aboutOutput.textContent = `${ sentence } Our goal is ${ mission.toLowerCase() }`
         test1Output.textContent = test1
         test2Output.textContent = test2
         test3Output.textContent = test3
@@ -186,7 +506,7 @@
         const testimonials = document.querySelector(".testimonials")
         testimonials.style.display = "flex"
 
-        const newUrl = ``
+        const newUrl = `?updatedquerystring`
         history.pushState({}, null, newUrl);
     }
 
