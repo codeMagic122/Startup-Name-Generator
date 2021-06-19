@@ -283,7 +283,7 @@ input[type="color"]::-webkit-color-swatch {
   top: -14.5rem;
   right: 50%;
   transform: translateX(50%);
-  background-image: transparent url("loading.gif") center no-repeat;
+  background: transparent url("loading.gif") center no-repeat;
 }
 
 /* Testimonials Section */
