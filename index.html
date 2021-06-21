@@ -448,11 +448,51 @@
         return sentences[Math.floor(Math.random() * sentences.length)]
     }
 
-    // Genereate short description
-    const shortDescription = category => {
-        const description = `Who says a direct to consumer ${ category } startup can't provide amazing and affordable products?`
-        
-        return description
+    const updateColor = color => {
+        const loveOutput = document.querySelector("#love")
+        const loveOuterOutput = document.querySelector("#love-outer")
+        const shareOutput = document.querySelector("#share")
+        const shareOuterOutput = document.querySelector("#share-outer")
+        const resultOutput = document.querySelector("#gradient")
+        const buildBtn = document.querySelector("#build")
+        const buildAgainBtn = document.querySelector("#build-again")
+        const buttons = document.getElementsByTagName('button')
+        const titleOutput = document.querySelector("#top")
+        const startupForm = document.querySelector("#startup-form")
+
+        const outputColor = color === "" ? "var(--color-salmon-dark)" : color
+        const white = "var(--color-white)"
+
+        resultOutput.style.backgroundColor = outputColor
+        loveOuterOutput.style.color = white
+        loveOutput.style.color = white
+        shareOuterOutput.style.color = white
+        shareOutput.style.color = white
+        startupForm.style.backgroundColor = outputColor
+        titleOutput.style.color = outputColor
+
+        buildBtn.style.color = outputColor
+        buildBtn.style.border = `3px solid ${ outputColor }`
+
+        buildBtn.addEventListener("mouseenter", function() {
+            this.setAttribute("style", `background-color: ${outputColor}; border: 3px solid ${ outputColor }`)
+            this.style.color = "#fff"
+        })
+
+        buildBtn.addEventListener("mouseleave", function() {
+            this.setAttribute("style", `background-color: transparent; border: 3px solid ${ outputColor }; color: ${ outputColor }`)
+        })
+
+        buildAgainBtn.style.color = white
+        buildAgainBtn.style.border = `3px solid ${ white }`
+
+        buildAgainBtn.addEventListener("mouseenter", function() {
+            this.setAttribute("style", `background-color: ${ white }; border: 3px solid ${ white }; color: ${ outputColor }`)
+        })
+
+        buildAgainBtn.addEventListener("mouseleave", function() {
+            this.setAttribute("style", `background-color: transparent; border: 3px solid ${ white }; color: ${ white }`)
+        })
     }
 
     const onSubmitHandler = e => {
@@ -462,21 +502,16 @@
         const users = e.target.elements.users.value
         const category = e.target.elements.category.value
         const location = e.target.elements.location.value
-        const color1 = e.target.elements.colorOne.value
-        const color2 = e.target.elements.colorTwo.value
+        const color = e.target.elements.color.value
 
         // Build Startup
         const { name, image, mission, test1, test2, test3, test4 } = generateStartup(category)
-
-        // Generate Short Description
-        const desc = shortDescription(category)
 
         // Generate Startup 'about' sentence
         const sentence = generateAbout(users, category, location, name)
 
         // Update About Section
         const nameOutput = document.querySelector("#name")
-        const descOutput = document.querySelector("#desc")
         const imgOutput = document.querySelector("#image")
         const aboutOutput = document.querySelector("#about")
         const test1Output = document.querySelector("#test1")
@@ -484,20 +519,23 @@
         const test3Output = document.querySelector("#test3")
         const test4Output = document.querySelector("#test4")
         const loveOutput = document.querySelector("#love")
+        const loveOuterOutput = document.querySelector("#love-outer")
         const shareOutput = document.querySelector("#share")
+        const shareOuterOutput = document.querySelector("#share-outer")
         const gradientOutput = document.querySelector("#gradient")
+        const buttons = document.getElementsByTagName('button')
 
         nameOutput.textContent = name
         loveOutput.textContent = name
         shareOutput.textContent = name
-        descOutput.textContent = desc
         imgOutput.setAttribute("src", image)
         aboutOutput.textContent = `${ sentence } Our goal is ${ mission.toLowerCase() }`
         test1Output.textContent = test1
         test2Output.textContent = test2
         test3Output.textContent = test3
         test4Output.textContent = test4
-        gradientOutput.setAttribute("style", `background-image: linear-gradient(to right bottom, ${ color1 }, ${ color2 });`)
+        
+        updateColor(color)
 
         const result = document.querySelector(".result")
         result.style.display = "flex"
@@ -526,14 +564,12 @@
 <body>
     <div class="body">
 
-        <!------------------------------------------------------------------------------>
         <!-------------------------------- HOME PAGE ----------------------------------->
-        <!------------------------------------------------------------------------------>
 
         <!-- Page Content -->
 
         <!-- Title -->
-        <h1 class=" u-gutter-top" id="top">Startup Name Generator</h1>
+        <h1 class="u-gutter-top" id="top">Startup Name Generator</h1>
         <p class="u-text-center u-my-sm">
             We promise your brand will make the world a better place.
             <br>
@@ -599,53 +635,60 @@
 
         <!-- Colors -->
 
-        <p class="u-my-lg">What are your brand’s favorite colors? (click the circles)</p>
+        <p class="u-my-lg">What are your brand’s favorite colors? (choose one)</p>
 
-        <div class="row u-my-md">
-            <input type="color" form="startup-form" name="colorOne" value="#CC78FF" class="u-mx-md" required>
-            <input type="color" form="startup-form" name="colorTwo" value="#00B2FF" required>
+        <div class="u-row u-my-md">
+            <!-- <input type="color" form="startup-form" name="colorOne" value="#fa8072" class="u-mx-md" required>
+            <input type="color" form="startup-form" name="colorOne" value="#7566FA" class="u-mx-md" required>
+            <input type="color" form="startup-form" name="colorOne" value="#5AFAA6" class="u-mx-md" required>
+            <input type="color" form="startup-form" name="colorTwo" value="#5AF3FA" required> -->
+
+            <div class="radio-group u-mx-md" onclick="updateColor('#fa8072')">
+                <input type="radio" class="radio-button" id="#fa8072" name="color" form="startup-form" value="#fa8072" checked="checked">
+                <label for="#fa8072" class="radio-group-label">
+                    <span class="radio-group-button" style="background-color: #fa8072;"></span>
+                </label>
+            </div>
+            
+            <div class="radio-group u-mx-md" onclick="updateColor('#7566FA')">
+                <input type="radio" class="radio-button" id="#7566FA" name="color" form="startup-form" value="#7566FA">
+                <label for="#7566FA" class="radio-group-label">
+                    <span class="radio-group-button" style="background-color: #7566FA;"></span>
+                </label>
+            </div>      
+
+            <div class="radio-group u-mx-md" onclick="updateColor('#2DAD6A')">
+                <input type="radio" class="radio-button" id="#2DAD6A" name="color" form="startup-form" value="#2DAD6A">
+                <label for="#2DAD6A" class="radio-group-label">
+                    <span class="radio-group-button" style="background-color: #2DAD6A;"></span>
+                </label>
+            </div>            
+
+            <div class="radio-group" onclick="updateColor('#3EA9AD')">
+                <input type="radio" class="radio-button" id="#3EA9AD" name="color" form="startup-form" value="#3EA9AD">
+                <label for="#3EA9AD" class="radio-group-label">
+                    <span class="radio-group-button" style="background-color: #3EA9AD;"></span>
+                </label>
+            </div>   
         </div>
         
         <!-- Form Submit -->
 
-        <button class="u-my-md u-gutter-bottom" type="submit" form="startup-form">Build my startup</button>
+        <button class="u-my-md u-gutter-bottom" type="submit" form="startup-form" id="build">Build my startup</button>
 
     </div>
 
-    <!------------------------------------------------------------------------------>
     <!----------------------------- RESULT PAGE ------------------------------------>
-    <!------------------------------------------------------------------------------>
 
     <div class="result" id="gradient">
 
         <!-- Heading Section -->
 
         <h1 class="u-text-white u-gutter-top" id="name">Docster</h1>
-        <p class="u-text-center u-text-white u-my-sm u-width-50" id="desc">
-            Who says a direct-to-consumer cat food company can’t provide amazing and affordable products?
-        </p>
+        <p class="u-text-white u-text-center u-text-spaced u-my-sm u-width-50" id="about">MeeYow cat food is a new direct-to-consumer brand, offering the highest quality natural foods in a wide variety of flavors from seafood to poultry to delicacies such as duck and rabbit. We deliver with free shipping to all 50 states and we never quit until you are satisfied. We love our pets, and we know you do too!</p>
+        <img src="docster.png" alt="docster" class="about-img u-my-md" id="image">
 
-        <!-- About Section -->
-
-        <div class="about u-my-lg u-gutter-bottom">
-
-            <!-- Image -->
-
-            <img src="docster.png" alt="docster" class="about-img" id="image">
-
-            <!-- Text Body -->
-
-            <h2 class="u-bold u-text-white u-text-center">ABOUT US</h2>
-            <p class="u-text-white u-text-center u-text-spaced u-my-sm" id="about">MeeYow cat food is a new direct-to-consumer brand, offering the highest quality natural foods in a wide variety of flavors from seafood to poultry to delicacies such as duck and rabbit. We deliver with free shipping to all 50 states and we never quit until you are satisfied. We love our pets, and we know you do too!</p>
-        </div>
-    </div>
-
-    <!------------------------------------------------------------------------------>
-    <!-------------------------- TESTIMONIALS PAGE --------------------------------->
-    <!------------------------------------------------------------------------------>
-
-    <div class="testimonials u-gutter-top u-gutter-bottom">
-        <h1>People <span class="red">&hearts;</span> <span id="love">Docster</span></h1>
+        <h1 id="love-outer" class="u-gutter-top">People <span class="red">&hearts;</span> <span id="love">Docster</span></h1>
 
         <!-- Testimonials Container -->
 
@@ -691,10 +734,8 @@
                 </div>
             </div>
         </div>
-    
-        <!-- Sharing -->
 
-        <h1 class="u-gutter-top share">Share <span id="share">Docster</span></h1>
+        <h1 class="u-gutter-top share" id="share-outer">Share <span id="share">Docster</span></h1>
 
         <div class="share-buttons u-my-lg">
             <a href="#" class="share-btn twt u-mx-md">
@@ -708,8 +749,28 @@
             </a>
         </div>
 
-        <button class="u-gutter-top" onclick=scrollToTop()>Start another startup</button>
+        <button class="u-gutter-top u-gutter-bottom" onclick=scrollToTop() id="build-again">Go again <span>&#8634;</span></button>
     </div>
+
+    <!-- <div class="testimonials u-gutter-top u-gutter-bottom">
+        <h1 id="love-outer">People <span class="red">&hearts;</span> <span id="love">Docster</span></h1>
+
+        <h1 class="u-gutter-top share" id="share-outer">Share <span id="share">Docster</span></h1>
+
+        <div class="share-buttons u-my-lg">
+            <a href="#" class="share-btn twt u-mx-md">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="share-btn fb u-mx-md">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="#" class="share-btn insta">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
+
+        <button class="u-gutter-top" onclick=scrollToTop() id="build-again">Start another startup</button>
+    </div> -->
 </body>
 
 </html>
