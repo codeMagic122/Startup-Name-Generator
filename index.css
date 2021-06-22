@@ -450,11 +450,20 @@ input[type="color"]::-webkit-color-swatch {
   background-color: #1977f2;
 }
 
-.share-btn.insta {
-  background-color: #ed4956;
+.share-btn.linkedin {
+  background-color: #0b65c2;
 }
 
 #build-again span {
   font-size: 1.8rem;
   color: currentColor;
+}
+
+.background {
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  width: 150%;
 }
