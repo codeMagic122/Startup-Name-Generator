@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Startup Name Generator</title>
+    <title>D2C Startup Name Generator</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -222,6 +223,11 @@
                 test4: "I've been in the crypto space since 2013, and have seen my share of scams, pump and dumps, and all sorts of crazy. Maxxcoin is one of the most professional teams I have ever worked with in the industry. They are constantly working on making their product better, and have a great track record of putting their community first!"
             }
         ]
+    }
+
+    // Encode URL
+    const encode = url => {
+        return encodeURIComponent(url).replace(/'/g,"%27").replace(/"/g,"%22");	
     }
 
     const companyAdjectives = [
@@ -448,6 +454,12 @@
         return sentences[Math.floor(Math.random() * sentences.length)]
     }
 
+    const generateTwitterShare = ( users, category, location, name ) => {
+        const sentence = `I just built ${ name }, A D2C ${ category } Startup serving ${ users } from sunny ${ location }! Build your own startup: https://codemagic122.github.io/`
+        const encoded = encode(sentence)
+        return `https://twitter.com/intent/tweet?text=${ encoded }`
+    }
+
     const updateColor = color => {
         const loveOutput = document.querySelector("#love")
         const loveOuterOutput = document.querySelector("#love-outer")
@@ -510,6 +522,11 @@
         // Generate Startup 'about' sentence
         const sentence = generateAbout(users, category, location, name)
 
+        // Generate shareable content
+        const shareSentence = generateTwitterShare(users, category, location, name)
+
+        const linkersly = "https://www.facebook.com/sharer.php?u=https://codemagic122.github.io/"
+
         // Update About Section
         const nameOutput = document.querySelector("#name")
         const imgOutput = document.querySelector("#image")
@@ -524,6 +541,7 @@
         const shareOuterOutput = document.querySelector("#share-outer")
         const gradientOutput = document.querySelector("#gradient")
         const buttons = document.getElementsByTagName('button')
+        const twitter = document.querySelector(".twt")
 
         nameOutput.textContent = name
         loveOutput.textContent = name
@@ -534,6 +552,7 @@
         test2Output.textContent = test2
         test3Output.textContent = test3
         test4Output.textContent = test4
+        twitter.setAttribute("href", shareSentence)
         
         updateColor(color)
 
@@ -686,9 +705,9 @@
 
         <h1 class="u-text-white u-gutter-top" id="name">Docster</h1>
         <p class="u-text-white u-text-center u-text-spaced u-my-sm u-width-50" id="about">MeeYow cat food is a new direct-to-consumer brand, offering the highest quality natural foods in a wide variety of flavors from seafood to poultry to delicacies such as duck and rabbit. We deliver with free shipping to all 50 states and we never quit until you are satisfied. We love our pets, and we know you do too!</p>
-        <img src="docster.png" alt="docster" class="about-img u-my-md" id="image">
+        <img src="SNG.png" alt="docster" class="about-img u-my-md" id="image">
 
-        <h1 id="love-outer" class="u-my-lg">People <span class="red">&hearts;</span> <span id="love">Docster</span></h1>
+        <h1 id="love-outer" class="u-gutter-top">People <span class="red">&hearts;</span> <span id="love">Docster</span></h1>
 
         <!-- Testimonials Container -->
 
@@ -738,14 +757,14 @@
         <h1 class="u-gutter-top share" id="share-outer">Share <span id="share">Docster</span></h1>
 
         <div class="share-buttons u-my-lg">
-            <a href="#" class="share-btn twt u-mx-md">
+            <a href="https://twitter.com/intent/tweet?text=My%20name%20is%20sobhan%20nejad%2C%20and%20I%20recently%20developed%20a%20D2C%20startup%20using%20fin%20vs%20fin.%20Let%20me%20know%20if%20you%27re%20interested%20in%20it%21Here%27s%20the%20link%20to%20the%20site%3A%20https%3A%2F%2Fcodemagic122.github.io%2F" target="_blank" class="share-btn twt u-mx-md">
                 <i class="fab fa-twitter"></i>
             </a>
-            <a href="#" class="share-btn fb u-mx-md">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=codeMagic122.github.io" target="_blank" class="share-btn fb u-mx-md">
                 <i class="fab fa-facebook"></i>
             </a>
-            <a href="#" class="share-btn insta">
-                <i class="fab fa-instagram"></i>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=codeMagic122.github.io" target="_blank" class="share-btn linkedin">
+                <i class="fab fa-linkedin"></i>
             </a>
         </div>
 
