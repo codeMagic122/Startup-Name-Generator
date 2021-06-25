@@ -423,7 +423,7 @@
     const generateStartup = category => {
         const idx = Math.floor((startups[category].length) * Math.random())
         const startup = startups[category][idx]
-        return startup
+        return {...startup, "idx": idx}
     }
 
     // Grab random company adjective
@@ -455,7 +455,7 @@
     }
 
     const generateTwitterShare = ( users, category, location, name ) => {
-        const sentence = `I just built ${ name }, A D2C ${ category } Startup serving ${ users } from sunny ${ location }! Build your own startup: https://codemagic122.github.io/`
+        const sentence = `I just built ${ name }, A D2C ${ category } Startup serving ${ users } from sunny ${ location }! Build your own startup: ${ window.location.href }`
         const encoded = encode(sentence)
         return `https://twitter.com/intent/tweet?text=${ encoded }`
     }
@@ -507,27 +507,53 @@
         })
     }
 
-    const onSubmitHandler = e => {
-        e.preventDefault()
+    const updateQueryString = ({ users, category, location, color, idx }) => {
+        const encodedUsers = encode(users)
+        const encodedCategory = encode(category)
+        const encodedLocation = encode(location)
+        const encodedColor = encode(color)
+        const encodedIndex = encode(idx)
 
-        // Retreive Data on Form Submit
-        const users = e.target.elements.users.value
-        const category = e.target.elements.category.value
-        const location = e.target.elements.location.value
-        const color = e.target.elements.color.value
+        return `?users=${ encodedUsers }&category=${ encodedCategory }&location=${ encodedLocation }&color=${ encodedColor }&startupIndex=${ idx }`
+    }
 
-        // Build Startup
-        const { name, image, mission, test1, test2, test3, test4 } = generateStartup(category)
+    const updateForm = (category, users, location, color) => {
+        const startupFormItems = document.querySelector("#startup-form").children
+        var idx = 0
 
-        // Generate Startup 'about' sentence
-        const sentence = generateAbout(users, category, location, name)
+        while (idx < startupFormItems.length) {
+            const item = startupFormItems[idx].children[1].children[0]
 
-        // Generate shareable content
-        const shareSentence = generateTwitterShare(users, category, location, name)
+            if (item.name === "category") {
+                item.value = category
+            }
+            
+            if (item.name === "users") {
+                item.value = users
+            }
 
-        const linkersly = "https://www.facebook.com/sharer.php?u=https://codemagic122.github.io/"
+            if (item.name === "location") {
+                item.value = location
+            }
 
-        // Update About Section
+            idx += 1
+        }
+
+        const colorInputs = document.querySelectorAll("[name=color]")
+        var idx = 0
+        while (idx < colorInputs.length) {
+            input = colorInputs[idx]
+
+            if(input.value === color) {
+                input.checked = true
+            }
+
+            idx += 1
+        }
+    }
+
+    const updatePage = (name, image, mission, test1, test2, test3, test4, shareSentence, color, sentence) => {
+    
         const nameOutput = document.querySelector("#name")
         const imgOutput = document.querySelector("#image")
         const aboutOutput = document.querySelector("#about")
@@ -553,24 +579,90 @@
         test3Output.textContent = test3
         test4Output.textContent = test4
         twitter.setAttribute("href", shareSentence)
-        
+
         updateColor(color)
+    }
+
+    const handleUpdate = ( startup, users, category, location, color ) => {
+        var finalStartup 
+        if(startup === null || startup === undefined){
+            finalStartup = generateStartup(category)
+        } else {
+            finalStartup = startup
+        }
+
+        // Build Startup
+        const { name, image, mission, test1, test2, test3, test4, idx } = finalStartup
+
+        // Generate Startup 'about' sentence
+        const sentence = generateAbout(users, category, location, name)
+
+        // Generate shareable content
+        const shareSentence = generateTwitterShare(users, category, location, name)
+
+        updatePage(name, image, mission, test1, test2, test3, test4, shareSentence, color, sentence)
 
         const result = document.querySelector(".result")
         result.style.display = "flex"
         result.scrollIntoView()
 
-        const testimonials = document.querySelector(".testimonials")
-        testimonials.style.display = "flex"
+        const newUrl = updateQueryString({
+            users,
+            category,
+            location,
+            color,
+            idx
+        })
 
-        const newUrl = `?updatedquerystring`
         history.pushState({}, null, newUrl);
+    }
+
+    const onSubmitHandler = e => {
+        e.preventDefault()
+
+        // Retreive Data on Form Submit
+        const users = e.target.elements.users.value
+        const category = e.target.elements.category.value
+        const location = e.target.elements.location.value
+        const color = e.target.elements.color.value
+
+        handleUpdate(null, users, category, location, color)
     }
 
     document.addEventListener("DOMContentLoaded", () => {
         const params = new URLSearchParams(window.location.search)
+        var users
+        var category
+        var location
+        var color
+        var startupIndex
+        var startup
+
         for (const param of params) {
-            console.log(param)
+            if(param[0] === "users") {
+                users = param[1]
+            }
+
+            if(param[0] === "category") {
+                category = param[1]
+            }
+
+            if(param[0] === "location") {
+                location = param[1]
+            }
+            if(param[0] === "color") {
+                color = param[1]
+            }
+            if(param[0] === "startupIndex") {
+                startupIndex = param[1]
+            }
+        }
+
+        if(startupIndex) {
+            const foundStartup = startups[category][startupIndex]
+            const finalStartup = { ...foundStartup, "idx":startupIndex }
+            handleUpdate(finalStartup, users, category, location, color)
+            updateForm(category, users, location, color)
         }
     });
 
