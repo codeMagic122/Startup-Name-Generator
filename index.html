@@ -15,6 +15,7 @@
 <!-- Generator Logic -->
 
 <script>
+    // Startups Data
     const startups = {
         "Telemedicine": [
             { 
@@ -230,122 +231,134 @@
         return encodeURIComponent(url).replace(/'/g,"%27").replace(/"/g,"%22");	
     }
 
+    // Company Adjectives
     const companyAdjectives = [
-        "At-home", 
-        "Subscription-based", 
-        "Next day", 
+        "Affordable", 
+        "All in one", 
         "Artisan-crafted", 
-        "Sustainable", 
-        "Eco-friendly", 
-        "Organic", 
-        "Plant-based", 
-        "Locally sourced", 
-        "Carbon Neutral", 
-        "AI-powered", 
-        "Proprietary", 
-        "VC-backed", 
-        "Compostable", 
-        "NFT-ready", 
-        "Machine learning based", 
-        "Vegan", 
-        "Meat-lovers", 
-        "Chef-prepared", 
-        "Blockchain powered", 
-        "Distributed ledger/blockchain enabled", 
-        "Members-only", 
-        "Consumer-driven", 
-        "Technology platform", 
-        "On demand", 
-        "Real-time", 
-        "Behavior change", 
-        "Digital transformation", 
-        "Networked", 
-        "Peer to peer", 
-        "Digital, online", 
-        "Mobile", 
-        "Distributed", 
-        "Connected", 
-        "Smart app enabled", 
-        "Mobile first", 
-        "Android", 
-        "Online, mobile", 
-        "Design centric", 
-        "Mobility focused", 
-        "Remote first", 
-        "Leading", 
-        "Integrated", 
-        "Transparent, fair", 
-        "Cloud-based", 
-        "Natural Language Enabled", 
-        "Clinically-proven", 
-        "Speciality", 
-        "Proactive", 
-        "Curated", 
-        "Private label", 
-        "Personalized", 
-        "Scientifically proven", 
-        "Keto", 
-        "Diet", 
-        "Patent pending", 
-        "Biometric", 
-        "Ultra-fresh", 
-        "Intelligent", 
-        "Catheter-based", 
-        "Value-added", 
-        "Voice-enabled", 
+        "At-home", 
         "Automated", 
-        "Information-driven", 
-        "Next-generation", 
-        "Premium", 
-        "Non-invasive", 
+        "Behavior change", 
+        "Bespoke", 
+        "Carbon Neutral", 
+        "Catheter-based", 
+        "Clinically-proven", 
+        "Community-driven", 
+        "Compostable", 
+        "Consumer-driven", 
+        "Curated", 
+        "Cutting-edge", 
+        "Data-driven", 
+        "Design centric", 
+        "Diet", 
+        "Digital transformation", 
+        "Digitally-native", 
+        "Easy-to-Use", 
+        "Eco-friendly", 
+        "Evidence-based", 
+        "Exceptional", 
         "FDA cleared", 
+        "Financially responsible", 
+        "High protein", 
+        "HIPPA compliant", 
+        "Holistic", 
+        "Information-driven", 
+        "Innovative", 
+        "Integrated", 
+        "Intelligent", 
+        "Leading", 
+        "Locally sourced", 
+        "Low glycemic index", 
+        "Meat-lovers", 
+        "Members-only", 
+        "Mobile", 
+        "Mobility focused", 
         "Multi-channel", 
         "Multi-device", 
-        "All in one", 
-        "Cutting-edge", 
-        "Evidence-based", 
-        "Financially responsible", 
-        "Virtual intelligence", 
-        "Decentralized", 
-        "Smart contract enabled", 
-        "Tokenized", 
-        "Innovative", 
-        "Paleo", 
-        "Socially responsible", 
-        "Web-based", 
-        "Bespoke", 
-        "Digitally-native", 
-        "Exceptional", 
+        "Next day", 
+        "Next-generation", 
+        "Non-invasive", 
         "Non-surgical", 
-        "Transformative", 
-        "Easy-to-Use", 
-        "Holistic", 
-        "Revolutionary", 
-        "High protein", 
         "Nootropics enhanced", 
-        "Data-driven", 
-        "Stylish", 
-        "Affordable", 
-        "Optimized", 
-        "Value-packed", 
-        "Wearable", 
-        "Unprecedented", 
         "Novel", 
-        "Low glycemic index", 
+        "On demand", 
+        "Optimized", 
+        "Organic", 
+        "Patent pending", 
+        "Personalized", 
+        "Plant-based", 
+        "Premium", 
+        "Private label", 
+        "Proactive", 
+        "Proprietary", 
+        "Real-time", 
+        "Remote first", 
+        "Revolutionary", 
+        "Scientifically proven", 
+        "Socially responsible", 
+        "Speciality", 
+        "Stylish", 
+        "Subscription-based", 
+        "Sustainable", 
+        "Technology platform", 
         "Therapeutic", 
-        "HIPPA compliant", 
-        "Biometric-sensor based", 
-        "Community-driven", 
-        "Wireless"
+        "Transformative", 
+        "Transparent and fair", 
+        "Ultra-fresh", 
+        "Unprecedented", 
+        "Value-added", 
+        "Value-packed", 
+        "VC-backed", 
+        "Vegan", 
+        "Wearable", 
+        "Web-based", 
+        "Wireless", 
+        "Bluetooth enabled", 
+        "5G ready", 
+        "Hyperautomated"
     ]
 
+    // Company Buzzwords
+    const companyBuzzwords = [
+        "AI-powered", 
+        "Android", 
+        "Biometric", 
+        "Biometric-sensor based", 
+        "Blockchain powered", 
+        "Chef-prepared", 
+        "Cloud-based", 
+        "Connected", 
+        "Decentralized", 
+        "Digital and online", 
+        "Distributed", 
+        "Distributed ledger/blockchain enabled", 
+        "Keto", 
+        "Machine learning based", 
+        "Mobile first", 
+        "Natural Language Enabled", 
+        "Networked", 
+        "NFT-ready", 
+        "Online and mobile", 
+        "Paleo", 
+        "Peer to peer", 
+        "Smart app enabled", 
+        "Smart contract enabled", 
+        "Tokenized", 
+        "Virtual intelligence", 
+        "Voice-enabled", 
+        "Deep learning", 
+        "Algorithmic", 
+        "Adaptive learning", 
+        "Internet of things", 
+        "Singularity advancing", 
+        "Microservices", 
+        "Virtual reality", 
+        "Extended reality"
+    ]
+
+    // Consumer Adjectives
     const consumerAdjectives = [
         "Discerning", 
-        "Hipster", 
-        "GenZ", 
-        "GenY", 
-        "Millennial", 
-        "Boomer", 
         "Busy", 
         "Everyday", 
         "Professional", 
@@ -357,18 +370,15 @@
         "Stylish", 
         "Fashion-forward", 
         "Freedom loving", 
-        "Menopausal", 
-        "Retired", 
         "Reward-loving", 
         "Deal-loving", 
         "Overworked", 
         "Inspired", 
         "Fitness-obsessed", 
-        "the Modern", 
         "On the go", 
         "Category creating", 
         "Growing", 
-        "Solution seeking", 
+        "Growing", 
         "Unique", 
         "ICO loving", 
         "NFT curious", 
@@ -393,7 +403,6 @@
         "Highly educated", 
         "College bound", 
         "Online", 
-        "Digital currency holding", 
         "Influential", 
         "Community-oriented", 
         "Extraordinary", 
@@ -412,12 +421,58 @@
         "Discriminating", 
         "Informed", 
         "Upscale", 
+        "Chic", 
+        "Burned out", 
+        "Rich", 
+        "Middle class"
+    ]
+
+    // Consumer Nouns
+    const consumerNouns = [
+        "Hipster", 
+        "GenZ", 
+        "GenY", 
+        "Millennial", 
+        "Boomer", 
+        "Menopausal", 
+        "Retired", 
+        "DINK", 
+        "Yuppie", 
         "Urban", 
         "Suburban", 
-        "Chic", 
         "Modern", 
-        "Burned out"
+        "Digital currency holding", 
+        "Bitcoin miners", 
+        "Home owning", 
+        "Office workers", 
+        "Uber driving", 
+        "Online shopper", 
+        "iPhone owner", 
+        "Real estate investor", 
+        "Dieter", 
+        "NFT Investor", 
+        "Day trader"
     ]
+
+    // Get random value from array
+    const getRandom = arr => {
+        return arr[Math.floor((arr.length) * Math.random())]
+    }
+
+    // Grab startup description 
+    const getDescriptors = () => {
+        const companyAdj = getRandom(companyAdjectives)
+        const companyBuzzword = getRandom(companyBuzzwords)
+        const consumerAdj = getRandom(consumerAdjectives)
+        const consumerNoun = getRandom(consumerNouns)
+
+        return {
+            companyAdj,
+            companyBuzzword,
+            consumerAdj,
+            consumerNoun
+        }
+    }
 
     // Grab startup data
     const generateStartup = category => {
@@ -426,32 +481,19 @@
         return {...startup, "idx": idx}
     }
 
-    // Grab random company adjective
-    const randomCompanyAdjectives = () => {
-        const idx = Math.floor((companyAdjectives.length) * Math.random())
-        const idx2 = (idx !== (companyAdjectives.length - 1)) ? idx + 1 : idx
-        return [companyAdjectives[idx].toLowerCase(), companyAdjectives[idx2].toLowerCase()]
-    }
-
-    // Grab random consumer adjective
-    const randomConsumerAdjectives = () => {
-        const idx = Math.floor((consumerAdjectives.length) * Math.random())
-        const idx2 = (idx !== (consumerAdjectives.length - 1)) ? idx + 1 : idx
-        return [consumerAdjectives[idx].toLowerCase(), consumerAdjectives[idx2].toLowerCase()]
-    }
-
     // Create about sentence using user input
     const generateAbout = ( users, category, location, name ) => {
-        const companyAdj = randomCompanyAdjectives()
-        const consumerAdj = randomConsumerAdjectives()
+        const { companyAdj, companyBuzzword, consumerAdj, consumerNoun } = getDescriptors()
 
-        const sentence1 = `${ name } is a ${ location } based direct to consumer ${ companyAdj[0] } and ${ companyAdj[1] } ${ category } startup for ${ consumerAdj[0] } and ${ consumerAdj[1] } ${ users }.`
-        const sentence2 = `At ${ name }, we're revolutionizing the ${ category } industry, by providing the best ${ companyAdj[0] } and ${ companyAdj[1] } ${ category } products to ${ consumerAdj[0] } and ${ consumerAdj[1] } ${ users } in ${ location }.`
-        const sentence3 = `Located in sunny ${ location }, ${ name } is disrupting the ${ category } industry, by bringing our target demographic, ${ consumerAdj[0] } and ${ consumerAdj[1] } ${ users }, the best ${ companyAdj[0] } and ${ companyAdj[1] } ${ category } products possible.`
+        const sentence1 = `${ name } is a ${ location } based direct to consumer ${ companyBuzzword } ${ companyAdj } ${ category } startup for ${ consumerAdj } ${ consumerNoun } ${ users }.`
+        const sentence2 = `At ${ name }, we're revolutionizing the ${ category } industry, by providing the best ${ companyBuzzword } ${ companyAdj } ${ category } products to ${ consumerAdj } ${ consumerNoun } ${ users } in ${ location }.`
+        const sentence3 = `Located in sunny ${ location }, ${ name } is disrupting the ${ category } industry, by bringing our target demographic, ${ consumerAdj } ${ consumerNoun } ${ users }, the best ${ companyBuzzword }  ${ companyAdj } ${ category } products possible.`
         
         const sentences = [ sentence1, sentence2, sentence3 ]
 
         return sentences[Math.floor(Math.random() * sentences.length)]
+
+        return sentence1
     }
 
     const generateTwitterShare = ( users, category, location, name ) => {
@@ -680,8 +722,8 @@
         <!-- Page Content -->
 
         <!-- Title -->
-        <h1 class="u-gutter-top" id="top">Direct-to-consumer Startup Name Generator</h1>
-        <p class="u-text-center u-my-sm">
+        <h1 class="u-gutter-top" id="top">D2C Startup Name Generator</h1>
+        <p class="u-text-center u-my-sm better-world">
             We promise your brand will make the world a better place.
             <br>
             But first, we have a few questions. 
@@ -799,49 +841,55 @@
         <p class="u-text-white u-text-center u-text-spaced u-my-sm u-width-50" id="about">MeeYow cat food is a new direct-to-consumer brand, offering the highest quality natural foods in a wide variety of flavors from seafood to poultry to delicacies such as duck and rabbit. We deliver with free shipping to all 50 states and we never quit until you are satisfied. We love our pets, and we know you do too!</p>
         <img src="SNG.png" alt="docster" class="about-img u-my-md" id="image">
 
-        <h1 id="love-outer" class="u-gutter-top">People <span class="red">&hearts;</span> <span id="love">Docster</span></h1>
+        <h1 id="love-outer" class="u-my-lg">People <span class="red">&hearts;</span> <span id="love">Docster</span></h1>
 
         <!-- Testimonials Container -->
 
         <div class="testimonial-group u-my-lg">
 
-            <!-- Testmionial -->
+            <!-- Testimonial Column -->
+            <div class="testimonial-column">
+                <!-- Testmionial -->
 
-            <div class="testimonial">
-                <img src="rand1.jpeg" alt="user" class="u-mx-md">
-                <div class="content">
-                    <h2>Clarissa Leonardo</h2>
-                    <p class="u-my-sm u-text-spaced" id="test1">I'm a huge believer in the idea that more affordable, online healthcare is a net positive for the country. Docster is providing a great service to consumers by connecting them with doctors they can trust at prices that don't break the bank.</p>
+                <div class="testimonial">
+                    <img src="rand1.jpeg" alt="user" class="u-mx-md">
+                    <div class="content">
+                        <h2>Clarissa Leonardo</h2>
+                        <p class="u-my-sm u-text-spaced" id="test1">I'm a huge believer in the idea that more affordable, online healthcare is a net positive for the country. Docster is providing a great service to consumers by connecting them with doctors they can trust at prices that don't break the bank.</p>
+                    </div>
+                </div>
+
+                <!-- Testmionial -->
+
+                <div class="testimonial u-my-md">
+                    <img src="rand2.jpeg" alt="user" class="u-mx-md">
+                    <div class="content">
+                        <h2>Kayla Dumfries</h2>
+                        <p class="u-my-sm u-text-spaced" id="test2">I have been very happy with Docster and plan to continue using them for some time. The platform is easy to use, the customer service is great, and I love how easy it is for our patients to schedule appointments with us.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Testmionial -->
+            <!-- Testimonial Column -->
+            <div class="testimonial-column">
+                <!-- Testmionial -->
 
-            <div class="testimonial">
-                <img src="rand2.jpeg" alt="user" class="u-mx-md">
-                <div class="content">
-                    <h2>Kayla Dumfries</h2>
-                    <p class="u-my-sm u-text-spaced" id="test2">I have been very happy with Docster and plan to continue using them for some time. The platform is easy to use, the customer service is great, and I love how easy it is for our patients to schedule appointments with us.</p>
+                <div class="testimonial">
+                    <img src="rand3.jpeg" alt="user" class="u-mx-md">
+                    <div class="content">
+                        <h2>George John</h2>
+                        <p class="u-my-sm u-text-spaced" id="test3">The Internet has made it possible for people to order products from all over the world at any time. The next thing is to be able to order a professional service from anywhere in the world. Docster is the first step towards this reality.</p>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- Testmionial -->
 
-            <div class="testimonial u-my-md">
-                <img src="rand3.jpeg" alt="user" class="u-mx-md">
-                <div class="content">
-                    <h2>George John</h2>
-                    <p class="u-my-sm u-text-spaced" id="test3">The Internet has made it possible for people to order products from all over the world at any time. The next thing is to be able to order a professional service from anywhere in the world. Docster is the first step towards this reality.</p>
-                </div>
-            </div>
+                <!-- Testmionial -->
 
-            <!-- Testmionial -->
-
-            <div class="testimonial u-my-md">
-                <img src="rand4.jpeg" alt="user" class="u-mx-md">
-                <div class="content">
-                    <h2>Jeff Daniels</h2>
-                    <p class="u-my-sm u-text-spaced" id="test4">Docster has changed my life by connecting me with a licensed and professional doctor for only $25. I had ongoing health issues that needed to be addressed but never had the time to go see a doctor. Docster is saving me time and money, and I am able to connect with a licensed and professional doctor at any time from the comfort of my home!</p>
+                <div class="testimonial u-my-md">
+                    <img src="rand4.jpeg" alt="user" class="u-mx-md">
+                    <div class="content">
+                        <h2>Jeff Daniels</h2>
+                        <p class="u-my-sm u-text-spaced" id="test4">Docster has changed my life by connecting me with a licensed and professional doctor for only $25. I had ongoing health issues that needed to be addressed but never had the time to go see a doctor. Docster is saving me time and money, and I am able to connect with a licensed and professional doctor at any time from the comfort of my home!</p>
+                    </div>
                 </div>
             </div>
         </div>
