@@ -454,6 +454,98 @@
         "Day trader"
     ]
 
+    // Female First Names
+    const femaleNames = [
+        "Nancy",
+        "Stacy",
+        "Cherry",
+        "Allison",
+        "Juliet",
+        "Julia",
+        "Claude",
+        "Virginia",
+        "Rachel",
+        "Isabella",
+        "Naomi",
+        "Lara",
+        "Carlie",
+        "Carla",
+        "Olivia",
+        "Sophia",
+        "Emma",
+        "Charlotte",
+        "Ava",
+        "Emily",
+        "Madison",
+        "Hannah",
+        "Alexis",
+        "Ashley",
+        "Samantha",
+        "Jessica",
+        "Sarah",
+        "Brittany",
+        "Melissa",
+        "Amy",
+        "Heather",
+        "Michelle",
+        "Kimberly",
+        "Lisa"
+    ]
+
+    const maleNames = [
+        "Liam",
+        "Noah",
+        "Oliver",
+        "Elijah",
+        "William",
+        "James",
+        "Mason",
+        "Jacob",
+        "John",
+        "Logan",
+        "Ethan",
+        "Nathan",
+        "Jayden",
+        "Kyle",
+        "Daniel",
+        "Joshua",
+        "Michael",
+        "Eric",
+        "Christopher",
+        "Tyler",
+        "David",
+        "Daniel",
+        "Andrew",
+        "Matthew",
+        "Jason",
+        "Robert",
+        "Richard",
+        "Charles"
+    ]
+
+    const lastNames = [
+        "Smith",
+        "Garcia",
+        "Johnson",
+        "Williams",
+        "Brown",
+        "Jones",
+        "Miller",
+        "Davis",
+        "Rodriguez",
+        "Wilson",
+        "Martinez",
+        "Anderson",
+        "Moore",
+        "Thompson",
+        "White",
+        "Lee",
+        "Harris",
+        "Robinson",
+        "Walker",
+        "Perez",
+        "Hall"
+    ]
     // Get random value from array
     const getRandom = arr => {
         return arr[Math.floor((arr.length) * Math.random())]
@@ -479,6 +571,33 @@
         const idx = Math.floor((startups[category].length) * Math.random())
         const startup = startups[category][idx]
         return {...startup, "idx": idx}
+    }
+
+    // Retrieve user image
+    const retrieveImage = male => {
+        const idx = Math.floor(Math.random() * 100)
+        return (male ? `https://randomuser.me/api/portraits/men/${idx}.jpg` : `https://randomuser.me/api/portraits/women/${idx}.jpg`)
+    }
+
+    // Generate Random User
+    const generateRandomUser = male => {
+        if(male) {
+            const fname = getRandom(maleNames)
+            const lname = getRandom(lastNames)
+            const name = `${ fname } ${ lname }`
+            const img = retrieveImage(true)
+
+            return { name, img }
+
+        } else {
+            const fname = getRandom(femaleNames)
+            const lname = getRandom(lastNames)
+            const name = `${ fname } ${ lname }`
+            const img = retrieveImage(false)
+
+            return { name, img }
+        }
+        
     }
 
     // Create about sentence using user input
@@ -600,9 +719,17 @@
         const imgOutput = document.querySelector("#image")
         const aboutOutput = document.querySelector("#about")
         const test1Output = document.querySelector("#test1")
+        const test1name = document.querySelector("#test1name")
+        const test1img = document.querySelector("#test1img")
         const test2Output = document.querySelector("#test2")
+        const test2name = document.querySelector("#test2name")
+        const test2img = document.querySelector("#test2img")
         const test3Output = document.querySelector("#test3")
+        const test3name = document.querySelector("#test3name")
+        const test3img = document.querySelector("#test3img")
         const test4Output = document.querySelector("#test4")
+        const test4name = document.querySelector("#test4name")
+        const test4img = document.querySelector("#test4img")
         const loveOutput = document.querySelector("#love")
         const loveOuterOutput = document.querySelector("#love-outer")
         const shareOutput = document.querySelector("#share")
@@ -611,15 +738,28 @@
         const buttons = document.getElementsByTagName('button')
         const twitter = document.querySelector(".twt")
 
+        const user1 = generateRandomUser(true)
+        const user2 = generateRandomUser(false)
+        const user3 = generateRandomUser(true)
+        const user4 = generateRandomUser(false)
+
         nameOutput.textContent = name
         loveOutput.textContent = name
         shareOutput.textContent = name
         imgOutput.setAttribute("src", image)
         aboutOutput.textContent = `${ sentence } Our goal is ${ mission.toLowerCase() }`
         test1Output.textContent = test1
+        test1name.textContent = user1.name
+        test1img.setAttribute("src", user1.img)
         test2Output.textContent = test2
+        test2name.textContent = user2.name
+        test2img.setAttribute("src", user2.img)
         test3Output.textContent = test3
+        test3name.textContent = user3.name
+        test3img.setAttribute("src", user3.img)
         test4Output.textContent = test4
+        test4name.textContent = user4.name
+        test4img.setAttribute("src", user4.img)
         twitter.setAttribute("href", shareSentence)
 
         updateColor(color)
@@ -852,9 +992,9 @@
                 <!-- Testmionial -->
 
                 <div class="testimonial">
-                    <img src="rand1.jpeg" alt="user" class="u-mx-md">
+                    <img src="rand1.jpeg" alt="user" class="u-mx-md" id="test1img">
                     <div class="content">
-                        <h2>Clarissa Leonardo</h2>
+                        <h2 id="test1name">Clarissa Leonardo</h2>
                         <p class="u-my-sm u-text-spaced" id="test1">I'm a huge believer in the idea that more affordable, online healthcare is a net positive for the country. Docster is providing a great service to consumers by connecting them with doctors they can trust at prices that don't break the bank.</p>
                     </div>
                 </div>
@@ -862,9 +1002,9 @@
                 <!-- Testmionial -->
 
                 <div class="testimonial u-my-md">
-                    <img src="rand2.jpeg" alt="user" class="u-mx-md">
+                    <img src="rand2.jpeg" alt="user" class="u-mx-md" id="test2img">
                     <div class="content">
-                        <h2>Kayla Dumfries</h2>
+                        <h2 id="test2name">Kayla Dumfries</h2>
                         <p class="u-my-sm u-text-spaced" id="test2">I have been very happy with Docster and plan to continue using them for some time. The platform is easy to use, the customer service is great, and I love how easy it is for our patients to schedule appointments with us.</p>
                     </div>
                 </div>
@@ -875,9 +1015,9 @@
                 <!-- Testmionial -->
 
                 <div class="testimonial">
-                    <img src="rand3.jpeg" alt="user" class="u-mx-md">
+                    <img src="rand3.jpeg" alt="user" class="u-mx-md" id="test3img">
                     <div class="content">
-                        <h2>George John</h2>
+                        <h2 id="test3name">George John</h2>
                         <p class="u-my-sm u-text-spaced" id="test3">The Internet has made it possible for people to order products from all over the world at any time. The next thing is to be able to order a professional service from anywhere in the world. Docster is the first step towards this reality.</p>
                     </div>
                 </div>
@@ -885,9 +1025,9 @@
                 <!-- Testmionial -->
 
                 <div class="testimonial u-my-md">
-                    <img src="rand4.jpeg" alt="user" class="u-mx-md">
+                    <img src="rand4.jpeg" alt="user" class="u-mx-md" id="test4img">
                     <div class="content">
-                        <h2>Jeff Daniels</h2>
+                        <h2 id="test4name">Jeff Daniels</h2>
                         <p class="u-my-sm u-text-spaced" id="test4">Docster has changed my life by connecting me with a licensed and professional doctor for only $25. I had ongoing health issues that needed to be addressed but never had the time to go see a doctor. Docster is saving me time and money, and I am able to connect with a licensed and professional doctor at any time from the comfort of my home!</p>
                     </div>
                 </div>
@@ -910,26 +1050,6 @@
 
         <button class="u-gutter-top u-gutter-bottom" onclick=scrollToTop() id="build-again">Go again <span>&#8634;</span></button>
     </div>
-
-    <!-- <div class="testimonials u-gutter-top u-gutter-bottom">
-        <h1 id="love-outer">People <span class="red">&hearts;</span> <span id="love">Docster</span></h1>
-
-        <h1 class="u-gutter-top share" id="share-outer">Share <span id="share">Docster</span></h1>
-
-        <div class="share-buttons u-my-lg">
-            <a href="#" class="share-btn twt u-mx-md">
-                <i class="fab fa-twitter"></i>
-            </a>
-            <a href="#" class="share-btn fb u-mx-md">
-                <i class="fab fa-facebook"></i>
-            </a>
-            <a href="#" class="share-btn insta">
-                <i class="fab fa-instagram"></i>
-            </a>
-        </div>
-
-        <button class="u-gutter-top" onclick=scrollToTop() id="build-again">Start another startup</button>
-    </div> -->
 </body>
 
 </html>
