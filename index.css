@@ -29,12 +29,12 @@ body {
 :root {
   /* Color */
 
-  --color-black: #1d2733;
-  --color-white: #f8fbff;
-  --color-blue: #00b2ff;
-  --color-purple: #cc78ff;
-  --color-salmon-dark: #fa8072;
-  --color-salmon-light: #fbc0b9;
+  --color-black: #1d2733 !important;
+  --color-white: #f8fbff !important;
+  --color-blue: #00b2ff !important;
+  --color-purple: #cc78ff !important;
+  --color-salmon-dark: #fa8072 !important;
+  --color-salmon-light: #fbc0b9 !important;
 
   /* Border Radius */
 
@@ -140,10 +140,10 @@ p {
   content: "\2713";
   position: absolute;
   z-index: 100;
-  left: 17px;
-  top: 13px;
+  left: 1.7rem;
+  top: 1.3rem;
   color: #fff;
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 .radio-button:checked + .radio-group-label .radio-group-button {
@@ -203,11 +203,13 @@ button:hover {
 #top {
   color: var(--color-salmon-dark);
   font-weight: 800;
+  text-align: center;
+  max-width: 95%;
 }
 
 /* Form */
 
-form {
+.body form {
   width: 50rem;
   padding: 3.5rem;
   border-radius: var(--border-radius);
@@ -346,9 +348,8 @@ input[type="color"]::-webkit-color-swatch {
 .testimonials {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
 
   /* Hide */
   display: none;
@@ -362,8 +363,12 @@ input[type="color"]::-webkit-color-swatch {
   align-items: flex-start;
 }
 
-.testimonial-group .testimonial {
-  width: 48%;
+.testimonial-column {
+  width: 47.5%;
+}
+
+.testimonial {
+  width: 100%;
   display: flex;
   align-items: center;
   padding: 3rem;
@@ -466,4 +471,55 @@ input[type="color"]::-webkit-color-swatch {
   right: 50%;
   transform: translate(50%, -50%);
   width: 150%;
+}
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 50%;
+  }
+
+  .testimonial-group {
+    flex-direction: column;
+    width: 70rem;
+  }
+
+  .testimonial-column {
+    width: 100%;
+  }
+
+  .testimonial-column:nth-child(2) {
+    margin-top: 4rem;
+  }
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 42.5%;
+  }
+
+  #top {
+    font-size: 3.5rem;
+  }
+
+  .result p.u-width-50 {
+    width: 70rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .result p.u-width-50 {
+    width: 90%;
+  }
+
+  .testimonial-group {
+    width: 90%;
+  }
+
+  .body form {
+    width: 80%;
+  }
+
+  html {
+    font-size: 37.5%;
+  }
 }
