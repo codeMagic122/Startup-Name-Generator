@@ -1,9 +1,9 @@
 /* Grab Font */
 
-@font-face {
+/* @font-face {
   font-family: "Open Sans Regular";
   src: url("OpenSans-Regular.ttf");
-}
+} */
 
 /* Global Reset */
 
@@ -11,7 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Open Sans Regular";
+  font-family: "Arial";
   color: var(--color-black);
 }
 
@@ -188,14 +188,67 @@ button:hover {
   box-shadow: 0 1.5rem 1.5rem rgba(0, 0, 0, 0.15);
 }
 
+/* Directions Section */
+.directions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--color-salmon-dark);
+  padding: 3rem 5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.15);
+}
+
+.directions h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-white);
+}
+
+.directions p {
+  font-size: 1.8rem;
+  font-weight: 100;
+  color: var(--color-white);
+}
+
 /* First Section */
 
 .body {
   width: 100%;
+  display: grid;
+  grid-template-columns: 5rem 1fr 3fr 1fr 5rem;
+}
+
+.body .center {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: space-between;
+  grid-column: 3 / span 1;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.logo img:not(:first-child) {
+  margin-top: 2rem;
+}
+
+.logo-left {
+  grid-column: 2 / span 1;
+  max-width: 100%;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 20rem;
+  filter: grayscale(100%);
+  opacity: 0.1;
+  transition: opacity 0.5s;
 }
 
 /* Title Heading */
@@ -214,7 +267,6 @@ button:hover {
   padding: 3.5rem;
   border-radius: var(--border-radius);
   background-color: var(--color-salmon-dark);
-  opacity: 0.9;
   box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.15);
 }
 
@@ -490,6 +542,10 @@ input[type="color"]::-webkit-color-swatch {
   .testimonial-column:nth-child(2) {
     margin-top: 4rem;
   }
+
+  .logo {
+    display: none;
+  }
 }
 
 @media (max-width: 800px) {
@@ -515,8 +571,31 @@ input[type="color"]::-webkit-color-swatch {
     width: 90%;
   }
 
-  .body form {
-    width: 80%;
+  .body .center {
+    grid-column: 2 / span 3;
+  }
+
+  .share {
+    font-size: 3rem;
+  }
+
+  .share-buttons {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+  }
+
+  .share-btn.fb {
+    margin-right: 0;
+  }
+
+  .share-buttons .break {
+    flex-basis: 100%;
+  }
+
+  .share-btn.linkedin {
+    margin-top: 3rem;
   }
 
   html {
