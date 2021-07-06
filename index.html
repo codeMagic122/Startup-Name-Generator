@@ -1009,6 +1009,7 @@
         const gradientOutput = document.querySelector("#gradient")
         const buttons = document.getElementsByTagName('button')
         const twitter = document.querySelector(".twt")
+        const twitterMetaImage = document.querySelector("#twitter-image-meta")
         const facebook = document.querySelector(".fb")
         const linkedin = document.querySelector(".linkedin")
 
@@ -1040,6 +1041,7 @@
         twitter.setAttribute("href", shareSentence)
         facebook.setAttribute("href", facebookShare)
         linkedin.setAttribute("href", linkedinShare)
+        twitterMetaImage.setAttribute("content", image)
 
         updateColor(color)
     }
@@ -1166,9 +1168,9 @@
         <!-- Add Meta Tag -->
         <meta name="twitter:card" content="summary"></meta>
         <meta name="twitter:site:id" content="@finvsfin">
-        <meta name="twitter:description" content="here's the description">
-        <meta name="twitter:title" content="I just build a startup. That's the title.">
-        <meta name="twitter:image" content="https://finvsfin.com/wp-content/uploads/2021/07/retainer.png"/>
+        <meta name="twitter:description" content="You can use the direct to consumer startup name generator to create your own direct to consumer startup">
+        <meta name="twitter:title" content="I just build a direct to consumer startup using the direct to consumer startup generator at Fin vs Fin!">
+        <meta name="twitter:image" content="https://finvsfin.com/wp-content/uploads/2021/07/retainer.png" id="twitter-image-meta"/>
 
         <div class="logo logo-left">
             <img src="https://finvsfin.com/wp-content/uploads/2021/06/warby.png" alt="warby parker logo">
