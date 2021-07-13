@@ -22,7 +22,7 @@
 <script>
     // Startups Data
     const startups = {
-        "Telemedicine": [
+        "telemedicine": [
             { 
                 name: "Pillsly",
                 image: "https://finvsfin.com/wp-content/uploads/2021/07/pills.png",
@@ -74,7 +74,7 @@
             }
         ],
 
-        "Pets": [
+        "pets": [
             {
                 name: "Wagly",
                 image: "https://finvsfin.com/wp-content/uploads/2021/07/dogtoy.png",
@@ -126,7 +126,7 @@
             }
         ],
 
-        "Nutrition": [
+        "nutrition": [
             {
                 name: "Healthology",
                 image: "https://finvsfin.com/wp-content/uploads/2021/07/stethoscope.png",
@@ -178,7 +178,7 @@
             }
         ],
 
-        "Fintech": [
+        "fintech": [
             {
                 name: "AltCoinsly",
                 image: "https://finvsfin.com/wp-content/uploads/2021/07/coin-alt.png",
@@ -230,7 +230,7 @@
             }
         ],
 
-        "Mental Health": [
+        "mental health": [
             {
                 name: "Heather",
                 image: "https://finvsfin.com/wp-content/uploads/2021/07/heather.png",
@@ -282,7 +282,7 @@
             }
         ],
 
-        "Dental": [
+        "dental": [
             {
                 name: "Toothly",
                 image: "https://finvsfin.com/wp-content/uploads/2021/07/toothbrush-blue.png",
@@ -326,7 +326,7 @@
             {
                 name: "Brusht",
                 image: "https://finvsfin.com/wp-content/uploads/2021/07/toothbrush.png",
-                mission: "To improve the oral health of people around the world. We are an innovative company that produces superior toothbrushes that offer clients and patients a healthy, beautiful smile.",
+                mission: "To improve the oral health of people around the world by producing superior toothbrushes that offer clients and patients a healthy, beautiful smile.",
                 test1: "I am a dentist who cares about the health of my patients. I am proud to recommend Brusht to my patients. The brushes are excellent for oral hygiene and I am happy to see the improvement in my patients' smiles.",
                 test2: "Now that I have a Brusht toothbrush, I can truly say that my teeth are cleaner and my mouth feels fresher. I'm so grateful for the fine work that Brusht has done and continues to do!",
                 test3: "Brusht Toothbrush is very unique. It's a toothbrush that actually enables people to brush their teeth correctly. I know it sounds crazy, but you can check out the double-blind randomized studies published in various dental journals.",
@@ -334,7 +334,7 @@
             }
         ],
 
-        "Retail": [
+        "retail": [
             {
                 name: "Closetly",
                 image: "https://finvsfin.com/wp-content/uploads/2021/07/closet.png",
@@ -386,7 +386,7 @@
             }
         ],
 
-        "Apparell": [
+        "apparell": [
             {
                 name: "The Shades",
                 image: "https://finvsfin.com/wp-content/uploads/2021/07/glasses.png",
@@ -438,7 +438,7 @@
             }
         ],
 
-        "Food": [
+        "food": [
             {
                 name: "Yummer",
                 image: "https://finvsfin.com/wp-content/uploads/2021/07/pasta.png",
@@ -508,225 +508,204 @@
 
     // Company Adjectives
     const companyAdjectives = [
-        "Affordable", 
-        "All in one", 
-        "Artisan-crafted", 
-        "At-home", 
-        "Automated", 
-        "Behavior change", 
-        "Bespoke", 
-        "Carbon Neutral", 
-        "Catheter-based", 
-        "Clinically-proven", 
-        "Community-driven", 
-        "Compostable", 
-        "Consumer-driven", 
-        "Curated", 
-        "Cutting-edge", 
-        "Data-driven", 
-        "Design centric", 
-        "Diet", 
-        "Digital transformation", 
-        "Digitally-native", 
-        "Easy-to-Use", 
-        "Eco-friendly", 
-        "Evidence-based", 
-        "Exceptional", 
+        "affordable", 
+        "all in one", 
+        "artisan-crafted", 
+        "at-home", 
+        "automated", 
+        "behavior change", 
+        "bespoke", 
+        "carbon neutral", 
+        "catheter-based", 
+        "clinically-proven", 
+        "community-driven", 
+        "compostable", 
+        "consumer-driven", 
+        "curated", 
+        "cutting-edge", 
+        "data-driven", 
+        "design centric", 
+        "diet", 
+        "digital transformation", 
+        "digitally-native", 
+        "easy-to-use", 
+        "eco-friendly", 
+        "evidence-based", 
+        "exceptional", 
         "FDA cleared", 
-        "Financially responsible", 
-        "High protein", 
+        "financially responsible", 
+        "high protein", 
         "HIPPA compliant", 
-        "Holistic", 
-        "Information-driven", 
-        "Innovative", 
-        "Integrated", 
-        "Intelligent", 
-        "Leading", 
-        "Locally sourced", 
-        "Low glycemic index", 
-        "Meat-lovers", 
-        "Members-only", 
-        "Mobile", 
-        "Mobility focused", 
-        "Multi-channel", 
-        "Multi-device", 
-        "Next day", 
-        "Next-generation", 
-        "Non-invasive", 
-        "Non-surgical", 
-        "Nootropics enhanced", 
-        "Novel", 
-        "On demand", 
-        "Optimized", 
-        "Organic", 
-        "Patent pending", 
-        "Personalized", 
-        "Plant-based", 
-        "Premium", 
-        "Private label", 
-        "Proactive", 
-        "Proprietary", 
-        "Real-time", 
-        "Remote first", 
-        "Revolutionary", 
-        "Scientifically proven", 
-        "Socially responsible", 
-        "Speciality", 
-        "Stylish", 
-        "Subscription-based", 
-        "Sustainable", 
-        "Technology platform", 
-        "Therapeutic", 
-        "Transformative", 
-        "Transparent and fair", 
-        "Ultra-fresh", 
-        "Unprecedented", 
-        "Value-added", 
-        "Value-packed", 
+        "holistic", 
+        "information-driven", 
+        "innovative", 
+        "integrated", 
+        "intelligent", 
+        "leading", 
+        "locally sourced", 
+        "low glycemic index", 
+        "meat-lovers", 
+        "members-only", 
+        "mobile", 
+        "mobility focused", 
+        "multi-channel", 
+        "multi-device", 
+        "next day", 
+        "next-generation", 
+        "non-invasive", 
+        "non-surgical", 
+        "nootropics enhanced", 
+        "novel", 
+        "on demand", 
+        "optimized", 
+        "organic", 
+        "patent pending", 
+        "personalized", 
+        "plant-based", 
+        "premium", 
+        "private label", 
+        "proactive", 
+        "proprietary", 
+        "real-time", 
+        "remote first", 
+        "revolutionary", 
+        "scientifically proven", 
+        "socially responsible", 
+        "speciality", 
+        "stylish", 
+        "subscription-based", 
+        "sustainable", 
+        "technology platform", 
+        "therapeutic", 
+        "transformative", 
+        "transparent and fair", 
+        "ultra-fresh", 
+        "unprecedented", 
+        "value-added", 
+        "value-packed", 
         "VC-backed", 
-        "Vegan", 
-        "Wearable", 
-        "Web-based", 
-        "Wireless", 
-        "Bluetooth enabled", 
+        "vegan", 
+        "wearable", 
+        "web-based", 
+        "wireless", 
+        "bluetooth enabled", 
         "5G ready", 
-        "Hyperautomated"
+        "hyperautomated"
     ]
 
     // Company Buzzwords
     const companyBuzzwords = [
-        "AI-powered", 
-        "Android", 
-        "Biometric", 
-        "Biometric-sensor based", 
-        "Blockchain powered", 
-        "Chef-prepared", 
-        "Cloud-based", 
-        "Connected", 
-        "Decentralized", 
-        "Digital and online", 
-        "Distributed", 
-        "Distributed ledger/blockchain enabled", 
-        "Keto", 
-        "Machine learning based", 
-        "Mobile first", 
-        "Natural Language Enabled", 
-        "Networked", 
-        "NFT-ready", 
-        "Online and mobile", 
-        "Paleo", 
-        "Peer to peer", 
-        "Smart app enabled", 
-        "Smart contract enabled", 
-        "Tokenized", 
-        "Virtual intelligence", 
-        "Voice-enabled", 
-        "Deep learning", 
-        "Algorithmic", 
-        "Adaptive learning", 
-        "Internet of things", 
-        "Singularity advancing", 
-        "Microservices", 
-        "Virtual reality", 
-        "Extended reality"
+        "ai-powered", 
+        "android", 
+        "biometric", 
+        "biometric-sensor based", 
+        "blockchain powered", 
+        "chef-prepared", 
+        "cloud-based", 
+        "connected", 
+        "decentralized", 
+        "digital and online", 
+        "distributed", 
+        "distributed ledger/blockchain enabled", 
+        "keto"
     ]
 
     // Consumer Adjectives
     const consumerAdjectives = [
-        "Discerning", 
-        "Busy", 
-        "Everyday", 
-        "Professional", 
-        "Mobile first", 
-        "Distributed", 
-        "High income", 
-        "Struggling", 
-        "Remote", 
-        "Stylish", 
-        "Fashion-forward", 
-        "Freedom loving", 
-        "Reward-loving", 
-        "Deal-loving", 
-        "Overworked", 
-        "Inspired", 
-        "Fitness-obsessed", 
-        "On the go", 
-        "Category creating", 
-        "Growing", 
-        "Growing", 
-        "Unique", 
-        "ICO loving", 
-        "NFT curious", 
-        "Connected", 
-        "Flexible", 
-        "Socially responsible", 
-        "Digitally-native", 
-        "Leading", 
-        "Curious", 
-        "Exceptional", 
-        "Healthy", 
-        "Passionate", 
-        "Everyday", 
-        "Bargain-seeking", 
-        "Proactive", 
-        "White collar", 
-        "Engaged", 
-        "Savvy", 
-        "Biohacking", 
-        "Independent", 
-        "Successful", 
-        "Highly educated", 
-        "College bound", 
-        "Online", 
-        "Influential", 
-        "Community-oriented", 
-        "Extraordinary", 
-        "Networked", 
-        "Cord-cutting", 
-        "Thriving", 
-        "Knowledgeable", 
-        "Canny", 
-        "Intelligent", 
-        "Perceptive", 
-        "Sensible", 
-        "Astute", 
-        "Logical", 
-        "Prudent", 
-        "Rational", 
-        "Discriminating", 
-        "Informed", 
-        "Upscale", 
-        "Chic", 
-        "Burned out", 
-        "Rich", 
-        "Middle class"
+        "discerning", 
+        "busy", 
+        "everyday", 
+        "professional", 
+        "mobile first", 
+        "distributed", 
+        "high income", 
+        "struggling", 
+        "remote", 
+        "stylish", 
+        "fashion-forward", 
+        "freedom loving", 
+        "reward-loving", 
+        "deal-loving", 
+        "overworked", 
+        "inspired",
+        "fitness-obsessed", 
+        "on the go", 
+        "category creating", 
+        "growing", 
+        "growing", 
+        "unique", 
+        "ico loving", 
+        "nft curious", 
+        "connected", 
+        "flexible", 
+        "socially responsible", 
+        "digitally-native", 
+        "leading", 
+        "curious", 
+        "exceptional", 
+        "healthy", 
+        "passionate", 
+        "everyday", 
+        "bargain-seeking", 
+        "proactive", 
+        "white collar", 
+        "engaged", 
+        "savvy", 
+        "biohacking", 
+        "independent", 
+        "successful", 
+        "highly educated", 
+        "college bound", 
+        "online", 
+        "influential", 
+        "community-oriented", 
+        "extraordinary", 
+        "networked", 
+        "cord-cutting", 
+        "thriving", 
+        "knowledgeable", 
+        "canny", 
+        "intelligent", 
+        "perceptive", 
+        "sensible", 
+        "astute", 
+        "logical", 
+        "prudent", 
+        "rational", 
+        "discriminating", 
+        "informed", 
+        "upscale", 
+        "chic", 
+        "burned out", 
+        "rich", 
+        "middle class"
     ]
 
     // Consumer Nouns
     const consumerNouns = [
-        "Hipster", 
-        "GenZ", 
-        "GenY", 
-        "Millennial", 
-        "Boomer", 
-        "Menopausal", 
-        "Retired", 
+        "hipster", 
+        "genz", 
+        "geny", 
+        "millennial", 
+        "boomer", 
+        "menopausal", 
+        "retired", 
         "DINK", 
-        "Yuppie", 
-        "Urban", 
-        "Suburban", 
-        "Modern", 
-        "Digital currency holding", 
-        "Bitcoin miners", 
-        "Home owning", 
-        "Office workers", 
-        "Uber driving", 
-        "Online shopper", 
-        "iPhone owner", 
-        "Real estate investor", 
-        "Dieter", 
-        "NFT Investor", 
-        "Day trader"
+        "yuppie", 
+        "urban", 
+        "suburban", 
+        "modern", 
+        "digital currency holding", 
+        "bitcoin mining", 
+        "home owning", 
+        "office working", 
+        "uber driving", 
+        "online shopping", 
+        "iphone owning", 
+        "real estate investing", 
+        "dieter", 
+        "nft investing", 
+        "day trading"
     ]
 
     // Female First Names
@@ -876,12 +855,12 @@
     }
 
     // Create about sentence using user input
-    const generateAbout = ( users, category, location, name ) => {
-        const { companyAdj, companyBuzzword, consumerAdj, consumerNoun } = getDescriptors()
+    const generateAbout = ( users, category, location, name, descriptors ) => {
+        const { companyAdj, companyBuzzword, consumerAdj, consumerNoun } = descriptors
 
         const sentence1 = `${ name } is a ${ location } based direct to consumer ${ companyBuzzword } ${ companyAdj } ${ category } startup for ${ consumerAdj } ${ consumerNoun } ${ users }.`
         const sentence2 = `At ${ name }, we're revolutionizing the ${ category } industry, by providing the best ${ companyBuzzword } ${ companyAdj } ${ category } products to ${ consumerAdj } ${ consumerNoun } ${ users } in ${ location }.`
-        const sentence3 = `Located in sunny ${ location }, ${ name } is disrupting the ${ category } industry, by bringing our target demographic, ${ consumerAdj } ${ consumerNoun } ${ users }, the best ${ companyBuzzword }  ${ companyAdj } ${ category } products possible.`
+        const sentence3 = `Located in sunny ${ location }, ${ name } is disrupting the ${ category } industry, by bringing ${ consumerAdj } ${ consumerNoun } ${ users }, the best ${ companyBuzzword }  ${ companyAdj } ${ category } products possible.`
         
         const sentences = [ sentence1, sentence2, sentence3 ]
 
@@ -890,8 +869,9 @@
         return sentence1
     }
 
-    const generateTwitterShare = ( users, category, location, name ) => {
-        const sentence = `I just built ${ name }, A D2C ${ category } Startup serving ${ users } from sunny ${ location }! Build your own startup: ${ window.location.href }`
+    const generateTwitterShare = ( users, category, location, name, descriptors ) => {
+        const { companyAdj, companyBuzzword, consumerAdj, consumerNoun } = descriptors
+        const sentence = `I just built ${ name }, a ${ location } based direct to consumer ${ companyBuzzword } ${ companyAdj } ${ category } startup for ${ consumerAdj } ${ consumerNoun } ${ users }! \n\nCheck out ${ name }, and build your own startup: ${ window.location.href }`
         const encoded = encode(sentence)
         return `https://twitter.com/intent/tweet?text=${ encoded }`
     }
@@ -907,7 +887,8 @@
         const buttons = document.getElementsByTagName('button')
         const titleOutput = document.querySelector("#top")
         const startupForm = document.querySelector("#startup-form")
-        const directions = document.querySelector(".directions")
+        const describeOutput = document.querySelector("#describe")
+        const brandOutput = document.querySelector("#brand")
 
         const outputColor = color === "" ? "var(--color-salmon-dark)" : color
         const white = "var(--color-white)"
@@ -919,43 +900,65 @@
         shareOutput.style.color = white
         startupForm.style.backgroundColor = outputColor
         titleOutput.style.color = outputColor
-        directions.style.backgroundColor = outputColor
+        describeOutput.style.color = outputColor
+        brandOutput.style.color = outputColor
 
         buildBtn.style.color = outputColor
         buildBtn.style.border = `3px solid ${ outputColor }`
 
         buildBtn.addEventListener("mouseenter", function() {
-            this.setAttribute("style", `background-color: ${outputColor}; border: 3px solid ${ outputColor }`)
             this.style.color = "#fff"
+            this.style.backgroundColor = `${ outputColor }`
+            this.style.border = `3px solid ${ outputColor }`
         })
 
         buildBtn.addEventListener("mouseleave", function() {
-            this.setAttribute("style", `background-color: transparent; border: 3px solid ${ outputColor }; color: ${ outputColor }`)
+            this.style.color = `${ outputColor }`
+            this.style.backgroundColor = "transparent"
+            this.style.border = `3px solid ${ outputColor }`
         })
 
         buildAgainBtn.style.color = white
         buildAgainBtn.style.border = `3px solid ${ white }`
 
         buildAgainBtn.addEventListener("mouseenter", function() {
-            this.setAttribute("style", `background-color: ${ white }; border: 3px solid ${ white }; color: ${ outputColor }`)
+            this.style.color = `${ outputColor }`
+            this.style.backgroundColor = `#fff`
+            this.style.border = `3px solid #fff`
         })
 
         buildAgainBtn.addEventListener("mouseleave", function() {
-            this.setAttribute("style", `background-color: transparent; border: 3px solid ${ white }; color: ${ white }`)
+            this.style.color = `#fff`
+            this.style.backgroundColor = "transparent"
+            this.style.border = `3px solid #fff`
         })
     }
 
-    const updateQueryString = ({ users, category, location, color, idx }) => {
+    const updateFont = font => {
+        var allElements = document.getElementsByClassName("font");
+        for (var i = 0, len = allElements.length; i < len; i++) {
+            try {
+                var element = allElements[i]
+                element.style.fontFamily = font
+            } catch(error) {
+                console.log(error)
+            }
+        }
+    }
+
+    const updateQueryString = ({ users, category, location, color, idx, font, descriptors }) => {
         const encodedUsers = encode(users)
         const encodedCategory = encode(category)
         const encodedLocation = encode(location)
         const encodedColor = encode(color)
         const encodedIndex = encode(idx)
+        const encodedFont = encode(font)
+        const { companyAdj, companyBuzzword, consumerAdj, consumerNoun } = descriptors
 
-        return `?users=${ encodedUsers }&category=${ encodedCategory }&location=${ encodedLocation }&color=${ encodedColor }&startupIndex=${ idx }`
+        return `?users=${ encodedUsers }&category=${ encodedCategory }&location=${ encodedLocation }&color=${ encodedColor }&startupIndex=${ idx }&font=${ encodedFont }&companyAdj=${ companyAdj }&companyBuzzword=${ companyBuzzword }&consumerAdj=${ consumerAdj }&consumerNoun=${ consumerNoun }`
     }
 
-    const updateForm = (category, users, location, color) => {
+    const updateForm = (category, users, location, color, font) => {
         const startupFormItems = document.querySelector("#startup-form").children
         var idx = 0
 
@@ -988,10 +991,38 @@
 
             idx += 1
         }
+
+        const fontInputs = document.querySelectorAll("[name=font]")
+        idx = 0
+        while (idx < fontInputs.length) {
+            input = fontInputs[idx]
+
+            if(input.value === font) {
+                input.checked = true
+            }
+
+            idx += 1
+        }
     }
 
-    const updatePage = (name, image, mission, test1, test2, test3, test4, shareSentence, color, sentence) => {
-    
+    const updateLinks = (twitter, twitterShare, facebook, linkedin) => {
+        const facebookShare = `https://www.facebook.com/sharer/sharer.php?u=${ window.location.href }`
+        const linkedinShare = `https://www.linkedin.com/shareArticle?mini=true&url=${ window.location.href }`
+
+        for(var i = 0; i < twitter.length; i++) {
+            twitter[i].setAttribute("href", twitterShare)
+        }
+
+        for(var i = 0; i < facebook.length; i++) {
+            facebook[i].setAttribute("href", facebookShare)
+        }
+
+        for(var i = 0; i < linkedin.length; i++) {
+            linkedin[i].setAttribute("href", linkedinShare)
+        }
+    }
+
+    const updatePage = (name, image, mission, test1, test2, test3, test4, shareSentence, color, sentence, font) => {
         const nameOutput = document.querySelector("#name")
         const imgOutput = document.querySelector("#image")
         const aboutOutput = document.querySelector("#about")
@@ -1013,13 +1044,9 @@
         const shareOuterOutput = document.querySelector("#share-outer")
         const gradientOutput = document.querySelector("#gradient")
         const buttons = document.getElementsByTagName('button')
-        const twitter = document.querySelector(".twt")
-        const twitterMetaImage = document.querySelector("#twitter-image-meta")
-        const facebook = document.querySelector(".fb")
-        const linkedin = document.querySelector(".linkedin")
-
-        const facebookShare = `https://www.facebook.com/sharer/sharer.php?u=${ window.location.href }`
-        const linkedinShare = `https://www.linkedin.com/shareArticle?mini=true&url=${ window.location.href }`
+        const twitter = document.querySelectorAll(".twt")
+        const facebook = document.querySelectorAll(".fb")
+        const linkedin = document.querySelectorAll(".linkedin")
 
         const user1 = generateRandomUser(true)
         const user2 = generateRandomUser(false)
@@ -1043,46 +1070,49 @@
         test4Output.textContent = test4
         test4name.textContent = user4.name
         test4img.setAttribute("src", user4.img)
-        twitter.setAttribute("href", shareSentence)
-        facebook.setAttribute("href", facebookShare)
-        linkedin.setAttribute("href", linkedinShare)
-        twitterMetaImage.setAttribute("content", image)
 
         updateColor(color)
+        updateFont(font)
+        updateLinks(twitter, shareSentence, facebook, linkedin)
     }
 
-    const handleUpdate = ( startup, users, category, location, color ) => {
+    const handleUpdate = ( startup, users, category, location, color, font ) => {
         var finalStartup 
         if(startup === null || startup === undefined){
             finalStartup = generateStartup(category)
+            const descriptors = getDescriptors()
+            finalStartup = { ...finalStartup, "descriptors": descriptors }
         } else {
             finalStartup = startup
         }
 
         // Build Startup
-        const { name, image, mission, test1, test2, test3, test4, idx } = finalStartup
-
-        // Generate Startup 'about' sentence
-        const sentence = generateAbout(users, category, location, name)
-
-        // Generate shareable content
-        const shareSentence = generateTwitterShare(users, category, location, name)
-
-        updatePage(name, image, mission, test1, test2, test3, test4, shareSentence, color, sentence)
-
-        const result = document.querySelector(".result")
-        result.style.display = "flex"
-        result.scrollIntoView()
+        const { name, image, mission, test1, test2, test3, test4, idx, descriptors } = finalStartup
 
         const newUrl = updateQueryString({
             users,
             category,
             location,
             color,
-            idx
+            idx,
+            font,
+            finalStartup,
+            descriptors
         })
 
         history.pushState({}, null, newUrl);
+
+        // Generate Startup 'about' sentence
+        const sentence = generateAbout(users, category, location, name, descriptors)
+
+        // Generate shareable content
+        const shareSentence = generateTwitterShare(users, category, location, name, descriptors)
+
+        updatePage(name, image, mission, test1, test2, test3, test4, shareSentence, color, sentence, font)
+
+        const result = document.querySelector(".result")
+        result.style.display = "flex"
+        result.scrollIntoView()
     }
 
     const onSubmitHandler = e => {
@@ -1093,8 +1123,9 @@
         const category = e.target.elements.category.value
         const location = e.target.elements.location.value
         const color = e.target.elements.color.value
+        const font = e.target.elements.font.value
 
-        handleUpdate(null, users, category, location, color)
+        handleUpdate(null, users, category, location, color, font)
     }
 
     document.addEventListener("DOMContentLoaded", () => {
@@ -1105,6 +1136,10 @@
         var color
         var startupIndex
         var startup
+        var companyAdj
+        var companyBuzzword
+        var consumerAdj
+        var consumerNoun
 
         for (const param of params) {
             if(param[0] === "users") {
@@ -1118,48 +1153,43 @@
             if(param[0] === "location") {
                 location = param[1]
             }
+
             if(param[0] === "color") {
                 color = param[1]
             }
+
+            if(param[0] === "font") {
+                font = param[1]
+            }
+
             if(param[0] === "startupIndex") {
                 startupIndex = param[1]
+            }
+
+            if(param[0] === "companyAdj") {
+                companyAdj = param[1]
+            }
+
+            if(param[0] === "companyBuzzword") {
+                companyBuzzword = param[1]
+            }
+
+            if(param[0] === "consumerAdj") {
+                consumerAdj = param[1]
+            }
+
+            if(param[0] === "consumerNoun") {
+                consumerNoun = param[1]
             }
         }
 
         if(startupIndex) {
-            const foundStartup = startups[category][startupIndex]
-            const finalStartup = { ...foundStartup, "idx":startupIndex }
-            handleUpdate(finalStartup, users, category, location, color)
-            updateForm(category, users, location, color)
+            var foundStartup = startups[category][startupIndex]
+            const descriptors = { companyAdj, companyBuzzword, consumerAdj, consumerNoun }
+            const finalStartup = { ...foundStartup, "idx":startupIndex, "descriptors": descriptors }
+            handleUpdate(finalStartup, users, category, location, color, font)
+            updateForm(category, users, location, color, font)
         }
-
-        // Get logos
-        const logoContainers = document.querySelectorAll(".logo")
-        var logos = []
-        logos.push(...(logoContainers[0].querySelectorAll("img")))
-        logos.push(...(logoContainers[1].querySelectorAll("img")))
-
-        // Animate logos
-        var counter = 0
-
-        var intervalId = window.setInterval(function(){
-            logos[counter].style.opacity = "0.5"
-
-            if(counter === 0) {
-                logos[logos.length-1].style.opacity = "0.1"
-            }
-
-            if(counter !== 0) {
-                logos[counter-1].style.opacity = "0.1"
-            }
-
-            if(counter < logos.length-1) {
-                counter += 1
-            } else {
-                counter = 0
-            }
-            
-        }, 500);
     });
 
     const scrollToTop = () => {
@@ -1169,78 +1199,72 @@
 
 <body>
     <div class="body">
-        <div class="logo logo-left">
-            <img src="https://finvsfin.com/wp-content/uploads/2021/06/warby.png" alt="warby parker logo">
-            <img src="https://finvsfin.com/wp-content/uploads/2021/06/roman.png" alt="roman logo">
-            <img src="https://finvsfin.com/wp-content/uploads/2021/06/keeps.png" alt="keeps logo">
-            <img src="https://finvsfin.com/wp-content/uploads/2021/06/jomers.png" alt="jomers logo">
-            <img src="https://finvsfin.com/wp-content/uploads/2021/06/lemonaid.png" alt="lemonaid logo">
-            <img src="https://finvsfin.com/beltology/" alt="beltology logo">
-            <img src="https://finvsfin.com/wp-content/uploads/2021/06/bearth.svg?swcfpc=1" alt="bearth logo">
-            <img src="https://finvsfin.com/wp-content/uploads/2021/06/allbirds.svg?swcfpc=1" alt="allbirds logo">
-            <img src="https://finvsfin.com/wp-content/uploads/2021/06/wp.png" alt="wp standard logo">
+        <div class="column column-explanations">
+            <div class="explanation">
+                <h4 class="font">How does it work?</h4>
+                <p class="font">
+                    We use a combination of GPT-3 enabled AI tools to take the inputs you provide us with, and generate a brand new company
+                </p>
+            </div>
+            <div class="explanation">
+                <h4 class="font">Are any of the startups real?</h4>
+                <p class="font">Not yet! Every startup is a fictional creation, derived from your user inputs.</p>
+            </div>
         </div>
 
         <div class="center">
-            <div class="directions u-gutter-top">
-                <h1>Directions</h1>
-                <div class="directions-list u-my-sm">
-                    <p>1. <strong style="color: var(--color-white);">Describe</strong> your startup, using the form below</p>
-                    <p>2. We'll use <strong style="color: var(--color-white);">GPT-3 artificial intelligence</strong> to build your startup</p>
-                    <p>3. <strong style="color: var(--color-white);">Share</strong> your startup with your friends!</p>
-                </div>
-            </div>
             <div id="page-top"></div>
 
             <!-- Title -->
-            <h1 class="u-gutter-top" id="top">D2C Startup Name Generator</h1>
-            <p class="u-text-center u-my-sm better-world">
+            <h1 class="u-gutter-top font" id="top">D2C Startup Name Generator</h1>
+            <p class="u-text-center u-my-sm better-world font">
                 We promise your brand will make the world a better place.
                 <br>
                 But first, we have a few questions. 
             </p>
-    
+            
+            <h2 class="u-my-lg font" id="describe">Describe your startup</h2>
             <!-- Form -->
-            <form class="u-my-lg" id="startup-form" onsubmit=onSubmitHandler(event)>
+            <form class="u-my-sm" id="startup-form" onsubmit=onSubmitHandler(event)>
                 <div class="form-group">
-                    <p class="u-text-white">What industry are you disrupting?</p>
-                    <div class="select">
+                    <p class="u-text-white font">What industry are you disrupting?</p>
+                    <div class="select font">
                         <select name="category" required>
                             <option value="" selected disabled hidden>Select an option</option>
-                            <option value="Telemedicine">Telemedicine</option>
-                            <option value="Pets">Pets</option>
-                            <option value="Nutrition">Nutrition</option>
-                            <option value="Fintech">Fintech</option>
-                            <option value="Mental Health">Mental Health</option>
-                            <option value="Dental">Dental</option>
-                            <option value="Retail">Retail</option>
-                            <option value="Apparell">Apparell</option>
-                            <option value="Food">Food</option>
+                            <option value="telemedicine">Telemedicine</option>
+                            <option value="pets">Pets</option>
+                            <option value="nutrition">Nutrition</option>
+                            <option value="fintech">Fintech</option>
+                            <option value="mental health">Mental Health</option>
+                            <option value="dental">Dental</option>
+                            <option value="retail">Retail</option>
+                            <option value="apparell">Apparell</option>
+                            <option value="food">Food</option>
                         </select>
                     </div>
                 </div>
     
                 <div class="form-group u-my-md">
-                    <p class="u-text-white">What's your target demographic?</p>
-                    <div class="select">
+                    <p class="u-text-white font">What's your target demographic?</p>
+                    <div class="select font">
                         <select name="users" required>
                             <option value="" selected disabled hidden>Select an option</option>
-                            <option value="Parents">Parents</option>
-                            <option value="Vegans">Vegans</option>
-                            <option value="Teens">Teens</option>
-                            <option value="Grandmas">Grandmas</option>
-                            <option value="Millenials">Millenials</option>
-                            <option value="Bitcoiners">Bitcoiners</option>
-                            <option value="Tech Bros">Tech Bros</option>
-                            <option value="Activists">Activists</option>
+                            <option value="parents">Parents</option>
+                            <option value="vegans">Vegans</option>
+                            <option value="teens">Teens</option>
+                            <option value="grandmas">Grandmas</option>
+                            <option value="millenials">Millenials</option>
+                            <option value="bitcoiners">Bitcoiners</option>
+                            <option value="tech bros">Tech Bros</option>
+                            <option value="activists">Activists</option>
                             <option value="VCs">VCs</option>
                         </select>
                     </div>
                 </div>
     
                 <div class="form-group u-my-md">
-                    <p class="u-text-white">Where's your HQ?</p>
-                    <div class="select">
+                    <p class="u-text-white font">Where's your HQ?</p>
+                    <div class="select font">
                         <select name="location" required>
                             <option value="" selected disabled hidden>Select an option</option>
                             <option value="San Francisco">San Francisco</option>
@@ -1258,55 +1282,92 @@
             </form>
     
             <!-- Colors -->
+
+            <h2 class="u-my-lg font" id="brand">Create your startup's brand</h2>
     
-            <p class="u-my-lg">Select your brand's color</p>
-    
-            <div class="u-row u-my-md">
-    
-                <div class="radio-group u-mx-md" onclick="updateColor('#fa8072')">
-                    <input type="radio" class="radio-button" id="#fa8072" name="color" form="startup-form" value="#fa8072" checked="checked">
-                    <label for="#fa8072" class="radio-group-label">
-                        <span class="radio-group-button" style="background-color: #fa8072;"></span>
-                    </label>
+            <div class="brand-container u-my-sm">
+                <p class="font">Select your brand's color</p>
+                <div class="u-row u-my-sm colors">
+                    <div class="radio-group u-mx-md" onclick="updateColor('#fa8072')">
+                        <input type="radio" class="radio-button" id="#fa8072" name="color" form="startup-form" value="#fa8072" checked="checked">
+                        <label for="#fa8072" class="radio-group-label">
+                            <span class="radio-group-button" style="background-color: #fa8072;"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="radio-group u-mx-md" onclick="updateColor('#7566FA')">
+                        <input type="radio" class="radio-button" id="#7566FA" name="color" form="startup-form" value="#7566FA">
+                        <label for="#7566FA" class="radio-group-label">
+                            <span class="radio-group-button" style="background-color: #7566FA;"></span>
+                        </label>
+                    </div>      
+        
+                    <div class="radio-group u-mx-md" onclick="updateColor('#2DAD6A')">
+                        <input type="radio" class="radio-button" id="#2DAD6A" name="color" form="startup-form" value="#2DAD6A">
+                        <label for="#2DAD6A" class="radio-group-label">
+                            <span class="radio-group-button" style="background-color: #2DAD6A;"></span>
+                        </label>
+                    </div>            
+        
+                    <div class="radio-group" onclick="updateColor('#3EA9AD')">
+                        <input type="radio" class="radio-button" id="#3EA9AD" name="color" form="startup-form" value="#3EA9AD">
+                        <label for="#3EA9AD" class="radio-group-label">
+                            <span class="radio-group-button" style="background-color: #3EA9AD;"></span>
+                        </label>
+                    </div>   
                 </div>
-                
-                <div class="radio-group u-mx-md" onclick="updateColor('#7566FA')">
-                    <input type="radio" class="radio-button" id="#7566FA" name="color" form="startup-form" value="#7566FA">
-                    <label for="#7566FA" class="radio-group-label">
-                        <span class="radio-group-button" style="background-color: #7566FA;"></span>
-                    </label>
-                </div>      
-    
-                <div class="radio-group u-mx-md" onclick="updateColor('#2DAD6A')">
-                    <input type="radio" class="radio-button" id="#2DAD6A" name="color" form="startup-form" value="#2DAD6A">
-                    <label for="#2DAD6A" class="radio-group-label">
-                        <span class="radio-group-button" style="background-color: #2DAD6A;"></span>
-                    </label>
-                </div>            
-    
-                <div class="radio-group" onclick="updateColor('#3EA9AD')">
-                    <input type="radio" class="radio-button" id="#3EA9AD" name="color" form="startup-form" value="#3EA9AD">
-                    <label for="#3EA9AD" class="radio-group-label">
-                        <span class="radio-group-button" style="background-color: #3EA9AD;"></span>
-                    </label>
-                </div>   
+
+                <p class="u-my-sm font">Select your brand's font</p>
+                <div class="u-row u-my-sm fonts">
+                    <div class="radio-group u-mx-md" onclick="updateFont('sans-serif')">
+                        <input type="radio" class="radio-button" id="sans-serif" name="font" form="startup-form" value="sans-serif" checked="checked">
+                        <label for="sans-serif" class="radio-group-label">
+                            <span class="radio-group-button" style="font-family: sans-serif;">S</span>
+                        </label>
+                    </div>
+                    
+                    <div class="radio-group u-mx-md" onclick="updateFont('courier')">
+                        <input type="radio" class="radio-button" id="courier" name="font" form="startup-form" value="courier">
+                        <label for="courier" class="radio-group-label">
+                            <span class="radio-group-button" style="font-family: courier;">S</span>
+                        </label>
+                    </div>      
+        
+                    <div class="radio-group u-mx-md" onclick="updateFont('comic sans ms')">
+                        <input type="radio" class="radio-button" id="comic sans ms" name="font" form="startup-form" value="comic sans ms">
+                        <label for="comic sans ms" class="radio-group-label">
+                            <span class="radio-group-button" style="font-family: 'comic sans ms'">S</span>
+                        </label>
+                    </div>            
+        
+                    <div class="radio-group" onclick="updateFont('georgia')">
+                        <input type="radio" class="radio-button" id="georgia" name="font" form="startup-form" value="georgia">
+                        <label for="georgia" class="radio-group-label">
+                            <span class="radio-group-button" style="font-family: georgia;">S</span>
+                        </label>
+                    </div>   
+                </div>
             </div>
             
+            
             <!-- Form Submit -->
-    
-            <button class="u-my-md u-gutter-bottom" type="submit" form="startup-form" id="build">Build my D2C startup</button>
+            <button class="u-my-md u-gutter-bottom font" type="submit" form="startup-form" id="build">Build my D2C startup</button>
         </div>
         
-        <div class="logo logo-right">
-            <img src="https://finvsfin.com/wp-content/uploads/2021/06/warby.png" alt="warby parker logo">
-            <img src="https://finvsfin.com/wp-content/uploads/2021/06/roman.png" alt="roman logo">
-            <img src="https://finvsfin.com/wp-content/uploads/2021/06/keeps.png" alt="keeps logo">
-            <img src="https://finvsfin.com/wp-content/uploads/2021/06/jomers.png" alt="jomers logo">
-            <img src="https://finvsfin.com/wp-content/uploads/2021/06/lemonaid.png" alt="lemonaid logo">
-            <img src="https://finvsfin.com/beltology/" alt="beltology logo">
-            <img src="https://finvsfin.com/wp-content/uploads/2021/06/bearth.svg?swcfpc=1" alt="bearth logo">
-            <img src="https://finvsfin.com/wp-content/uploads/2021/06/allbirds.svg?swcfpc=1" alt="allbirds logo">
-            <img src="https://finvsfin.com/wp-content/uploads/2021/06/wp.png" alt="wp standard logo">
+        <div class="column right">
+            <div class="share-top">
+                <h3 class="font"><i class="fas fa-paper-plane"></i>Share the generator</h3>
+                <a href="https://twitter.com/intent/tweet?text=Check%20out%20the%20d2c%20startup%20generator%20to%20create%20your%20own%20d2c%20startups%21%0A%0AGo%20to%20Fin%20vs.%20Fin%20to%20get%20started%20https%3A%2F%2Ffinvsfin.com%2Fd2c-startup-ideas%2F%3Fswcfpc%3D1" target="_blank" class="share-btn font twt u-mx-md">
+                    <i class="fab fa-twitter"></i> twitter
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=codeMagic122.github.io" target="_blank" class="share-btn font fb u-mx-md">
+                    <i class="fab fa-facebook"></i> facebook
+                </a>
+                <div class="break"></div>
+                <a href="https://www.linkedin.com/shareArticle?mini=true&url=codeMagic122.github.io" target="_blank" class="share-btn font linkedin">
+                    <i class="fab fa-linkedin"></i> linkedin
+                </a>
+            </div>
         </div>
     </div>
 
@@ -1316,11 +1377,11 @@
 
         <!-- Heading Section -->
 
-        <h1 class="u-text-white u-gutter-top" id="name">Docster</h1>
-        <p class="u-text-white u-text-center u-text-spaced u-my-sm u-width-50" id="about">MeeYow cat food is a new direct-to-consumer brand, offering the highest quality natural foods in a wide variety of flavors from seafood to poultry to delicacies such as duck and rabbit. We deliver with free shipping to all 50 states and we never quit until you are satisfied. We love our pets, and we know you do too!</p>
+        <h1 class="u-text-white u-gutter-top font" id="name"></h1>
+        <p class="u-text-white u-text-center u-text-spaced u-my-sm u-width-50 font" id="about"></p>
         <img src="SNG.png" alt="docster" class="about-img u-my-md" id="image">
 
-        <h1 id="love-outer" class="u-my-lg">People <span class="red">&hearts;</span> <span id="love">Docster</span></h1>
+        <h1 id="love-outer" class="u-my-lg font">People <span class="red font">&hearts; </span><span id="love" class="font"></span></h1>
 
         <!-- Testimonials Container -->
 
@@ -1331,20 +1392,20 @@
                 <!-- Testmionial -->
 
                 <div class="testimonial">
-                    <img src="rand1.jpeg" alt="user" class="u-mx-md" id="test1img">
+                    <img alt="user" class="u-mx-md" id="test1img">
                     <div class="content">
-                        <h2 id="test1name">Clarissa Leonardo</h2>
-                        <p class="u-my-sm u-text-spaced" id="test1">I'm a huge believer in the idea that more affordable, online healthcare is a net positive for the country. Docster is providing a great service to consumers by connecting them with doctors they can trust at prices that don't break the bank.</p>
+                        <h2 id="test1name" class="font"></h2>
+                        <p class="u-my-sm u-text-spaced font" id="test1"></p>
                     </div>
                 </div>
 
                 <!-- Testmionial -->
 
                 <div class="testimonial u-my-md">
-                    <img src="rand2.jpeg" alt="user" class="u-mx-md" id="test2img">
+                    <img alt="user" class="u-mx-md" id="test2img">
                     <div class="content">
-                        <h2 id="test2name">Kayla Dumfries</h2>
-                        <p class="u-my-sm u-text-spaced" id="test2">I have been very happy with Docster and plan to continue using them for some time. The platform is easy to use, the customer service is great, and I love how easy it is for our patients to schedule appointments with us.</p>
+                        <h2 id="test2name" class="font"></h2>
+                        <p class="u-my-sm u-text-spaced font" id="test2"></p>
                     </div>
                 </div>
             </div>
@@ -1354,41 +1415,41 @@
                 <!-- Testmionial -->
 
                 <div class="testimonial">
-                    <img src="rand3.jpeg" alt="user" class="u-mx-md" id="test3img">
+                    <img alt="user" class="u-mx-md" id="test3img">
                     <div class="content">
-                        <h2 id="test3name">George John</h2>
-                        <p class="u-my-sm u-text-spaced" id="test3">The Internet has made it possible for people to order products from all over the world at any time. The next thing is to be able to order a professional service from anywhere in the world. Docster is the first step towards this reality.</p>
+                        <h2 id="test3name" class="font"></h2>
+                        <p class="u-my-sm u-text-spaced font" id="test3"></p>
                     </div>
                 </div>
 
                 <!-- Testmionial -->
 
                 <div class="testimonial u-my-md">
-                    <img src="rand4.jpeg" alt="user" class="u-mx-md" id="test4img">
+                    <img alt="user" class="u-mx-md" id="test4img">
                     <div class="content">
-                        <h2 id="test4name">Jeff Daniels</h2>
-                        <p class="u-my-sm u-text-spaced" id="test4">Docster has changed my life by connecting me with a licensed and professional doctor for only $25. I had ongoing health issues that needed to be addressed but never had the time to go see a doctor. Docster is saving me time and money, and I am able to connect with a licensed and professional doctor at any time from the comfort of my home!</p>
+                        <h2 id="test4name" class="font"></h2>
+                        <p class="u-my-sm u-text-spaced font" id="test4"></p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <h1 class="u-gutter-top share" id="share-outer">Share <span id="share">Docster</span> with the world</h1>
+        <h1 class="u-gutter-top share font" id="share-outer">Share <span id="share" class="font"></span> with the world</h1>
 
         <div class="share-buttons u-my-lg">
-            <a href="https://twitter.com/intent/tweet?text=My%20name%20is%20sobhan%20nejad%2C%20and%20I%20recently%20developed%20a%20D2C%20startup%20using%20fin%20vs%20fin.%20Let%20me%20know%20if%20you%27re%20interested%20in%20it%21Here%27s%20the%20link%20to%20the%20site%3A%20https%3A%2F%2Fcodemagic122.github.io%2F" target="_blank" class="share-btn twt u-mx-md">
-                <i class="fab fa-twitter"></i>
+            <a href="#" target="_blank" class="share-btn font twt u-mx-md">
+                <i class="fab fa-twitter"></i> twitter
             </a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=codeMagic122.github.io" target="_blank" class="share-btn fb u-mx-md">
-                <i class="fab fa-facebook"></i>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=codeMagic122.github.io" target="_blank" class="share-btn font fb u-mx-md">
+                <i class="fab fa-facebook"></i> facebook
             </a>
             <div class="break"></div>
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=codeMagic122.github.io" target="_blank" class="share-btn linkedin">
-                <i class="fab fa-linkedin"></i>
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=codeMagic122.github.io" target="_blank" class="share-btn font linkedin">
+                <i class="fab fa-linkedin"></i> linkedin
             </a>
         </div>
 
-        <button class="u-gutter-top u-gutter-bottom" onclick=scrollToTop() id="build-again">Build again <span>&#8634;</span></button>
+        <button class="u-gutter-top u-gutter-bottom font" onclick=scrollToTop() id="build-again">Build again <span>&#8634;</span></button>
     </div>
 </body>
  
